@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/herilsaha/.config/nvim'
+let g:netrw_dirhist_5='/Users/herilsaha/.config'
+let g:netrw_dirhist_4='/Users/herilsaha'
+let g:netrw_dirhist_3='/Users/herilsaha/WebApplication/pages'
+let g:netrw_dirhist_2='/Users/herilsaha/WebApplication'
+let g:netrw_dirhist_1='/Users/herilsaha'
