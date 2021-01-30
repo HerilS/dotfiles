@@ -1,4 +1,5 @@
 {
+  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
   "coc.preferences.formatOnSaveFiletypes": [

@@ -1,4 +1,4 @@
-let mapleader =" "
+let mapleader =","
 " Use System Clipboard
 set clipboard+=unnamedplus
 
@@ -15,9 +15,12 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Shortcutting split opening
-nnoremap <leader>h :split<Space>
-nnoremap <leader>v :vsplit<Space>
+nnoremap <leader>h :split<CR>
+nnoremap <leader>v :vsplit<CR>
 
+" Change & Delete JSX tags
+map <leader>c cstt
+map <leader>d dst
 " Alias reaplce all to S
 nnoremap S :%s//gI<Left><Left><Left>
 
@@ -32,6 +35,11 @@ Plug 'peitalin/vim-jsx-typescript' " TSX Support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " Basic Settings
@@ -44,6 +52,9 @@ set termguicolors
 set t_Co=256
 set t_ut=
 colorscheme codedark
+
+set autoindent
+set smartindent
 
 " Tab Settings
 set expandtab
@@ -65,11 +76,20 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
-" Tabs
+
+" Tab navigation like Firefox: only 'open new tab' works in terminal
 nnoremap <C-t>     :tabnew<CR>
 inoremap <C-t>     <Esc>:tabnew<CR>
+" move to the previous/next tabpage.
 nnoremap <C-j> gT
 nnoremap <C-k> gt
+
+" delete tab
+nnoremap <C-d> :bdelete<CR>
+" Go to last active tab
+au TabLeave * let g:lasttab = tabpagenr()
+nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 
 " COC Tab autocomplete
 inoremap <silent><expr> <TAB>
@@ -108,3 +128,61 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" Global Coc
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-snippets',
+  \ 'coc-prettier',
+  \ 'coc-pairs',
+  \ 'coc-git',
+  \ 'coc-eslint',
+  \ 'coc-json',
+  \ 'coc-css'
+  \ ]
+" Ctrl-P
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx,*ts,*tsx'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js,*.jsx,*ts,*tsx'
+
+" filetypes like xml, html, xhtml, ...
+" These are the file types where this plugin is enabled.
+"
+let g:closetag_filetypes = 'html,xhtml,phtml,js,ts,jsx,tsx'
+
+" filetypes like xml, xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filetypes = 'xhtml,js,jsx,ts,tsx'
+
+" integer value [0|1]
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
+" dict
+" Disables auto-close if not in a "valid" region (based on filetype)
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ }
+
+" Shortcut for closing tags, default is '>'
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+let g:closetag_close_shortcut = '<leader>>'
+
