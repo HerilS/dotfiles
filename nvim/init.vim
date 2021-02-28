@@ -1,6 +1,6 @@
 let mapleader =","
 " Use System Clipboard
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 
 " Go to center on insert
 autocmd InsertEnter * norm zz
@@ -8,11 +8,6 @@ autocmd InsertEnter * norm zz
 " Remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
 
-" Shortcutting split navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
 
 " Shortcutting split opening
 nnoremap <leader>h :split<CR>
@@ -26,8 +21,7 @@ nnoremap S :%s//gI<Left><Left><Left>
 
 " Plugins
 call plug#begin("~/.vim/plugged")
-Plug 'tomasr/molokai'
-Plug 'arcticicestudio/nord-vim'
+Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -39,9 +33,9 @@ Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'HerringtonDarkholme/yats.vim'
 
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Basic Settings
@@ -50,23 +44,21 @@ syntax on
 set ignorecase
 set smartcase
 set number relativenumber
-set termguicolors
 set t_Co=256
 set t_ut=
-
-colorscheme molokai
+set termguicolors
+colorscheme onedark
+set background=dark
 let g:rehash256 = 1
-hi Normal ctermbg=16 guibg=#1A1B1F
-hi LineNr ctermbg=16 guibg=#1A1B1F
+hi Normal ctermbg=16 guibg=#171410
+hi LineNr ctermbg=16 guibg=#171410
 set autoindent
 set smartindent
-
 " Tab Settings
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
-
 set cursorline
 highlight CursorLine ctermbg=Yellow cterm=bold guibg=#2b2b2b
 " Autocompletion
@@ -82,12 +74,10 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 
 
 " Tab navigation like Firefox: only 'open new tab' works in terminal
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-t>     <Esc>:tabnew<CR>
+nnoremap <leader>t <Esc>:tabnew<cr>
 " move to the previous/next tabpage.
-nnoremap <C-j> gT
-nnoremap <C-k> gt
-
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
 " delete tab
 nnoremap <C-d> :bdelete<CR>
 " Go to last active tab
@@ -145,12 +135,6 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-css'
   \ ]
-" Ctrl-P
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
@@ -190,3 +174,14 @@ let g:closetag_shortcut = '>'
 " Add > at current position without closing the current tag, default is ''
 let g:closetag_close_shortcut = '<leader>>'
 
+" FZF
+nnoremap <C-p> <Esc>:Files<CR>
+nnoremap <C-f> <Esc>:GFiles<CR>
+
+" Shortcutting split navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+let g:airline_theme='onedark'
