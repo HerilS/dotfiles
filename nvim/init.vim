@@ -21,8 +21,11 @@ nnoremap S :%s//gI<Left><Left><Left>
 
 " Plugins
 call plug#begin("~/.vim/plugged")
-Plug 'joshdick/onedark.vim'
+
+Plug 'voldikss/vim-floaterm'
+
 Plug 'vim-airline/vim-airline'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'pangloss/vim-javascript'    " JavaScript support
@@ -47,11 +50,11 @@ set number relativenumber
 set t_Co=256
 set t_ut=
 set termguicolors
-colorscheme onedark
+colorscheme palenight
 set background=dark
 let g:rehash256 = 1
-hi Normal ctermbg=16 guibg=#171410
-hi LineNr ctermbg=16 guibg=#171410
+hi Normal ctermbg=NONE guibg=NONE
+hi LineNr ctermbg=16 guibg=NONE
 set autoindent
 set smartindent
 " Tab Settings
@@ -60,7 +63,7 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set cursorline
-highlight CursorLine ctermbg=Yellow cterm=bold guibg=#2b2b2b
+highlight CursorLine ctermbg=Yellow cterm=bold guibg=#2C2D32
 " Autocompletion
 set wildmode=longest,list,full
 
@@ -175,8 +178,9 @@ let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
 " FZF
-nnoremap <C-p> <Esc>:Files<CR>
-nnoremap <C-f> <Esc>:GFiles<CR>
+nnoremap <C-p> <Esc>:GFiles --cached --others --exclude-standard<CR>
+nnoremap <C-f> <Esc>:Files<CR>
+nnoremap t <Esc>:FloatermNew<CR>
 
 " Shortcutting split navigation
 nnoremap <C-h> <C-w>h
@@ -184,4 +188,4 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-let g:airline_theme='onedark'
+let g:airline_theme='palenight'
