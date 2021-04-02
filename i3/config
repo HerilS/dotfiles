@@ -194,14 +194,14 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # finds out, if available)
  bar {
         colors {
-         background #1c1e2b
-         focused_workspace #c678dd #c678dd #FFFFFF
+         background #040303
+         focused_workspace #FFFFFF #FFFFFF #000000
         }
         font pango:Iosevka Term 9
         status_command i3blocks
  }
 
-exec_always feh --bg-scale /home/herilsaha/Pictures/purple.png
+exec_always feh --bg-scale ${HOME}/Pictures/Samsung-Galaxy-S21-Wallpaper-11-scaled.jpg
 
 exec_always xrandr --output DVI-D-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-0 --off --output DP-1 --off
 
@@ -211,8 +211,8 @@ assign [class="Brave-browser"] $ws2
 for_window [class="^.*"] border pixel 0
 
 # Set inner/outer gaps
-gaps inner 10
-gaps outer 15
+gaps inner 8
+gaps outer 10
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -225,6 +225,7 @@ gaps outer 15
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
+smart_borders no_gaps
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -264,7 +265,6 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-exec_always wal -R
 hide_edge_borders smart_no_gaps
 # Activate smart borders (always)
 smart_borders on
@@ -272,3 +272,6 @@ smart_borders on
 # Activate smart borders (only when there are effectively no gaps)
 smart_borders no_gaps
 hide_edge_borders both
+
+# Picom
+exec_always picom --experimental-backends

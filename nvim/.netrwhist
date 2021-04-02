@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/etc/default'
+let g:netrw_dirhist_2='/home/heril/.config'
+let g:netrw_dirhist_1='/home/heril/.tmux'
 let g:netrw_dirhist_0='/home/heril/.config/i3'
 let g:netrw_dirhist_9='/home/heril/.config/kitty'
 let g:netrw_dirhist_8='/home/heril/WebApplication/server/routes'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_7='/home/herilsaha/nixode-web/styles/Navbar.ts'
 let g:netrw_dirhist_6='/Users/herilsaha/.config/nvim'
 let g:netrw_dirhist_5='/Users/herilsaha/.config'
 let g:netrw_dirhist_4='/Users/herilsaha'
-let g:netrw_dirhist_3='/Users/herilsaha/WebApplication/pages'
-let g:netrw_dirhist_2='/Users/herilsaha/WebApplication'
-let g:netrw_dirhist_1='/Users/herilsaha'

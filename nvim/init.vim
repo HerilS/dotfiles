@@ -39,6 +39,10 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
+
 call plug#end()
 
 " Basic Settings
@@ -50,8 +54,10 @@ set number relativenumber
 set t_Co=256
 set t_ut=
 set termguicolors
-colorscheme palenight
+colorscheme gruvbox
 set background=dark
+" colorscheme PaperColor
+" set background=light
 let g:rehash256 = 1
 hi Normal ctermbg=NONE guibg=NONE
 hi LineNr ctermbg=16 guibg=NONE
@@ -63,7 +69,7 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set cursorline
-highlight CursorLine ctermbg=Yellow cterm=bold guibg=#2C2D32
+" highlight CursorLine ctermbg=Yellow cterm=bold guibg=#2C2D32
 " Autocompletion
 set wildmode=longest,list,full
 
@@ -188,4 +194,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-let g:airline_theme='palenight'
+let g:airline_theme='gruvbox'
+
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default': {
+  \       'transparent_background': 1
+  \     }
+  \   }
+  \ }
