@@ -24,9 +24,9 @@ call plug#begin("~/.vim/plugged")
 
 Plug 'voldikss/vim-floaterm'
 
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'peitalin/vim-jsx-typescript' " TSX Support
@@ -50,7 +50,7 @@ set mouse=a
 syntax on
 set ignorecase
 set smartcase
-set number relativenumber
+" set number relativenumber
 set t_Co=256
 set t_ut=
 set termguicolors
@@ -61,6 +61,28 @@ set background=dark
 let g:rehash256 = 1
 hi Normal ctermbg=NONE guibg=NONE
 hi LineNr ctermbg=16 guibg=NONE
+set statusline=
+set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''}
+set statusline+=%#DiffChange#%{(mode()=='i')?'\ \ INSERT\ ':''}
+set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
+set statusline+=%#Cursor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
+set statusline+=\ %n\           " buffer number
+set statusline+=%#Visual#       " colour
+set statusline+=%{&paste?'\ PASTE\ ':''}
+set statusline+=%{&spell?'\ SPELL\ ':''}
+set statusline+=%#CursorIM#     " colour
+set statusline+=%R                        " readonly flag
+set statusline+=%M                        " modified [+] flag
+set statusline+=%#Cursor#               " colour
+set statusline+=%#CursorLine#     " colour
+set statusline+=\ %t\                   " short file name
+set statusline+=%=                          " right align
+set statusline+=%#CursorLine#   " colour
+set statusline+=\ %Y\                   " file type
+set statusline+=%#CursorIM#     " colour
+set statusline+=\ %3l:%-2c\         " line + column
+set statusline+=%#Cursor#       " colour
+set statusline+=\ %3p%%\                " percentage
 set autoindent
 set smartindent
 " Tab Settings
@@ -69,7 +91,8 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set cursorline
-" highlight CursorLine ctermbg=Yellow cterm=bold guibg=#2C2D32
+highlight CursorLine ctermbg=Yellow cterm=bold guibg=NONE
+hi Visual  guifg=#000000 guibg=#E7D4AD gui=none
 " Autocompletion
 set wildmode=longest,list,full
 
@@ -77,9 +100,9 @@ set wildmode=longest,list,full
 set splitbelow splitright
 
 " Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
 
 
 " Tab navigation like Firefox: only 'open new tab' works in terminal
@@ -93,6 +116,7 @@ nnoremap <C-d> :bdelete<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+highlight clear SignColumn
 
 " COC Tab autocomplete
 inoremap <silent><expr> <TAB>
@@ -194,12 +218,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-let g:airline_theme='gruvbox'
+" let g:airline_theme='gruvbox'
 
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default': {
-  \       'transparent_background': 1
-  \     }
-  \   }
-  \ }
+
+
