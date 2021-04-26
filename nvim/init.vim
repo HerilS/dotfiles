@@ -42,6 +42,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
+Plug 'Yggdroot/indentLine'
+Plug 'valloric/MatchTagAlways'
 
 call plug#end()
 
@@ -50,7 +52,7 @@ set mouse=a
 syntax on
 set ignorecase
 set smartcase
-" set number relativenumber
+set number
 set t_Co=256
 set t_ut=
 set termguicolors
@@ -219,6 +221,20 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " let g:airline_theme='gruvbox'
+let g:indentLine_color_term = 232
+let g:indentLine_concealcursor = 'inc'
+let g:indentLine_conceallevel = 2
+let g:indentLine_setConceal = 2
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \ 'javascript': 1,
+    \}
 
+let g:mta_set_default_matchtag_color = 1
+hi link jsxCloseString htmlTag
