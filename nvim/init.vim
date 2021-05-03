@@ -24,11 +24,12 @@ call plug#begin("~/.vim/plugged")
 
 Plug 'voldikss/vim-floaterm'
 
-" Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'drewtempelmeyer/palenight.vim'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 
 Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript' " TSX Support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
@@ -42,11 +43,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
-Plug 'Yggdroot/indentLine'
 Plug 'valloric/MatchTagAlways'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 " Basic Settings
 set mouse=a
 syntax on
@@ -56,50 +60,17 @@ set number
 set t_Co=256
 set t_ut=
 set termguicolors
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_invert_tabline = 1
+let g:gruvbox_transparent_bg = 1
 colorscheme gruvbox
 set background=dark
 " colorscheme PaperColor
 " set background=light
 let g:rehash256 = 1
 hi Normal ctermbg=NONE guibg=NONE
-hi LineNr ctermbg=16 guibg=NONE
-set statusline=
-set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''}
-set statusline+=%#DiffChange#%{(mode()=='i')?'\ \ INSERT\ ':''}
-set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
-set statusline+=%#Cursor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
-set statusline+=\ %n\           " buffer number
-set statusline+=%#Visual#       " colour
-set statusline+=%{&paste?'\ PASTE\ ':''}
-set statusline+=%{&spell?'\ SPELL\ ':''}
-set statusline+=%#CursorIM#     " colour
-set statusline+=%R                        " readonly flag
-set statusline+=%M                        " modified [+] flag
-set statusline+=%#Cursor#               " colour
-set statusline+=%#CursorLine#     " colour
-set statusline+=\ %t\                   " short file name
-set statusline+=%=                          " right align
-set statusline+=%#CursorLine#   " colour
-set statusline+=\ %Y\                   " file type
-set statusline+=%#CursorIM#     " colour
-set statusline+=\ %3l:%-2c\         " line + column
-set statusline+=%#Cursor#       " colour
-set statusline+=\ %3p%%\                " percentage
-set autoindent
-set smartindent
-" Tab Settings
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-set cursorline
-highlight CursorLine ctermbg=Yellow cterm=bold guibg=NONE
-hi Visual  guifg=#000000 guibg=#E7D4AD gui=none
-" Autocompletion
-set wildmode=longest,list,full
-
-" Fix Splitting
-set splitbelow splitright
+hi LineNr ctermbg=NONE guibg=NONE
+hi NonText ctermbg=NONE guibg=NONE
 
 " Airline
 "let g:airline#extensions#tabline#enabled = 1
@@ -220,12 +191,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" let g:airline_theme='gruvbox'
-let g:indentLine_color_term = 232
-let g:indentLine_concealcursor = 'inc'
-let g:indentLine_conceallevel = 2
-let g:indentLine_setConceal = 2
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:airline_theme='transparent'
 
 
 let g:mta_filetypes = {
@@ -238,3 +204,5 @@ let g:mta_filetypes = {
 
 let g:mta_set_default_matchtag_color = 1
 hi link jsxCloseString htmlTag
+set noshowmode
+
