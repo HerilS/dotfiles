@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/heril/WebApplication/pages/sellproperty'
 let g:netrw_dirhist_4='/home/heril/.config/kitty'
 let g:netrw_dirhist_3='/home/heril/WebApplication'
 let g:netrw_dirhist_2='/home/heril/WebApplication/pages'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_9='/home/heril/WebApplication'
 let g:netrw_dirhist_8='/home/heril/WebApplication/pages/messages'
 let g:netrw_dirhist_7='/home/heril/WebApplication/components'
 let g:netrw_dirhist_6='/home/heril/.config/nvim'
-let g:netrw_dirhist_5='/home/heril/.config/i3'

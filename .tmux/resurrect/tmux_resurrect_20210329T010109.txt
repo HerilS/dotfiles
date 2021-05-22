@@ -1,0 +1,18 @@
+pane	0	0	:EDITOR	0	:	0	:/home/heril/WebApplication/pages	1	zsh	:
+pane	0	1	:UPKEEP	1	:*	0	:/home/heril/WebApplication	0	npm	:npm run-script dev
+pane	0	1	:UPKEEP	1	:*	1	:/home/heril/WebApplication	1	zsh	:
+pane	0	1	:UPKEEP	1	:*	2	:/home/heril/WebApplication/server	0	npm	:npm start
+pane	0	2	:TERMINAL	0	:-	0	:/home/heril	0	zsh	:
+pane	0	2	:TERMINAL	0	:-	1	:/home/heril	1	zsh	:
+pane	0	2	:TERMINAL	0	:-	2	:/home/heril	0	zsh	:
+pane	0	2	:TERMINAL	0	:-	3	:/home/heril	0	zsh	:
+pane	1	0	:zsh	1	:*	0	:/home/heril	1	zsh	:
+pane	2	0	:zsh	1	:*	0	:/home/heril	1	zsh	:
+pane	3	1	:zsh	1	:*	0	:/home/heril	1	zsh	:
+window	0	0	0	:	b99e,267x52,0,0,1
+window	0	1	1	:*	1890,267x52,0,0{133x52,0,0[133x26,0,0,2,133x25,0,27,11],133x52,134,0,3}
+window	0	2	0	:-	d1f3,267x52,0,0[267x25,0,0{133x25,0,0,4,133x25,134,0,5},267x26,0,26{133x26,0,26,6,133x26,134,26,7}]
+window	1	0	1	:*	b9a5,267x52,0,0,8
+window	2	0	1	:*	b9a6,267x52,0,0,9
+window	3	1	1	:*	5cff,267x52,0,0,10
+state	0	1

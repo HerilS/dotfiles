@@ -1,0 +1,6 @@
+pane	0	0	:EDITOR	0	:-	0	:/home/heril	1	nvim	:nvim
+pane	0	1	:UPKEEP	1	:*	0	:/home/heril/WebApplication	0	npm	:npm run-script dev
+pane	0	1	:UPKEEP	1	:*	1	:/home/heril/WebApplication/server	1	npm	:npm start
+window	0	0	0	:-	b99e,267x52,0,0,1
+window	0	1	1	:*	df38,267x52,0,0{133x52,0,0,2,133x52,134,0,4}
+state	0	

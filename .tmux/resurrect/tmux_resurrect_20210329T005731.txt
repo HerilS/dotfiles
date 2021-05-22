@@ -1,0 +1,19 @@
+pane	0	0	:EDITOR	0	:-	0	:/home/heril/WebApplication/pages	1	nvim	:git log
+git log
+nvim buyproperty.js
+pane	0	1	:UPKEEP	1	:*M	0	:/home/heril/WebApplication	0	npm	:npm run-script dev
+pane	0	1	:UPKEEP	1	:*M	1	:/home/heril/WebApplication/server	1	zsh	:
+pane	0	2	:TERMINAL	0	:	0	:/home/heril	0	zsh	:
+pane	0	2	:TERMINAL	0	:	1	:/home/heril	0	zsh	:
+pane	0	2	:TERMINAL	0	:	2	:/home/heril	1	zsh	:
+pane	0	2	:TERMINAL	0	:	3	:/home/heril	0	cmatrix	:cmatrix
+pane	1	0	:zsh	1	:*	0	:/home/heril	1	zsh	:
+pane	2	0	:zsh	1	:*	0	:/home/heril	1	zsh	:
+pane	3	1	:zsh	1	:*	0	:/home/heril	1	zsh	:
+window	0	0	0	:-	c45e,274x55,0,0,1
+window	0	1	1	:*M	66ea,274x55,0,0{137x55,0,0,2,136x55,138,0,4}
+window	0	2	0	:	5a47,274x55,0,0[274x27,0,0{137x27,0,0,10,136x27,138,0,13},274x27,0,28{137x27,0,28,11,136x27,138,28,12}]
+window	1	0	1	:*	c462,274x55,0,0,5
+window	2	0	1	:*	b9a3,267x52,0,0,6
+window	3	1	1	:*	b9a5,267x52,0,0,8
+state	0	1

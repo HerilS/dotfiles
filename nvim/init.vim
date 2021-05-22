@@ -71,7 +71,9 @@ let g:rehash256 = 1
 hi Normal ctermbg=NONE guibg=NONE
 hi LineNr ctermbg=NONE guibg=NONE
 hi NonText ctermbg=NONE guibg=NONE
-
+:set shiftwidth=2
+:set autoindent
+:set smartindent
 " Airline
 "let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#left_sep = ' '

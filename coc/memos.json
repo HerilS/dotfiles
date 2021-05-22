@@ -1,0 +1,10 @@
+{
+  "coc-eslint|global": {
+    "eslintLibraries": {
+      "libs": {
+        "/home/heril/WebApplication/node_modules/eslint/lib/api.js": false
+      }
+    },
+    "eslintAlwaysAllowExecution": true
+  }
+}
