@@ -1,0 +1,6 @@
+2021/06/03-18:34:17.782 2134 Creating DB /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_studio.youtube.com_0.indexeddb.leveldb since it was missing.
+2021/06/03-18:34:17.888 2134 Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_studio.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/06/03-18:34:23.789 2668 Level-0 table #5: started
+2021/06/03-18:34:23.853 2668 Level-0 table #5: 2560 bytes OK
+2021/06/03-18:34:23.920 2668 Delete type=0 #3
+2021/06/03-18:34:23.920 2668 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

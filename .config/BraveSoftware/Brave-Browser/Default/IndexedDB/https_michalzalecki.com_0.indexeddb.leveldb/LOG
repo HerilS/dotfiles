@@ -1,0 +1,6 @@
+2021/06/02-22:46:56.659 262b4 Creating DB /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_michalzalecki.com_0.indexeddb.leveldb since it was missing.
+2021/06/02-22:46:56.769 262b4 Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_michalzalecki.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/06/02-22:47:29.689 26e02 Level-0 table #5: started
+2021/06/02-22:47:29.722 26e02 Level-0 table #5: 4410 bytes OK
+2021/06/02-22:47:29.752 26e02 Delete type=0 #3
+2021/06/02-22:47:29.753 26e02 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

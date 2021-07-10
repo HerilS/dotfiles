@@ -1,0 +1,6 @@
+2021/05/25-05:23:50.287 1bb4d Creating DB /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_archived.forum.manjaro.org_0.indexeddb.leveldb since it was missing.
+2021/05/25-05:23:50.615 1bb4d Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_archived.forum.manjaro.org_0.indexeddb.leveldb/MANIFEST-000001
+2021/05/25-05:24:27.525 1baff Level-0 table #5: started
+2021/05/25-05:24:27.588 1baff Level-0 table #5: 58217 bytes OK
+2021/05/25-05:24:27.635 1baff Delete type=0 #3
+2021/05/25-05:24:27.635 1baff Manual compaction at level-0 from (begin) .. (end); will stop at (end)

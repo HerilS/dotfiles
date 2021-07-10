@@ -1,0 +1,809 @@
+{
+   "appDesc": {
+      "message": "全屏幕捕获网页或任何部分。编辑的截图。记录的视频记录的视频从您的屏幕"
+   },
+   "appName": {
+      "message": "Nimbus 截幕 & 屏幕录像机"
+   },
+   "appNameMini": {
+      "message": "Nimbus 截图"
+   },
+   "btnAccessMic": {
+      "message": "使用麦克风"
+   },
+   "btnAndroidVersion": {
+      "message": "安卓版"
+   },
+   "btnBlankScreen": {
+      "message": "空白的屏幕"
+   },
+   "btnBrowserWindow": {
+      "message": "浏览器窗口"
+   },
+   "btnCaptureFragment": {
+      "message": "捕捉片段"
+   },
+   "btnCaptureVideo": {
+      "message": "录制视频"
+   },
+   "btnConnectSlack": {
+      "message": "连接 Slack"
+   },
+   "btnDelayedScreen": {
+      "message": "延迟截屏"
+   },
+   "btnDesktop": {
+      "message": "捕获桌面"
+   },
+   "btnEnableCopy": {
+      "message": "复制到剪贴板"
+   },
+   "btnEnableDownload": {
+      "message": "发送到 to Nimbus/Google/Slack"
+   },
+   "btnEnableEdit": {
+      "message": "编辑"
+   },
+   "btnEnableSave": {
+      "message": "下载"
+   },
+   "btnEntirePage": {
+      "message": "整个页面"
+   },
+   "btnManual": {
+      "message": "Manual?=手册"
+   },
+   "btnReadyVideo": {
+      "message": "我准备录制视频"
+   },
+   "btnSelectedArea": {
+      "message": "选择区域"
+   },
+   "btnSelectedScroll": {
+      "message": "可滚动截屏"
+   },
+   "btnVisiblePage": {
+      "message": "页面可见部分"
+   },
+   "cropBtnCancel": {
+      "message": "取消"
+   },
+   "cropBtnCopy": {
+      "message": "复制到剪贴板"
+   },
+   "cropBtnEdit": {
+      "message": "编辑"
+   },
+   "cropBtnNimbus": {
+      "message": "发送到 Nimbus"
+   },
+   "cropBtnSave": {
+      "message": "保存为图像"
+   },
+   "disable": {
+      "message": "禁用"
+   },
+   "editBtnBack": {
+      "message": "返回"
+   },
+   "editBtnCopy": {
+      "message": "复制到剪贴板"
+   },
+   "editBtnDone": {
+      "message": "完成"
+   },
+   "editBtnDrive": {
+      "message": "发送到 Google"
+   },
+   "editBtnNimbusScreen": {
+      "message": "Upload screenshot"
+   },
+   "editBtnNimbusVideo": {
+      "message": "Upload video"
+   },
+   "editBtnPrint": {
+      "message": "打印"
+   },
+   "editBtnSave": {
+      "message": "保存为图像"
+   },
+   "editBtnSaveVideo": {
+      "message": "保存视频"
+   },
+   "gDriveBtnDone": {
+      "message": "完成"
+   },
+   "gDriveLabel": {
+      "message": "选择保存到的文件夹"
+   },
+   "gDriveLabelFolders": {
+      "message": "截图已保存"
+   },
+   "gDriveLogout": {
+      "message": "注销登陆"
+   },
+   "gDriveMainFolder": {
+      "message": "这是主文件夹"
+   },
+   "gDriveNoItems": {
+      "message": "没有项目"
+   },
+   "gDriveNotAuthorized": {
+      "message": "您没有登录到您的帐户"
+   },
+   "gDriveSendTo": {
+      "message": "发送到"
+   },
+   "gDriveTitle": {
+      "message": "发送到 Google Drive"
+   },
+   "gDriveUploadPrivate": {
+      "message": "上传的私人空间"
+   },
+   "labelCaptureHelper": {
+      "message": "选择一个屏幕快照"
+   },
+   "labelDropImage": {
+      "message": "图像放入这里"
+   },
+   "labelPreviewLoading": {
+      "message": "读取..."
+   },
+   "labelPreviewLoadingVideo": {
+      "message": "处理视频…可能需要10-60秒，时间长度取决于你的电脑的性能…请稍等…"
+   },
+   "newReleaseText": {
+      "message": "\u003Cli>新设计;\u003C/li>\u003Cli>锁定元素防止编辑;\u003C/li>\u003Cli>延迟截图;\u003C/li>\u003Cli>自定义主菜单删除不必要的项目;\u003C/li>\u003Cli>在需要的形状旁边添加数字？;\u003C/li>\u003Cli>使用 Ctrl+Enter 快速发送到 Nimbus/Slack;\u003C/li>\u003Cli>修正了其他一些bug;\u003C/li>"
+   },
+   "newReleaseTitle": {
+      "message": "欢迎来到 Nimbus 截图新版本"
+   },
+   "nimbusAccessAnyTimes": {
+      "message": "在任何时间，从任何设备访问的你的截图和视频;"
+   },
+   "nimbusAccount": {
+      "message": "Nimbus 帐户"
+   },
+   "nimbusBad": {
+      "message": "踩"
+   },
+   "nimbusBeBetter": {
+      "message": "顶(皮?)"
+   },
+   "nimbusBtnAuthFacebook": {
+      "message": "使用 Facebook"
+   },
+   "nimbusBtnAuthGoogle": {
+      "message": "使用 Google"
+   },
+   "nimbusBtnLogin": {
+      "message": "登陆到 Nimbus Note"
+   },
+   "nimbusBtnRemind": {
+      "message": "忘记密码?"
+   },
+   "nimbusBtnSignup": {
+      "message": "创建帐户"
+   },
+   "nimbusChannels": {
+      "message": "渠道？"
+   },
+   "nimbusComment": {
+      "message": "评论"
+   },
+   "nimbusCommentPlaceholder": {
+      "message": "评论你的截图"
+   },
+   "nimbusCreateAccount": {
+      "message": "创建一个免费账户"
+   },
+   "nimbusDid": {
+      "message": "Did"
+   },
+   "nimbusEnter": {
+      "message": "登录到 Nimbus Note"
+   },
+   "nimbusEnvironmentInfo": {
+      "message": "添加系统和网页信息"
+   },
+   "nimbusGoPro": {
+      "message": "Go to Nimbus Pro"
+   },
+   "nimbusGood": {
+      "message": "Good!"
+   },
+   "nimbusInfoAgent": {
+      "message": "用户代理"
+   },
+   "nimbusInfoBrowser": {
+      "message": "用户的浏览器"
+   },
+   "nimbusInfoPage": {
+      "message": "网页"
+   },
+   "nimbusInfoPlatform": {
+      "message": "用户平台"
+   },
+   "nimbusInfoScreen": {
+      "message": "屏幕分辨率"
+   },
+   "nimbusIsPro": {
+      "message": "已拥有nimbus pro"
+   },
+   "nimbusLabelEmail": {
+      "message": "邮箱"
+   },
+   "nimbusLabelPassword": {
+      "message": "密码"
+   },
+   "nimbusLabelPasswordAndInfo": {
+      "message": "密码(最少8位)"
+   },
+   "nimbusLabelRetypePass": {
+      "message": "再次输入密码"
+   },
+   "nimbusLimitDescription": {
+      "message": "\u003Cb>你可以切换到 Nimbus Pro\u003C/b> ，每月的流量上限提高到1000MB."
+   },
+   "nimbusLimitOf": {
+      "message": "of"
+   },
+   "nimbusLimitSpace": {
+      "message": "不幸的是，您将无法上载文件，因为 \u003Cstrong>您每月的流量限制将达到100兆字节\u003C/strong>."
+   },
+   "nimbusLimitUsage": {
+      "message": "Usage:"
+   },
+   "nimbusNoThanks": {
+      "message": "不，谢谢"
+   },
+   "nimbusNotAccount": {
+      "message": "我没有帐号"
+   },
+   "nimbusNoteName": {
+      "message": "注名"
+   },
+   "nimbusOrganizeUploadFolders": {
+      "message": "通过文件夹、子文件夹和标签组织上传;"
+   },
+   "nimbusPlaceholderEmail": {
+      "message": "邮箱"
+   },
+   "nimbusPlaceholderEnterText": {
+      "message": "输入文字"
+   },
+   "nimbusPlaceholderPassword": {
+      "message": "密码"
+   },
+   "nimbusPrivate": {
+      "message": "私人"
+   },
+   "nimbusPrivateMessage": {
+      "message": "私人消息"
+   },
+   "nimbusProAddWaterMark": {
+      "message": "添加你自己的水印"
+   },
+   "nimbusProConvertGIF": {
+      "message": "转换视频为GIF"
+   },
+   "nimbusProConvertMP4": {
+      "message": "转换视频为mp4"
+   },
+   "nimbusProSendGoogleDrive": {
+      "message": "发送视频至Google Drive"
+   },
+   "nimbusProSendYoutube": {
+      "message": "发送视频至Youtube"
+   },
+   "nimbusProSupport": {
+      "message": "会员服务"
+   },
+   "nimbusRate": {
+      "message": "喜欢 Nimbus Screenshot吗? 去评分~~~"
+   },
+   "nimbusRateUs": {
+      "message": "评价我们"
+   },
+   "nimbusRegistration": {
+      "message": "注册"
+   },
+   "nimbusRemindPass": {
+      "message": "提醒密码？"
+   },
+   "nimbusSaveScreencast": {
+      "message": "保存录像"
+   },
+   "nimbusSaveScreenshot": {
+      "message": "保存截屏"
+   },
+   "nimbusSearch": {
+      "message": "搜索"
+   },
+   "nimbusSelectChannel": {
+      "message": "选择频道"
+   },
+   "nimbusSelectFolder": {
+      "message": "选择文件夹"
+   },
+   "nimbusSend": {
+      "message": "发送到 Nimbus Note"
+   },
+   "nimbusShareFriends": {
+      "message": "截图和录屏发送给朋友和同事;"
+   },
+   "nimbusSlackAccount": {
+      "message": "Slack 帐户"
+   },
+   "nimbusSlackHidePanel": {
+      "message": "隐藏 Slack 面板"
+   },
+   "nimbusSlackLogout": {
+      "message": "注销登陆 Slack"
+   },
+   "nimbusSlackSend": {
+      "message": "发送到 Slack"
+   },
+   "nimbusSlackWelcome": {
+      "message": "请花点时间读:"
+   },
+   "nimbusSlackWelcome2": {
+      "message": "Nimbus 的截图将不能进入聊天室的消息.你所有的谈话都是保密的.Nimbus 的截图只能上传到 Slack"
+   },
+   "nimbusSlackWelcome3": {
+      "message": "如果您有任何问题，请写电子邮件"
+   },
+   "nimbusSupport": {
+      "message": "支持"
+   },
+   "nimbusUpgradePro": {
+      "message": "为什么 Nimbus Pro 会更好"
+   },
+   "nimbusViewUploads": {
+      "message": "查看我的 Nimbus 上传"
+   },
+   "notificationCopy": {
+      "message": "图像已复制到剪贴板."
+   },
+   "notificationCrop": {
+      "message": "拖动并捕获页面（按ESC键退出）"
+   },
+   "notificationDesktopCursorAnimation": {
+      "message": "在桌面录制模式中不存在光标动画。使用制表符代替"
+   },
+   "notificationDesktopTabSound": {
+      "message": "系统声音在桌面录制模式中不可用。使用制表符代替"
+   },
+   "notificationEmailFail": {
+      "message": "此电子邮件已注册"
+   },
+   "notificationEmailIncorrect": {
+      "message": "不正确的电子邮件！请再试一次"
+   },
+   "notificationErrorActiveTab": {
+      "message": "Nimbus 捕捉不能初始化。你需要点击面板上的 Nimbus 捕捉 的图标"
+   },
+   "notificationErrorChromeTab": {
+      "message": "当前不支持的internarl Chrome网页或应用程序的页面记录。"
+   },
+   "notificationInsertInfo": {
+      "message": "只能插入图像"
+   },
+   "notificationLoginFail": {
+      "message": "请退出并重新登录"
+   },
+   "notificationNetworkError": {
+      "message": "服务器或网络连接有问题。请再试一次。"
+   },
+   "notificationReachedLimit": {
+      "message": "您已经达到每月流量限制（100 MB）。继续使用，你必须购买 Nimbus Pro。"
+   },
+   "notificationRegisterFail": {
+      "message": "注册失败！请再试一次"
+   },
+   "notificationRestoreSent": {
+      "message": "重置邮件已发送到您的电子邮件"
+   },
+   "notificationUploaded": {
+      "message": "上传完成"
+   },
+   "notificationUrlCopied": {
+      "message": "URL已复制到剪贴板"
+   },
+   "notificationWrong": {
+      "message": "出现错误，请再试一次"
+   },
+   "optionLabelEnableWatermark": {
+      "message": "水印"
+   },
+   "optionLabelEnableWatermarkTimer": {
+      "message": "视频禁用水印"
+   },
+   "optionLabelWatermarkFont": {
+      "message": "字体"
+   },
+   "optionLabelWatermarkFontColor": {
+      "message": "字体颜色"
+   },
+   "optionLabelWatermarkFontSize": {
+      "message": "字体大小"
+   },
+   "optionLabelWatermarkImage": {
+      "message": "图片"
+   },
+   "optionLabelWatermarkSelectFile": {
+      "message": "选择文件"
+   },
+   "optionLabelWatermarkSelectPosition": {
+      "message": "选择水印位置"
+   },
+   "optionLabelWatermarkText": {
+      "message": "文字"
+   },
+   "optionLabelWatermarkTransparent": {
+      "message": "水印透明度"
+   },
+   "optionLabelWatermarkTransparentSmall": {
+      "message": "不透明"
+   },
+   "optionsCaptureSettings": {
+      "message": "截图设置"
+   },
+   "optionsGeneral": {
+      "message": "常规"
+   },
+   "optionsLabelAfterClicking": {
+      "message": "点击图标后"
+   },
+   "optionsLabelAndThen": {
+      "message": "然后"
+   },
+   "optionsLabelAutoShortUrl": {
+      "message": "上传后使用短网址"
+   },
+   "optionsLabelCanUse": {
+      "message": "可用的名称:"
+   },
+   "optionsLabelDelayedScreenshotTime": {
+      "message": "延迟截图-延迟时间（s）"
+   },
+   "optionsLabelDepthScreenshot": {
+      "message": "叠加颜色层"
+   },
+   "optionsLabelDesktopVideo": {
+      "message": "开始记录桌面"
+   },
+   "optionsLabelFilenameTemplate": {
+      "message": "文件名模式"
+   },
+   "optionsLabelFilenameTemplateScreencast": {
+      "message": "视频文件命名规则"
+   },
+   "optionsLabelFilenameTemplateScreenshot": {
+      "message": "截图文件命名规则"
+   },
+   "optionsLabelHideFixedElements": {
+      "message": "隐藏固定元素"
+   },
+   "optionsLabelImageFormat": {
+      "message": "格式"
+   },
+   "optionsLabelImageQuality": {
+      "message": "质量"
+   },
+   "optionsLabelKeepOriginalResolution": {
+      "message": "保持原始分辨率（视网膜）"
+   },
+   "optionsLabelLoadToNS": {
+      "message": "发送到 Nimbus/Slack"
+   },
+   "optionsLabelQuickCaptureEnable": {
+      "message": "启用快速屏幕截图（不打开菜单）"
+   },
+   "optionsLabelSaveAs": {
+      "message": "显示“另存为”对话框"
+   },
+   "optionsLabelSaveCropPosition": {
+      "message": "保存选定区域的位置"
+   },
+   "optionsLabelShowContentMenu": {
+      "message": "在右键菜单中显示"
+   },
+   "optionsLabelShowInfoPrint": {
+      "message": "在打印中显示 URL/日期"
+   },
+   "optionsLabelShowNewButton": {
+      "message": "更新后显示新建页面"
+   },
+   "optionsLabelStopVideo": {
+      "message": "停止录像"
+   },
+   "optionsLabelTabVideo": {
+      "message": "开始记录标签页"
+   },
+   "optionsLabelTimeScrollEntirePage": {
+      "message": "滚动截图延迟时间"
+   },
+   "optionsLabelWantCapture": {
+      "message": "截图"
+   },
+   "optionsMainMenu": {
+      "message": "主菜单设置"
+   },
+   "optionsSettingImage": {
+      "message": "图像设置"
+   },
+   "optionsSettingsSave": {
+      "message": "保存设置"
+   },
+   "optionsShortcutSettings": {
+      "message": "热键设置"
+   },
+   "optionsTitle": {
+      "message": "截图设置"
+   },
+   "optionsWatermark": {
+      "message": "水印"
+   },
+   "panelActions": {
+      "message": "操作"
+   },
+   "panelAlfaChanel": {
+      "message": "移动滑块以改变不透明性"
+   },
+   "panelCancel": {
+      "message": "取消"
+   },
+   "panelChange": {
+      "message": "改变"
+   },
+   "panelHeight": {
+      "message": "高度"
+   },
+   "panelParameters": {
+      "message": "参数"
+   },
+   "panelProportional": {
+      "message": "比例"
+   },
+   "panelShadow": {
+      "message": "阴影"
+   },
+   "panelSize": {
+      "message": "大小"
+   },
+   "panelTools": {
+      "message": "绘图工具"
+   },
+   "panelWidth": {
+      "message": "宽度"
+   },
+   "popupAccessMic": {
+      "message": "首先，你必须允许访问你的麦克风"
+   },
+   "popupAfterCapture": {
+      "message": "捕获后的动作"
+   },
+   "popupBitrateAudioLabel": {
+      "message": "音频比特率"
+   },
+   "popupBitrateVideoLabel": {
+      "message": "视频比特率"
+   },
+   "popupBtnBack": {
+      "message": "返回"
+   },
+   "popupBtnDesktopRecord": {
+      "message": "桌面"
+   },
+   "popupBtnResetVideoSetting": {
+      "message": "重置"
+   },
+   "popupBtnStartRecord": {
+      "message": "开始录制"
+   },
+   "popupBtnStopPause": {
+      "message": "暂停"
+   },
+   "popupBtnStopRecord": {
+      "message": "停止录制"
+   },
+   "popupBtnStopResume": {
+      "message": "继续"
+   },
+   "popupBtnTabRecord": {
+      "message": "Tab"
+   },
+   "popupFrameRateLabel": {
+      "message": "帧率"
+   },
+   "popupLabelCountdown": {
+      "message": "倒计时"
+   },
+   "popupLabelCursorAnimate": {
+      "message": "动画光标"
+   },
+   "popupLabelRecordCamera": {
+      "message": "记录WebCam"
+   },
+   "popupLabelRecordMic": {
+      "message": "记录麦克风的声音"
+   },
+   "popupLabelRecordTab": {
+      "message": "记录 Tab Sound"
+   },
+   "popupLabelSetting": {
+      "message": "设置"
+   },
+   "popupLabelShowDrawingTools": {
+      "message": "显示绘画工具"
+   },
+   "popupLabelVideoSetting": {
+      "message": "视频设置"
+   },
+   "popupMyNotes": {
+      "message": "我的上传"
+   },
+   "popupReadManual": {
+      "message": "此外，您还可以阅读使用该应用程序的说明"
+   },
+   "popupRecordTitle": {
+      "message": "视频正在记录..."
+   },
+   "popupRecordTypeTitle": {
+      "message": "你想录什么"
+   },
+   "popupSec": {
+      "message": "sec."
+   },
+   "popupSelectMicLabel": {
+      "message": "选择麦克风"
+   },
+   "popupSelectWebCamLabel": {
+      "message": "仅限WebCam"
+   },
+   "popupTitle": {
+      "message": "Nimbus 捕捉"
+   },
+   "popupVideoQualityTitle": {
+      "message": "视频和音频质量"
+   },
+   "popupVideoReEncoding": {
+      "message": "使用视频重编码"
+   },
+   "popupVideoTitle": {
+      "message": "记录的视频?"
+   },
+   "popupWelcomeVideo": {
+      "message": "欢迎来到录像记录"
+   },
+   "tooltipArrowCurve": {
+      "message": "曲线的箭头"
+   },
+   "tooltipArrowDouble": {
+      "message": "双箭头"
+   },
+   "tooltipArrowLine": {
+      "message": "箭头"
+   },
+   "tooltipBlur": {
+      "message": "整体模糊"
+   },
+   "tooltipChangeZoom": {
+      "message": "改变缩放"
+   },
+   "tooltipCircle": {
+      "message": "圈？"
+   },
+   "tooltipColorAndSizeShadow": {
+      "message": "阴影颜色和大小"
+   },
+   "tooltipColorFull": {
+      "message": "填充颜色"
+   },
+   "tooltipColorLineAndText": {
+      "message": "线条和文字的颜色"
+   },
+   "tooltipCopy": {
+      "message": "复制到剪贴板"
+   },
+   "tooltipCrop": {
+      "message": "修剪"
+   },
+   "tooltipEllipse": {
+      "message": "椭圆"
+   },
+   "tooltipFontAndSize": {
+      "message": "字体大小"
+   },
+   "tooltipFormula": {
+      "message": "插入公式"
+   },
+   "tooltipLine": {
+      "message": "线"
+   },
+   "tooltipLineCurve": {
+      "message": "曲线"
+   },
+   "tooltipLineDotted": {
+      "message": "虚线"
+   },
+   "tooltipLineWidth": {
+      "message": "线宽"
+   },
+   "tooltipLock": {
+      "message": "锁定轮廓"
+   },
+   "tooltipMakeScreenshot": {
+      "message": "标记屏幕截图"
+   },
+   "tooltipMarker": {
+      "message": "荧光笔"
+   },
+   "tooltipNoteText": {
+      "message": "注释文本"
+   },
+   "tooltipNumber": {
+      "message": "编号标记"
+   },
+   "tooltipNumbers": {
+      "message": "自动编号"
+   },
+   "tooltipOpenFile": {
+      "message": "打开文件"
+   },
+   "tooltipOptions": {
+      "message": "设置"
+   },
+   "tooltipPassInfo": {
+      "message": "密码必须至少有8个符号"
+   },
+   "tooltipPassMatch": {
+      "message": "密码不匹配"
+   },
+   "tooltipPen": {
+      "message": "笔"
+   },
+   "tooltipRedo": {
+      "message": "重做"
+   },
+   "tooltipResize": {
+      "message": "调整大小"
+   },
+   "tooltipRounded": {
+      "message": "圆角矩形"
+   },
+   "tooltipShortUrl": {
+      "message": "短网址"
+   },
+   "tooltipSquare": {
+      "message": "方框"
+   },
+   "tooltipText": {
+      "message": "文本"
+   },
+   "tooltipTextArrow": {
+      "message": "文字箭头"
+   },
+   "tooltipUndo": {
+      "message": "撤消"
+   },
+   "tooltipUndoAll": {
+      "message": "撤消全部"
+   },
+   "tooltipUploadTo": {
+      "message": "上传到"
+   },
+   "tooltipWrongEmail": {
+      "message": "错误的邮件地址"
+   },
+   "tooltipZoomMinus": {
+      "message": "缩小 -"
+   },
+   "tooltipZoomPlus": {
+      "message": "放大 +"
+   },
+   "tooltipclassroomSend": {
+      "message": "发送到 Google Classroom"
+   }
+}

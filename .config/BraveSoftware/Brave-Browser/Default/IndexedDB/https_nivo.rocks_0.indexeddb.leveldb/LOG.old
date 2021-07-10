@@ -1,0 +1,6 @@
+2021/07/01-19:30:02.629 5be93 Creating DB /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_nivo.rocks_0.indexeddb.leveldb since it was missing.
+2021/07/01-19:30:02.734 5be93 Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_nivo.rocks_0.indexeddb.leveldb/MANIFEST-000001
+2021/07/01-19:30:37.164 5bd49 Level-0 table #5: started
+2021/07/01-19:30:37.206 5bd49 Level-0 table #5: 7380 bytes OK
+2021/07/01-19:30:37.235 5bd49 Delete type=0 #3
+2021/07/01-19:30:37.235 5bd49 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,15 @@
+2021/06/05-03:35:03.706 aa24 Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.w3docs.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/06/05-03:35:03.707 aa24 Recovering log #4
+2021/06/05-03:35:03.707 aa24 Reusing old log /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.w3docs.com_0.indexeddb.leveldb/000004.log 
+2021/06/05-03:35:38.966 c0a4 Level-0 table #8: started
+2021/06/05-03:35:39.000 c0a4 Level-0 table #8: 3752 bytes OK
+2021/06/05-03:35:39.030 c0a4 Delete type=0 #4
+2021/06/05-03:35:39.046 c0a4 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/06/05-03:35:39.046 c0a4 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x03\x01\x1f\x03\x00P\x17j\xb8\x9dwB\x00\x01H\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00f\x00o\x00n\x00t\x00s\x00.\x00g\x00s\x00t\x00a\x00t\x00i\x00c\x00.\x00c\x00o\x00m\x00/\x00s\x00/\x00p\x00o\x00p\x00p\x00i\x00n\x00s\x00/\x00v\x001\x005\x00/\x00p\x00x\x00i\x00B\x00y\x00p\x008\x00k\x00v\x008\x00J\x00H\x00g\x00F\x00V\x00r\x00L\x00G\x00T\x009\x00Z\x001\x00x\x00l\x00F\x00Q\x00.\x00w\x00o\x00f\x00f\x002' @ 589 : 1
+2021/06/05-03:35:39.046 c0a4 Compacting 1@1 + 1@2 files
+2021/06/05-03:35:39.093 c0a4 Generated table #9@1: 128 keys, 5266 bytes
+2021/06/05-03:35:39.093 c0a4 Compacted 1@1 + 1@2 files => 5266 bytes
+2021/06/05-03:35:39.121 c0a4 compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/06/05-03:35:39.122 c0a4 Delete type=2 #5
+2021/06/05-03:35:39.122 c0a4 Delete type=2 #8
+2021/06/05-03:35:39.122 c0a4 Manual compaction at level-1 from '\x00\x03\x01\x1f\x03\x00P\x17j\xb8\x9dwB\x00\x01H\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00f\x00o\x00n\x00t\x00s\x00.\x00g\x00s\x00t\x00a\x00t\x00i\x00c\x00.\x00c\x00o\x00m\x00/\x00s\x00/\x00p\x00o\x00p\x00p\x00i\x00n\x00s\x00/\x00v\x001\x005\x00/\x00p\x00x\x00i\x00B\x00y\x00p\x008\x00k\x00v\x008\x00J\x00H\x00g\x00F\x00V\x00r\x00L\x00G\x00T\x009\x00Z\x001\x00x\x00l\x00F\x00Q\x00.\x00w\x00o\x00f\x00f\x002' @ 589 : 1 .. (end); will stop at (end)

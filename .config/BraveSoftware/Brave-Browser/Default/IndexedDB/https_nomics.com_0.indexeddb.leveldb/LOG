@@ -1,0 +1,15 @@
+2021/07/03-00:24:22.213 1ff8 Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_nomics.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/07/03-00:24:22.213 1ff8 Recovering log #4
+2021/07/03-00:24:22.213 1ff8 Reusing old log /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_nomics.com_0.indexeddb.leveldb/000004.log 
+2021/07/03-00:25:53.203 451a Level-0 table #8: started
+2021/07/03-00:25:53.234 451a Level-0 table #8: 5479 bytes OK
+2021/07/03-00:25:53.263 451a Delete type=0 #4
+2021/07/03-00:25:53.263 451a Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/07/03-00:25:53.264 451a Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01 \x03\x00\xb0\x0c\xb0\xb0\xa6wB\x00\x01Y\x00a\x00p\x00i\x00s\x00|\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00n\x00o\x00m\x00i\x00c\x00s\x00.\x00c\x00o\x00m\x00/\x00d\x00a\x00t\x00a\x00/\x00c\x00u\x00r\x00r\x00e\x00n\x00c\x00i\x00e\x00s\x00-\x00t\x00i\x00c\x00k\x00e\x00r\x00?\x00i\x00n\x00t\x00e\x00r\x00v\x00a\x00l\x00=\x001\x00d\x00&\x00q\x00u\x00o\x00t\x00e\x00-\x00c\x00u\x00r\x00r\x00e\x00n\x00c\x00y\x00=\x00U\x00S\x00D\x00&\x00s\x00y\x00m\x00b\x00o\x00l\x00s\x00=\x00B\x00T\x00C' @ 208 : 1
+2021/07/03-00:25:53.264 451a Compacting 1@1 + 1@2 files
+2021/07/03-00:25:53.301 451a Generated table #9@1: 50 keys, 3607 bytes
+2021/07/03-00:25:53.301 451a Compacted 1@1 + 1@2 files => 3607 bytes
+2021/07/03-00:25:53.330 451a compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/07/03-00:25:53.330 451a Delete type=2 #5
+2021/07/03-00:25:53.330 451a Delete type=2 #8
+2021/07/03-00:25:53.331 451a Manual compaction at level-1 from '\x00\x01\x01 \x03\x00\xb0\x0c\xb0\xb0\xa6wB\x00\x01Y\x00a\x00p\x00i\x00s\x00|\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00n\x00o\x00m\x00i\x00c\x00s\x00.\x00c\x00o\x00m\x00/\x00d\x00a\x00t\x00a\x00/\x00c\x00u\x00r\x00r\x00e\x00n\x00c\x00i\x00e\x00s\x00-\x00t\x00i\x00c\x00k\x00e\x00r\x00?\x00i\x00n\x00t\x00e\x00r\x00v\x00a\x00l\x00=\x001\x00d\x00&\x00q\x00u\x00o\x00t\x00e\x00-\x00c\x00u\x00r\x00r\x00e\x00n\x00c\x00y\x00=\x00U\x00S\x00D\x00&\x00s\x00y\x00m\x00b\x00o\x00l\x00s\x00=\x00B\x00T\x00C' @ 208 : 1 .. (end); will stop at (end)

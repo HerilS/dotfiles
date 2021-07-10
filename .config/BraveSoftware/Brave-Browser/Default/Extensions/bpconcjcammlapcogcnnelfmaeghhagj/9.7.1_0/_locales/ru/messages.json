@@ -1,0 +1,1343 @@
+{
+   "appDesc": {
+      "message": "Создавайте скриншоты всей страницы или только её части. Редактируйте скриншоты. Записывайте видео с экрана."
+   },
+   "appName": {
+      "message": "Nimbus Screenshot & Screen Video Recorder"
+   },
+   "appNameMini": {
+      "message": "Nimbus Screenshot"
+   },
+   "btnAccessMic": {
+      "message": "Дать доступ к микрофону и камере"
+   },
+   "btnAndroidVersion": {
+      "message": "Версия для Android"
+   },
+   "btnBlankScreen": {
+      "message": "Чистый лист"
+   },
+   "btnBrowserWindow": {
+      "message": "Скриншот всего экрана"
+   },
+   "btnCancel": {
+      "message": "Отмена"
+   },
+   "btnCaptureFragment": {
+      "message": "Захват фрагмента"
+   },
+   "btnCaptureFragmentScroll": {
+      "message": "Фрагмент с скроллингом"
+   },
+   "btnCaptureVideo": {
+      "message": "Запись видео"
+   },
+   "btnConnectSlack": {
+      "message": "Подключить Slack"
+   },
+   "btnDelayedScreen": {
+      "message": "Отложенный скриншот"
+   },
+   "btnDesktop": {
+      "message": "Захват с рабочего стола"
+   },
+   "btnEnableCopy": {
+      "message": "В буфер"
+   },
+   "btnEntirePage": {
+      "message": "Скриншот всей страницы"
+   },
+   "btnGoPremium": {
+      "message": "Обновить до Nimbus для Business"
+   },
+   "btnLearnMore": {
+      "message": "Узнать больше"
+   },
+   "btnManual": {
+      "message": "Инструкция"
+   },
+   "btnOkGotIt": {
+      "message": "Спасибо за информацию"
+   },
+   "btnReadyVideo": {
+      "message": "Я готов записывать видео"
+   },
+   "btnSelectedArea": {
+      "message": "Фрагмент страницы"
+   },
+   "btnSelectedScroll": {
+      "message": "Фрагмент + прокрутить"
+   },
+   "btnSignupUpToViewUpload": {
+      "message": "Создать аккаунт"
+   },
+   "btnVisiblePage": {
+      "message": "Видимая часть страницы"
+   },
+   "cropBtnCancel": {
+      "message": "Закрыть"
+   },
+   "cropBtnCopy": {
+      "message": "Копировать в буфер обмена"
+   },
+   "cropBtnEdit": {
+      "message": "В редактор"
+   },
+   "cropBtnNimbus": {
+      "message": "Отправить в Nimbus"
+   },
+   "cropBtnSave": {
+      "message": "Сохранить"
+   },
+   "cropBtnSavePdf": {
+      "message": "В PDF"
+   },
+   "disable": {
+      "message": "Отключить"
+   },
+   "editBtnBack": {
+      "message": "В редактор"
+   },
+   "editBtnCopy": {
+      "message": "В буфер обмена"
+   },
+   "editBtnDiscard": {
+      "message": "Отмена"
+   },
+   "editBtnDone": {
+      "message": "Готово"
+   },
+   "editBtnDrive": {
+      "message": "Google Drive"
+   },
+   "editBtnDropbox": {
+      "message": "Dropbox"
+   },
+   "editBtnNimbusScreen": {
+      "message": "Upload screenshot"
+   },
+   "editBtnNimbusVideo": {
+      "message": "Upload video"
+   },
+   "editBtnPrint": {
+      "message": "Распечатать"
+   },
+   "editBtnQuickUpload": {
+      "message": "Быстрая загрузка"
+   },
+   "editBtnSave": {
+      "message": "Сохранить на диск"
+   },
+   "editBtnSavePDF": {
+      "message": "Сохранить в PDF"
+   },
+   "editBtnSaveVideo": {
+      "message": "Сохранить видео"
+   },
+   "editBtnSlack": {
+      "message": "Slack"
+   },
+   "editBtnYoutube": {
+      "message": "Youtube"
+   },
+   "editVideoTitle": {
+      "message": "Редактор видео"
+   },
+   "gDriveBtnDone": {
+      "message": "Готово"
+   },
+   "gDriveLabel": {
+      "message": "Выберите папку, в которой будет сохранен скриншот"
+   },
+   "gDriveLabelFolders": {
+      "message": "Скриншот будет сохранен в"
+   },
+   "gDriveLogout": {
+      "message": "Выйти"
+   },
+   "gDriveLogoutFrom": {
+      "message": "Выйти из"
+   },
+   "gDriveMainFolder": {
+      "message": "Папка по умолчанию"
+   },
+   "gDriveNoItems": {
+      "message": "Пустая папка"
+   },
+   "gDriveNotAuthorized": {
+      "message": "Вы ещё не вошли в аккаунт"
+   },
+   "gDriveSendTo": {
+      "message": "Отправить в"
+   },
+   "gDriveTitle": {
+      "message": "Отправить в Google Drive"
+   },
+   "gDriveUploadPrivate": {
+      "message": "Сохранить приватно"
+   },
+   "hotKeys": {
+      "message": "Хоткей"
+   },
+   "labelCaptureHelper": {
+      "message": "Выберите один из экранов для снимка!"
+   },
+   "labelDropImage": {
+      "message": "перетащите изображение сюда"
+   },
+   "labelPreviewLoading": {
+      "message": "Немного терпения..."
+   },
+   "labelPreviewLoadingVideo": {
+      "message": "Обработка видео - подождите ..."
+   },
+   "labelRedactorLoading": {
+      "message": "Немного терпения..."
+   },
+   "newReleaseText": {
+      "message": "\u003Cli>Обновлённый дизайн;\u003C/li>\u003Cli>Замочек, который запрещает редактирование элементов;\u003C/li>\u003Cli>Возможность делать отложенный скриншот;\u003C/li>\u003Cli>Возможность менять главное меню и убирать лишние режимы;\u003C/li>\u003Cli>Возможность указывать произвольно цифры у нужных фигур;\u003C/li>\u003Cli> Возможность быстро отправлять скриншоты в Nimbus/Slack из редактора через хоткей ctrl+enter;\u003C/li>\u003Cli>Исправлены некоторые ошибки;\u003C/li>"
+   },
+   "newReleaseTitle": {
+      "message": "Добро пожаловать в новую версию Nimbus Screenshot"
+   },
+   "nimbusAccessAnyTimes": {
+      "message": "Доступ к скриншотам и скринкастам в любое время и с любого устройства;"
+   },
+   "nimbusAccount": {
+      "message": "Nimbus аккаунт"
+   },
+   "nimbusBad": {
+      "message": "Плохо"
+   },
+   "nimbusBannedDeviceDestruction": {
+      "message": "Данное устройство было забанено Вами."
+   },
+   "nimbusBeBetter": {
+      "message": "Средненько"
+   },
+   "nimbusBtnAuthFacebook": {
+      "message": "Используя Facebook"
+   },
+   "nimbusBtnAuthGoogle": {
+      "message": "Используя Google"
+   },
+   "nimbusBtnLogin": {
+      "message": "Войти в Nimbus Note"
+   },
+   "nimbusBtnRemind": {
+      "message": "Забыли свой пароль?"
+   },
+   "nimbusBtnSignup": {
+      "message": "Создать аккаунт"
+   },
+   "nimbusCaptureUpgradePremium": {
+      "message": "Ещё больше возможностей\u003Cbr>с Nimbus Capture Business"
+   },
+   "nimbusCaptureUpgradePro": {
+      "message": "Ещё больше возможностей\u003Cbr>с Nimbus Capture Pro"
+   },
+   "nimbusChannels": {
+      "message": "Каналы"
+   },
+   "nimbusComment": {
+      "message": "Комментарий"
+   },
+   "nimbusCommentPlaceholder": {
+      "message": "Комментировать скриншот"
+   },
+   "nimbusCreateAccount": {
+      "message": "Создать Бесплатный Аккаунт"
+   },
+   "nimbusDid": {
+      "message": "Уже оценил"
+   },
+   "nimbusEducationDiscounts": {
+      "message": "Скидки для образования"
+   },
+   "nimbusEnter": {
+      "message": "Войти в Nimbus Note"
+   },
+   "nimbusEnvironmentInfo": {
+      "message": "Добавить информацию о системе и странице"
+   },
+   "nimbusFragmentScrollTitle": {
+      "message": "С помощью этого режима, вы сможете сделать скриншот отдельных фрагментов со скроллом внутри страницы. Например, это может быть окно чата, панель управления сервисом или окно задачи в Jira. Наше приложение само найдет такие области и вам нужно будет только выбрать нужную."
+   },
+   "nimbusGoPro": {
+      "message": "Обновиться до Nimbus Pro"
+   },
+   "nimbusGood": {
+      "message": "Хорошо!"
+   },
+   "nimbusHelp": {
+      "message": "Помощь"
+   },
+   "nimbusIncreaseLimit": {
+      "message": "Повысить лимит"
+   },
+   "nimbusInfoAgent": {
+      "message": "User Agent"
+   },
+   "nimbusInfoBrowser": {
+      "message": "Браузер"
+   },
+   "nimbusInfoPage": {
+      "message": "Адрес страницы"
+   },
+   "nimbusInfoPlatform": {
+      "message": "Платформа"
+   },
+   "nimbusInfoScreen": {
+      "message": "Разрешение экрана"
+   },
+   "nimbusIsBusiness": {
+      "message": "У меня уже есть Nimbus Business"
+   },
+   "nimbusIsPro": {
+      "message": "У меня уже есть Nimbus Pro"
+   },
+   "nimbusLabelEmail": {
+      "message": "Ваш e-mail"
+   },
+   "nimbusLabelPassword": {
+      "message": "Пароль"
+   },
+   "nimbusLabelPasswordAndInfo": {
+      "message": "Пароль (мин. 8 символов)"
+   },
+   "nimbusLabelRetypePass": {
+      "message": "Повторите пароль"
+   },
+   "nimbusLimitDescription": {
+      "message": "Вы можете перейти на Nimbus Pro, чтобы увеличить ежемесячный лимит данных до 1 ГБ"
+   },
+   "nimbusLimitDeviceDestruction": {
+      "message": "Если вы хотите использовать Nimbus Capture на трёх и более устройствах, то вам нужно приобрести дополнительные лицензии.."
+   },
+   "nimbusLimitDeviceTitle": {
+      "message": "Ваш аккаунт Nimbus Capture уже используется на максимальном количестве устройств."
+   },
+   "nimbusLimitOf": {
+      "message": "из"
+   },
+   "nimbusLimitSpace": {
+      "message": "Вы не можете загрузить файл, потому что вы почти достигли предела месячного лимита в размере 100 МБ."
+   },
+   "nimbusLimitUsage": {
+      "message": "Использовано:"
+   },
+   "nimbusLimitVideo": {
+      "message": "Видео слишком большое! Но оно не потеряно..."
+   },
+   "nimbusLimitVideoDestruction": {
+      "message": "Максимальный размер файла для Nimbus Pro = 1GB Если вам нужно увелчить размер, вам нужно отписать на \u003Cb>team@nimbusweb.co\u003C/b>"
+   },
+   "nimbusLimitVideoDestructionFree": {
+      "message": "Максимальный размер файла для бесплатных аккаунтов = 10 МБ Обновите до Nimbus Pro, чтобы повысить размер файла."
+   },
+   "nimbusLimitVideoDestructionOrgFree": {
+      "message": "Размер файла превышает максимальный для бесплатного аккаунта 10MB. Напишите владельцу проекта, чтобы уточнить подробности."
+   },
+   "nimbusLimitVideoDestructionOrgLimit": {
+      "message": "Файл не будет сохранён в Nimbus Note, так как достигнут лимит на месячный трафик (100MB). Перейдите на премиум план, чтобы увеличить лимит."
+   },
+   "nimbusLimitVideoDestructionOrgPremium": {
+      "message": "Размер файла превышает максимальный для аккаунта 1GB. Напишите владельцу проекта, чтобы уточнить подробности."
+   },
+   "nimbusLimitVideoDestructionStreamMonth": {
+      "message": "В бесплатном плане вы можете записать не более 60 видео в месяц. Перейдите на план Nimbus Pro, чтобы снять ограничение."
+   },
+   "nimbusLimitVideoDestructionStreamTime": {
+      "message": "Важно! В бесплатном аккаунте вы сможете записывать видео длиной не более 5 митнут. Перейдите на план Nimbus Pro, чтобы увеличить лимит."
+   },
+   "nimbusLimitVideoDurationDestruction": {
+      "message": "Стартовал триал на 7 дней во время которого вы можете записывать видео без лимита на его размер. После окончания триала вы сможете записывать продолжтельностью не более 5 минут. Перейдите на Nimbus Pro,чтобы активировать безлимитную запись."
+   },
+   "nimbusLimitVideoFree": {
+      "message": "Видео слишком большое! Но оно не потеряно..."
+   },
+   "nimbusLimitVideoOrgFree": {
+      "message": "Видео слишком большое! Но оно не потеряно..."
+   },
+   "nimbusLimitVideoOrgLimit": {
+      "message": "Видео слишком большое! Но оно не потеряно..."
+   },
+   "nimbusLimitVideoOrgPremium": {
+      "message": "Видео слишком большое! Но оно не потеряно..."
+   },
+   "nimbusLimitVideoStreamMonth": {
+      "message": "Вы не можете больше записать ..."
+   },
+   "nimbusLimitVideoStreamTime": {
+      "message": "Вы не можете больше записать ..."
+   },
+   "nimbusLogout": {
+      "message": "Выйти из Nimbus Note"
+   },
+   "nimbusManageDevices": {
+      "message": "Управление устройствами"
+   },
+   "nimbusNoThanks": {
+      "message": "Нет, спасибо"
+   },
+   "nimbusNotAccount": {
+      "message": "У меня нет учетной записи"
+   },
+   "nimbusNoteName": {
+      "message": "Имя заметки"
+   },
+   "nimbusOr": {
+      "message": "или"
+   },
+   "nimbusOrganizeUploadFolders": {
+      "message": "С помощью папок и тегов вы сможете упорядочить вашу информацию;"
+   },
+   "nimbusPlaceholderEmail": {
+      "message": "e-mail"
+   },
+   "nimbusPlaceholderEnterText": {
+      "message": "Введите текст"
+   },
+   "nimbusPlaceholderPassword": {
+      "message": "пароль"
+   },
+   "nimbusPrivate": {
+      "message": "приватный"
+   },
+   "nimbusPrivateMessage": {
+      "message": "Личное сообщение"
+   },
+   "nimbusProAddWaterMark": {
+      "message": "Возможность добавлять вотермарк/водяной знак"
+   },
+   "nimbusProConvertGIF": {
+      "message": "Конвертирование видео в GIF"
+   },
+   "nimbusProConvertMP4": {
+      "message": "Конвертирование видео в MP4"
+   },
+   "nimbusProCropVideo": {
+      "message": "Кадрирование/обрезание видео"
+   },
+   "nimbusProSendDropbox": {
+      "message": "Отправляйте картинки и видео в Dropbox"
+   },
+   "nimbusProSendGoogleDrive": {
+      "message": "Загрузка картинки и видео в Google Drive"
+   },
+   "nimbusProSendGoogleDrive2": {
+      "message": "Загрузка публичной или приватной ссылки на Google Drive"
+   },
+   "nimbusProSendGoogleDriveFirefox": {
+      "message": "Загрузка картинок в Google Drive"
+   },
+   "nimbusProSendYoutube": {
+      "message": "Отправка видео в YouTube"
+   },
+   "nimbusProSupport": {
+      "message": "Приоритетная поддержка"
+   },
+   "nimbusProTrimVideo": {
+      "message": "Вырезайте лишнее из видео"
+   },
+   "nimbusProVideoLimit": {
+      "message": "Запись видео без лимита на длину"
+   },
+   "nimbusRate": {
+      "message": "Нравится Nimbus Screenshot ? Поставьте ему оценку!"
+   },
+   "nimbusRateUs": {
+      "message": "Напишите отзыв"
+   },
+   "nimbusRegistration": {
+      "message": "Регистрация"
+   },
+   "nimbusRemindPass": {
+      "message": "Напомнить пароль"
+   },
+   "nimbusSaveScreencast": {
+      "message": "Сохранить видео"
+   },
+   "nimbusSaveScreenshot": {
+      "message": "Сохранить скриншот"
+   },
+   "nimbusSearch": {
+      "message": "поиск"
+   },
+   "nimbusSelectChannel": {
+      "message": "Выбрать канал"
+   },
+   "nimbusSelectFolder": {
+      "message": "Папка"
+   },
+   "nimbusSelectOrganization": {
+      "message": "Организация"
+   },
+   "nimbusSelectWorkspace": {
+      "message": "Проект"
+   },
+   "nimbusSend": {
+      "message": "Отправить в Nimbus Note"
+   },
+   "nimbusShareFriends": {
+      "message": "Отправляйте скриншоты и скринкасты друзьям и коллегам;"
+   },
+   "nimbusSlackAccount": {
+      "message": "Slack аккаунт"
+   },
+   "nimbusSlackHidePanel": {
+      "message": "Скрыть панель Slack-а"
+   },
+   "nimbusSlackLogout": {
+      "message": "Выйти из Slack"
+   },
+   "nimbusSlackSend": {
+      "message": "В Slack"
+   },
+   "nimbusSlackWelcome": {
+      "message": "Уделите минутку, чтобы прочесть:"
+   },
+   "nimbusSlackWelcome2": {
+      "message": "Nimbus Screenshot не будет иметь доступ к сообщениям в чатах. Все ваши разговоры останутся приватными! Nimbus Screenshot сможет только загружать скриншоты в Slack."
+   },
+   "nimbusSlackWelcome3": {
+      "message": "Если у вас остались вопросы, то просим писать на емайл"
+   },
+   "nimbusStreamDestruction": {
+      "message": "Для записи видео нужно создать аккаунт в Nimbus Note. Это очень быстро!"
+   },
+   "nimbusStreamStartDestruction": {
+      "message": "Для записи видео нужен доступ к микрофону и камере."
+   },
+   "nimbusStreamStartTitle": {
+      "message": "Спасибо за регистрацию.\u003Cbr>Чтобы начать запись, просто нажмите на Начать стрим."
+   },
+   "nimbusStreamTitle": {
+      "message": "Главное преимущество стримминг записи - скорость! Вы записываете видео  и сразу получаете ссылку на него, которую можете отправить друзьям и коллегам."
+   },
+   "nimbusSupport": {
+      "message": "Поддержка"
+   },
+   "nimbusThanksYou": {
+      "message": "Спасибо за информацию"
+   },
+   "nimbusUpgradePro": {
+      "message": "Почему Nimbus Pro лучше"
+   },
+   "nimbusViewUploads": {
+      "message": "Открыть в Nimbus Note"
+   },
+   "nimbusViewUploadsToDropbox": {
+      "message": "Открыть в Dropbox"
+   },
+   "nimbusYoutubeSend": {
+      "message": "Сохранить в Youtube"
+   },
+   "notificationCopy": {
+      "message": "Изображение успешно скопироано в буфер обмена"
+   },
+   "notificationCrop": {
+      "message": "Перетажите для захвата страницы (Нажмите Esc для выхода)"
+   },
+   "notificationDesktopDrawingTools": {
+      "message": "Панель рисования недоступна в режиме записи рабочего стола. Вместо этого используйте режим «Страница»."
+   },
+   "notificationDesktopTabSound": {
+      "message": "Звук со страницы недоступен в режиме записи рабочего стола. Вместо этого используйте режим «Страница»."
+   },
+   "notificationDesktopVideoCamera": {
+      "message": "Видео камера недоступна в режиме записи рабочего стола. Вместо этого используйте режим «Страница»."
+   },
+   "notificationEmailFail": {
+      "message": "На данный e-mail уже создан аккаунт"
+   },
+   "notificationEmailIncorrect": {
+      "message": "Неверный e-mail. Попробуйте снова"
+   },
+   "notificationErrorActiveTab": {
+      "message": "Nimbus Capture не сможет начать запись таба пока вы инициализируете приложение. Для этого, достаточно кликнуть на иконке приложения на панели приложений."
+   },
+   "notificationErrorChromeTab": {
+      "message": "Запись страниц служебных страниц (включая страницы приложений) не поддерживается в Nimbus Capture."
+   },
+   "notificationImageCopied": {
+      "message": "Скопировано"
+   },
+   "notificationImageNotCopied": {
+      "message": "Не удалось скопировать"
+   },
+   "notificationInsertInfo": {
+      "message": "Вы можете вставить только изображение"
+   },
+   "notificationLoginFail": {
+      "message": "Неверный логин или пароль. Пожалуйста попробуйте снова."
+   },
+   "notificationNetworkError": {
+      "message": "Проблемы с сервером или вашим Интернет-соединением. Попробуйте ещё раз."
+   },
+   "notificationReachedLimit": {
+      "message": "Вы достигли месячный лимит трафика (100 МБ). Чтобы продолжить, вы должны приобрести Nimbus Pro."
+   },
+   "notificationRegisterFail": {
+      "message": "При создании аккаунт произошла ошибка. Попробуйте снова."
+   },
+   "notificationRestoreSent": {
+      "message": "Инструкция по восстановлению была отправлена на ваш e-mail."
+   },
+   "notificationUploaded": {
+      "message": "Отправка завершена"
+   },
+   "notificationUrlCopied": {
+      "message": "Ссылка была скопирована в буфер обмена"
+   },
+   "notificationWrong": {
+      "message": "Упс, что то пошло не так!. Попробуйте снова."
+   },
+   "onlyForChrome": {
+      "message": "Только для Chrome"
+   },
+   "onlyForFirefox": {
+      "message": "Только для Firefox"
+   },
+   "optionLabelEnableWatermark": {
+      "message": "Включить вотермарк"
+   },
+   "optionLabelEnableWatermarkTimer": {
+      "message": "Отключить вотермарк в видео через"
+   },
+   "optionLabelWatermarkFont": {
+      "message": "Шрифт"
+   },
+   "optionLabelWatermarkFontColor": {
+      "message": "Цвет"
+   },
+   "optionLabelWatermarkFontSize": {
+      "message": "Размер"
+   },
+   "optionLabelWatermarkImage": {
+      "message": "Картинка"
+   },
+   "optionLabelWatermarkSelectFile": {
+      "message": "Выберите файл"
+   },
+   "optionLabelWatermarkSelectPosition": {
+      "message": "Выберите место для вотермарка на скриншоте"
+   },
+   "optionLabelWatermarkSize": {
+      "message": "Размер вотермарка:"
+   },
+   "optionLabelWatermarkSizeLarge": {
+      "message": "Больше"
+   },
+   "optionLabelWatermarkSizeSmall": {
+      "message": "Меньше"
+   },
+   "optionLabelWatermarkText": {
+      "message": "Текст"
+   },
+   "optionLabelWatermarkTimer1": {
+      "message": "1 сек"
+   },
+   "optionLabelWatermarkTimer10": {
+      "message": "10 сек"
+   },
+   "optionLabelWatermarkTimer30": {
+      "message": "30 сек"
+   },
+   "optionLabelWatermarkTimer5": {
+      "message": "5 сек"
+   },
+   "optionLabelWatermarkTimer60": {
+      "message": "1 мин"
+   },
+   "optionLabelWatermarkTransparent": {
+      "message": "Прозрачность вотермарка:"
+   },
+   "optionLabelWatermarkTransparentLarge": {
+      "message": "Больше"
+   },
+   "optionLabelWatermarkTransparentSmall": {
+      "message": "Не прозрачный"
+   },
+   "optionSelectGithubSend": {
+      "message": "Сохранить через Github"
+   },
+   "optionSelectGithubSendNimbus": {
+      "message": "Сохранить в Nimbus, и вставить в Github"
+   },
+   "optionSelectSendDone": {
+      "message": "Открыть страницу сохранения"
+   },
+   "optionSelectSendDoneVideo": {
+      "message": "Открыть страницу сохранения/конвертирования"
+   },
+   "optionSelectSendDownload": {
+      "message": "Загрузить в Google/Slack/Dropbox"
+   },
+   "optionSelectSendDropbox": {
+      "message": "Загрузить в Dropbox"
+   },
+   "optionSelectSendEdit": {
+      "message": "Редактировать"
+   },
+   "optionSelectSendGoogle": {
+      "message": "Загрузить в Google"
+   },
+   "optionSelectSendNimbus": {
+      "message": "Загрузить в Nimbus"
+   },
+   "optionSelectSendQuick": {
+      "message": "Быстрая загрузка"
+   },
+   "optionSelectSendSave": {
+      "message": "Сохранить на компьютер"
+   },
+   "optionSelectSendYoutube": {
+      "message": "Загрузить в Youtube"
+   },
+   "optionsCaptureSettings": {
+      "message": "Настройки скриншота"
+   },
+   "optionsGeneral": {
+      "message": "Основные"
+   },
+   "optionsLabelAfterClicking": {
+      "message": "После клика на иконку"
+   },
+   "optionsLabelAndThen": {
+      "message": "а потом"
+   },
+   "optionsLabelAutoShortUrl": {
+      "message": "Сокращать ссылку после отправки"
+   },
+   "optionsLabelCanUse": {
+      "message": "Доступные обозначения:"
+   },
+   "optionsLabelDelayedScreenshotTime": {
+      "message": "Задержка перед отложенным снимком (сек)"
+   },
+   "optionsLabelDepthScreenshot": {
+      "message": "Фильтр глубины цвета (1 - отключен)"
+   },
+   "optionsLabelDesktopVideo": {
+      "message": "Начать запись окна"
+   },
+   "optionsLabelFilenameTemplateScreencast": {
+      "message": "Шаблон названия скринкаста"
+   },
+   "optionsLabelFilenameTemplateScreenshot": {
+      "message": "Шаблон названия скриншота"
+   },
+   "optionsLabelHideFixedElements": {
+      "message": "Скрывать фиксированные элементы"
+   },
+   "optionsLabelImageFormat": {
+      "message": "Формат"
+   },
+   "optionsLabelImageQuality": {
+      "message": "Качество"
+   },
+   "optionsLabelKeepOriginalResolution": {
+      "message": "Сохранять оригинальное разрешение (для Ретина)"
+   },
+   "optionsLabelLoadToNS": {
+      "message": "Отправить в Nimbus/Slack"
+   },
+   "optionsLabelPauseVideo": {
+      "message": "Пауза/продолжить запись видео"
+   },
+   "optionsLabelQuickCaptureEnable": {
+      "message": "Включить быстрый скриншот (без открытия меню)"
+   },
+   "optionsLabelQuickVideoCaptureEnable": {
+      "message": "Включить быстрое видео (меню запись видео откроется сразу при клике)"
+   },
+   "optionsLabelQuickVideoCaptureGithubEnable": {
+      "message": "Включить быструю запись в Github"
+   },
+   "optionsLabelSaveAs": {
+      "message": "Показывать диалоговое окно 'Сохранить как'"
+   },
+   "optionsLabelSaveCropPosition": {
+      "message": "Сохранить позицию выделенной области"
+   },
+   "optionsLabelShowContentMenu": {
+      "message": "Показывать в контекстном меню"
+   },
+   "optionsLabelShowInfoPrint": {
+      "message": "Показывать URL/дату при выводе на печать"
+   },
+   "optionsLabelShowNewButton": {
+      "message": "Показывать 'New' после обновления приложения"
+   },
+   "optionsLabelStopVideo": {
+      "message": "Остановить запись видео"
+   },
+   "optionsLabelStreamMenuEnable": {
+      "message": "Включить стриминг запись"
+   },
+   "optionsLabelTabVideo": {
+      "message": "Начать запись таба/страницы"
+   },
+   "optionsLabelTimeScrollEntirePage": {
+      "message": "Задержка перед прокруткой страницы (мсек)"
+   },
+   "optionsLabelVideoStorageLimit": {
+      "message": "Останавливать видео, если заканчивается место на диске"
+   },
+   "optionsLabelWantCapture": {
+      "message": "делать скриншот"
+   },
+   "optionsLabelWantVideoCapture": {
+      "message": "записать"
+   },
+   "optionsMainMenu": {
+      "message": "Настройки главного меню"
+   },
+   "optionsSettingImage": {
+      "message": "Настройки изображения"
+   },
+   "optionsSettingsSave": {
+      "message": "Настройки сохранения"
+   },
+   "optionsShortcutSettings": {
+      "message": "Настройка горячих клавиш"
+   },
+   "optionsTitle": {
+      "message": "Настройки"
+   },
+   "optionsVideo": {
+      "message": "Видео"
+   },
+   "optionsVideoCaptureGithub": {
+      "message": "Github"
+   },
+   "optionsVideoCaptureSettings": {
+      "message": "Настройки видео"
+   },
+   "optionsWatermark": {
+      "message": "Вотермарки"
+   },
+   "panelActions": {
+      "message": "Действия"
+   },
+   "panelAlfaChanel": {
+      "message": "Двигайте слайдер, чтобы изменить прозрачность."
+   },
+   "panelCancel": {
+      "message": "Отмена"
+   },
+   "panelChange": {
+      "message": "Изменить"
+   },
+   "panelHeight": {
+      "message": "Высота"
+   },
+   "panelParameters": {
+      "message": "Параметры"
+   },
+   "panelProportional": {
+      "message": "Пропорция"
+   },
+   "panelShadow": {
+      "message": "Тень"
+   },
+   "panelSize": {
+      "message": "Размер"
+   },
+   "panelTools": {
+      "message": "Инструменты"
+   },
+   "panelWidth": {
+      "message": "Ширина"
+   },
+   "popupAccessMic": {
+      "message": "Для начала, вы должны разрешить доступ к микрофону."
+   },
+   "popupActionMessageCrop": {
+      "message": "Зажмите кнопку мышки и не отпуская выделите нужный фрагмент. Далее, сохраните его или отправьте в редактор."
+   },
+   "popupActionMessageFragmentScroll": {
+      "message": "Выберите нужный фрагмент и кликните на него. Далее, сохраните его или отправьте в редактор."
+   },
+   "popupAfterCapture": {
+      "message": "Готовый скриншот"
+   },
+   "popupAutoDeleteDrawing": {
+      "message": "Автоматическая очистка видео"
+   },
+   "popupAutoDeleteDrawingDescription": {
+      "message": "Вы можете указать через какое время будут удалены фигуры рисования при записи видео"
+   },
+   "popupAutomationCancelButton": {
+      "message": "Стоп"
+   },
+   "popupAutomationHideButton": {
+      "message": "Скрыть"
+   },
+   "popupAutomationStorageLimit": {
+      "message": "На диске осталось мало места и мы не гарантируем стабильную работу записи видео. Очистите дисковое пространство и нажмите на Продолжить запись. Нажмите на Стоп, если вы хотите остановить запись."
+   },
+   "popupAutomationStreamError": {
+      "message": "К сожалению, сервер записи сейчас недоступен. Попробуйте позже или используйте локальную запись."
+   },
+   "popupAutomationUpload": {
+      "message": "Немного терпения... Загружаем... Скоро всё будет...."
+   },
+   "popupAutomationUploadStream": {
+      "message": "Немного терпения ... Мы сохраняем ваше потоковое видео на Nimbus."
+   },
+   "popupAutomationWelcome": {
+      "message": "Мы рады сообщить, что добавили возможность записывать и вставлять видео напрямую в тикеты Github."
+   },
+   "popupAutomationWelcomeButton": {
+      "message": "Включить"
+   },
+   "popupBitrateAudioLabel": {
+      "message": "Аудио битрейт"
+   },
+   "popupBitrateVideoLabel": {
+      "message": "Видео битрейт"
+   },
+   "popupBtnBack": {
+      "message": "назад"
+   },
+   "popupBtnCameraRecord": {
+      "message": "Только камеру"
+   },
+   "popupBtnDesktopRecord": {
+      "message": "Окно"
+   },
+   "popupBtnResetVideoSetting": {
+      "message": "Настройки по умолчанию"
+   },
+   "popupBtnStartRecord": {
+      "message": "Начать запись"
+   },
+   "popupBtnStartStream": {
+      "message": "Начать стриминг запись"
+   },
+   "popupBtnStopPause": {
+      "message": "Пауза"
+   },
+   "popupBtnStopRecord": {
+      "message": "Остановить"
+   },
+   "popupBtnStopResume": {
+      "message": "Продолжить"
+   },
+   "popupBtnTabRecord": {
+      "message": "Страницу"
+   },
+   "popupBtnUploadOptionHide": {
+      "message": "Скрыть настройки стрима"
+   },
+   "popupBtnUploadOptionShow": {
+      "message": "Открыть настройки стрима"
+   },
+   "popupButtonAdvertising": {
+      "message": "Nimbus Clipper"
+   },
+   "popupCapturingProgress": {
+      "message": "Делаем скриншот..."
+   },
+   "popupErrorLocalFileMessage": {
+      "message": "Перейдите в настройки расширения и включите опцию \u003Cstrong>'Разрешить открывать локальные файлы по ссылкам'\u003C/strong> После этого, вы сможете делать скриншоты локальных файлов"
+   },
+   "popupErrorLocalFileTitle": {
+      "message": "Нужно разрешение на открытие файлов"
+   },
+   "popupFrameRateLabel": {
+      "message": "Частота кадров"
+   },
+   "popupLabelCountdown": {
+      "message": "Обр.отсчёт"
+   },
+   "popupLabelCursorAnimate": {
+      "message": "Анимированный курсор"
+   },
+   "popupLabelPrivateUpload": {
+      "message": "Приватная загрузка"
+   },
+   "popupLabelQuickVideoCaptureEnable": {
+      "message": "Если опция активна, то вы сможете записывать и сохранять видео в 2 клика. Первый клик - начать запись, а второй клик - остановить и автоматически сохранить видео. Всё очень просто!"
+   },
+   "popupLabelQuickVideoCaptureGithubEnable": {
+      "message": "Записывать видео в Github очень просто! Первым кликом вы начинаете запись нужной страницы, а вторым кликом добавляете это видео прямо в тикет Github!"
+   },
+   "popupLabelRecordCamera": {
+      "message": "Видео с web-камеры"
+   },
+   "popupLabelRecordMic": {
+      "message": "Звук с микрофона"
+   },
+   "popupLabelRecordTab": {
+      "message": "Звук с таба/страницы"
+   },
+   "popupLabelSelectWorkspace": {
+      "message": "Выберите проект"
+   },
+   "popupLabelSetting": {
+      "message": "Настройки"
+   },
+   "popupLabelShowDrawingTools": {
+      "message": "Панель рисования"
+   },
+   "popupLabelVideoAnimationCursor": {
+      "message": "Анимация клика"
+   },
+   "popupLabelVideoSetting": {
+      "message": "Настройки видео"
+   },
+   "popupLabelVideoStorageLimit": {
+      "message": "Если на диске осталось мало места (меньше 500mb), то запись видео останавливается. Рекомендовано для Chromebook."
+   },
+   "popupMyNotes": {
+      "message": "Мои загрузки"
+   },
+   "popupOpenExtensions": {
+      "message": "Настройки расширений"
+   },
+   "popupReadManual": {
+      "message": "Также, вы можете прочитать инструкцию по работе с приложением"
+   },
+   "popupRecordAudioCoreLabel": {
+      "message": "Запись аудио"
+   },
+   "popupRecordCoreAdvancedLabel": {
+      "message": "Продвинутая"
+   },
+   "popupRecordCoreDefaultLabel": {
+      "message": "По умолчанию"
+   },
+   "popupRecordTitle": {
+      "message": "Идёт запись"
+   },
+   "popupRecordTypeTitle": {
+      "message": "Что вы хотите записать"
+   },
+   "popupRecordVideoCoreLabel": {
+      "message": "Запись видео"
+   },
+   "popupRecordWantTitle": {
+      "message": "Что вы хотите записать"
+   },
+   "popupSec": {
+      "message": "сек."
+   },
+   "popupSelectMicLabel": {
+      "message": "Микрофон"
+   },
+   "popupSelectWebCamLabel": {
+      "message": "Вебкамера"
+   },
+   "popupSizeAutoDescription": {
+      "message": "(текущее разрешение)"
+   },
+   "popupSizeAutoLabel": {
+      "message": "Авто"
+   },
+   "popupTitle": {
+      "message": "Nimbus Capture"
+   },
+   "popupVideoEditorCrop": {
+      "message": "Выделите мышкой нужный кусок видео, который нужно обрезать и нажмите на галочку."
+   },
+   "popupVideoEditorTrim": {
+      "message": "С помощью синих ползунков выделите часть видео, которое нужно удалить и нажмите на Удалить выделенное."
+   },
+   "popupVideoEditorWelcomeDescription": {
+      "message": "Здесь вы сможете сделать обрезать видео и вырезать лишние фрагменты. Инструкцию по работе с редактором вы сможете прочитать по этой \u003Ca href='https://nimbusweb.me/s/share/3624390/q4b84u3kyr5u6cy0ab07' target='_blank'>ссылке\u003C/a>."
+   },
+   "popupVideoEditorWelcomeTitle": {
+      "message": "Добро пожаловать в редактор видео!"
+   },
+   "popupVideoLimitMessage": {
+      "message": "\u003Cb>Лимит в 5 минут на видео.\u003C/b> Перейдите на платный план для записи без лимитов."
+   },
+   "popupVideoQualityTitle": {
+      "message": "Качество видео и аудио"
+   },
+   "popupVideoReEncoding": {
+      "message": "Включить ре-энкодинг"
+   },
+   "popupVideoReEncodingTitle": {
+      "message": "Если опция активна, то после записи, видео будет ре-энкодировано для правильного отображения таймлайна (длины видео). Если опцию отключить, то видео будет иметь некорректный таймлайн, но процесс обработки будет занимать минимальное время. (Рекомендовано для слабых компьютеров)"
+   },
+   "popupVideoTitle": {
+      "message": "Записать видео"
+   },
+   "popupWelcomeVideo": {
+      "message": "Добро пожаловать в запись видео"
+   },
+   "popupYoutubeChannel": {
+      "message": "Необходим канал в Youtube"
+   },
+   "popupYoutubeChannelCreates": {
+      "message": "Создайте хотя бы один канал в Youtube, чтобы загружать в него видео."
+   },
+   "rateNotShow": {
+      "message": "Не показывать больше"
+   },
+   "rateRate": {
+      "message": "Оценить аддон"
+   },
+   "rateText": {
+      "message": "Понравился аддон?\u003Cbr>Напишите об этом? Спасибо!"
+   },
+   "tooltipArrowCurve": {
+      "message": "Ломанная стрелка"
+   },
+   "tooltipArrowDouble": {
+      "message": "Двойная стрелка"
+   },
+   "tooltipArrowLine": {
+      "message": "Стрелка"
+   },
+   "tooltipBlur": {
+      "message": "Размыть область"
+   },
+   "tooltipBtnQuickUpload": {
+      "message": "Не требует регистрации"
+   },
+   "tooltipChangeZoom": {
+      "message": "Изменить маштаб"
+   },
+   "tooltipCircle": {
+      "message": "Круг"
+   },
+   "tooltipClassroomSend": {
+      "message": "Сохранить в Google Classroom"
+   },
+   "tooltipColorAndSizeShadow": {
+      "message": "Цвет и размер тени"
+   },
+   "tooltipColorFull": {
+      "message": "Цвет заливки"
+   },
+   "tooltipColorLineAndText": {
+      "message": "Цвет линии и текста"
+   },
+   "tooltipCopy": {
+      "message": "Копировать в буфер обмена"
+   },
+   "tooltipCrop": {
+      "message": "Кадрировать"
+   },
+   "tooltipEditBtnBack": {
+      "message": "В редактор"
+   },
+   "tooltipEditBtnDrive": {
+      "message": "Отправить в Google Drive"
+   },
+   "tooltipEditBtnDropbox": {
+      "message": "Отправить в Dropbox"
+   },
+   "tooltipEditBtnNimbus": {
+      "message": "Отправить в Nimbus Note"
+   },
+   "tooltipEditBtnSlack": {
+      "message": "Отправить в Slack"
+   },
+   "tooltipEditBtnYoutube": {
+      "message": "Опубликовать в Youtube"
+   },
+   "tooltipEllipse": {
+      "message": "Овал"
+   },
+   "tooltipFontAndSize": {
+      "message": "Тип и размер шрифта"
+   },
+   "tooltipFormula": {
+      "message": "Вставить формулу"
+   },
+   "tooltipLine": {
+      "message": "Линия"
+   },
+   "tooltipLineCurve": {
+      "message": "Ломанная линия"
+   },
+   "tooltipLineDotted": {
+      "message": "Пунктирная линия"
+   },
+   "tooltipLineWidth": {
+      "message": "Размер линии"
+   },
+   "tooltipLock": {
+      "message": "Зафиксировать фигуры"
+   },
+   "tooltipMakeScreenshot": {
+      "message": "Сделать скриншот"
+   },
+   "tooltipMarker": {
+      "message": "Маркер"
+   },
+   "tooltipNoteText": {
+      "message": "Стикер"
+   },
+   "tooltipNumber": {
+      "message": "Нумерованные маркеры"
+   },
+   "tooltipNumbers": {
+      "message": "Авто нумерация"
+   },
+   "tooltipOpenFile": {
+      "message": "Вставить картинку"
+   },
+   "tooltipOptions": {
+      "message": "Настройки"
+   },
+   "tooltipOptionsWatermark": {
+      "message": "Настройки вотермарков"
+   },
+   "tooltipPassInfo": {
+      "message": "Пароль должен содержать не менее 8-ми символов"
+   },
+   "tooltipPassMatch": {
+      "message": "Пароли не совпадают"
+   },
+   "tooltipPen": {
+      "message": "Карандаш"
+   },
+   "tooltipRedo": {
+      "message": "Шаг вперед"
+   },
+   "tooltipResize": {
+      "message": "Изменить размер"
+   },
+   "tooltipRounded": {
+      "message": "Скругленный прямоугольник"
+   },
+   "tooltipShortUrl": {
+      "message": "Короткая ссылка"
+   },
+   "tooltipSquare": {
+      "message": "Прямоугольник"
+   },
+   "tooltipText": {
+      "message": "Текст"
+   },
+   "tooltipTextArrow": {
+      "message": "Выноска"
+   },
+   "tooltipTrim": {
+      "message": "Вырезать лишние фрагменты"
+   },
+   "tooltipUndo": {
+      "message": "Шаг назад"
+   },
+   "tooltipUndoAll": {
+      "message": "Вернутся к исходному"
+   },
+   "tooltipUploadTo": {
+      "message": "Загрузка в"
+   },
+   "tooltipVideoEditor": {
+      "message": "Обрезать видео/Вырезать фрагмент"
+   },
+   "tooltipWrongEmail": {
+      "message": "Неверный e-mail"
+   },
+   "tooltipZoomMinus": {
+      "message": "Уменьшить"
+   },
+   "tooltipZoomPlus": {
+      "message": "Увеличить"
+   },
+   "videoCanvas": {
+      "message": "Холст"
+   },
+   "videoConvert": {
+      "message": "Конвертировать"
+   },
+   "videoConvertFrameRate": {
+      "message": "Кол-во кадров"
+   },
+   "videoConvertInfo": {
+      "message": "Вы можете конвертировать видео в другие форматы. Это может занять определенное время. Не закрывайте окно до завершения конвертации."
+   },
+   "videoConvertOpen": {
+      "message": "Конвертировать в MP4 или GIF"
+   },
+   "videoConvertSize": {
+      "message": "Размер"
+   },
+   "videoEditor": {
+      "message": "Редактор видео"
+   },
+   "videoEditorTimeline": {
+      "message": "Масштаб таймлайна"
+   },
+   "videoEditorTrimApply": {
+      "message": "Удалить выделенное"
+   },
+   "videoEditorTrimCancel": {
+      "message": "Отмена"
+   },
+   "videoPanelAnimatedCursor": {
+      "message": "Анимированный курсор - Alt+L"
+   },
+   "videoPanelArrow": {
+      "message": "Стрелка - Alt+A"
+   },
+   "videoPanelCamera": {
+      "message": "Вкл/Выкл вебкамеру"
+   },
+   "videoPanelCheckmark": {
+      "message": "Галочка - Alt+C"
+   },
+   "videoPanelClear": {
+      "message": "Очистить - Alt+N"
+   },
+   "videoPanelClearAll": {
+      "message": "Очистить все - Alt+U"
+   },
+   "videoPanelFocusMouse": {
+      "message": "Фокусировка - Alt+G"
+   },
+   "videoPanelHideShowPanel": {
+      "message": "Скрыть/Показать панель - Alt+V"
+   },
+   "videoPanelMark": {
+      "message": "Воскл. знак - Alt+M"
+   },
+   "videoPanelPen": {
+      "message": "Карандаш - Alt+P"
+   },
+   "videoPanelQuestion": {
+      "message": "Вопрос - Alt+Q"
+   },
+   "videoPanelSimpleCursor": {
+      "message": "Обычный курсор - Alt+S"
+   },
+   "videoPanelSquare": {
+      "message": "Прямоугольник - Alt+R"
+   },
+   "watermarkLimit": {
+      "message": "Выберите изображение размером до 1 МБ"
+   },
+   "watermarkUnsupported": {
+      "message": "Тип файла не поддерживается"
+   },
+   "youtubeCreate": {
+      "message": "Создать"
+   },
+   "youtubeName": {
+      "message": "Имя"
+   },
+   "youtubeNoPlaylist": {
+      "message": "Без плейлиста"
+   },
+   "youtubePlaylist": {
+      "message": "Плейлист"
+   },
+   "youtubePrivate": {
+      "message": "Приватное"
+   },
+   "youtubePublic": {
+      "message": "Публичное"
+   },
+   "youtubeUnlisted": {
+      "message": "Не в списке"
+   }
+}

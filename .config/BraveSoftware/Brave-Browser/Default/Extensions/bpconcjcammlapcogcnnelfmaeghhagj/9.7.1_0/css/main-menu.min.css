@@ -1,0 +1,129 @@
+body {
+  padding: 0;
+  margin: 0;
+  width: 280px;
+}
+body.loading {
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+}
+body.loading:before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 50%;
+  margin: 50px 0 0 -50px;
+  z-index: -1;
+  background: url(chrome-extension://bpconcjcammlapcogcnnelfmaeghhagj/images/loader/loader.png) no-repeat center;
+  background-size: 100%;
+  transform: rotate(360deg);
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+.nsc-capture-options {
+  background: #ffffff;
+  color: #171717;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+  padding: 12px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 16px;
+}
+.nsc-capture-title {
+  font-weight: bold;
+  padding: 0 0 10px;
+}
+.nsc-capture-title.secondary {
+  padding-top: 10px;
+}
+.nsc-capture-message {
+  margin: 10px 0;
+}
+.nsc-capture-message button {
+  width: 100%;
+  margin-top: 10px;
+}
+.nsc-capture-title-logo {
+  display: inline-block;
+  width: 110px;
+  height: 20px;
+  background-size: 100%;
+  background: url(chrome-extension://bpconcjcammlapcogcnnelfmaeghhagj/images/logo/nimbus_capture_full.svg) no-repeat;
+}
+.nsc-capture-title-icons button {
+  margin-left: 5px;
+}
+.nsc-capture-buttons .nsc-button,
+.nsc-capture-actions-buttons .nsc-button {
+  margin-top: 6px;
+  width: 100%;
+  height: 34px;
+}
+.nsc-capture-buttons .nsc-button:first-child,
+.nsc-capture-actions-buttons .nsc-button:first-child {
+  margin-top: 0;
+}
+.nsc-capture-select {
+  padding-bottom: 8px;
+}
+.nsc-capture-select select {
+  display: block;
+  padding: 2px;
+  width: 100%;
+}
+.nsc-capture-back {
+  margin-bottom: 10px;
+}
+.nsc-capture-back .nsc-button {
+  display: block;
+}
+.nsc-capture-back .nsc-button .nsc-icon {
+  margin: 0 2px 0 -4px;
+}
+.nsc-capture-timer {
+  color: #353535;
+  font-size: 40px;
+  line-height: 43px;
+  padding: 0 0 9px;
+  text-align: center;
+}
+.nsc-capture-video-buttons {
+  font-size: 0;
+  justify-content: center;
+}
+.nsc-capture-video-buttons .nsc-button {
+  color: #5a5a5a;
+  font-weight: 700;
+  height: 28px;
+  margin: 4px;
+  padding: 0 16px;
+}
+.nsc-capture-options-recording .nsc-capture-title {
+  color: #B50E0E;
+  text-align: center;
+}
+.nsc-capture-upload-options {
+  padding: 10px 0;
+}
+.nsc-capture-button-advertising {
+  margin-bottom: -10px;
+  margin-top: 10px;
+}
+.nsc-capture-button-media-access {
+  color: #cc512f;
+}

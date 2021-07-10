@@ -1,0 +1,7 @@
+2021/06/30-19:29:37.617 14f2d Reusing MANIFEST /home/herilsaha/.config/Slack/IndexedDB/https_app.slack.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/06/30-19:29:37.617 14f2d Recovering log #3
+2021/06/30-19:29:37.662 14f2d Reusing old log /home/herilsaha/.config/Slack/IndexedDB/https_app.slack.com_0.indexeddb.leveldb/000003.log 
+2021/07/01-20:26:34.405 5c006 Level-0 table #5: started
+2021/07/01-20:26:34.447 5c006 Level-0 table #5: 3461 bytes OK
+2021/07/01-20:26:34.476 5c006 Delete type=0 #3
+2021/07/01-20:26:34.476 5c006 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

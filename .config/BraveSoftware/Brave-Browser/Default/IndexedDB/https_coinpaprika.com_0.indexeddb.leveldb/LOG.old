@@ -1,0 +1,15 @@
+2021/07/04-13:12:16.151 7c0 Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_coinpaprika.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/07/04-13:12:16.151 7c0 Recovering log #4
+2021/07/04-13:12:16.168 7c0 Reusing old log /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_coinpaprika.com_0.indexeddb.leveldb/000004.log 
+2021/07/04-13:12:25.482 7c0 Level-0 table #8: started
+2021/07/04-13:12:25.512 7c0 Level-0 table #8: 1052 bytes OK
+2021/07/04-13:12:25.543 7c0 Delete type=0 #4
+2021/07/04-13:12:25.543 7c0 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/07/04-13:12:25.543 7c0 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x0e\x00_\x00_\x00s\x00a\x00k\x006\x005\x000\x008\x005\x004\x006\x006\x004' @ 78 : 1
+2021/07/04-13:12:25.543 7c0 Compacting 1@1 + 1@2 files
+2021/07/04-13:12:25.571 7c0 Generated table #9@1: 18 keys, 550 bytes
+2021/07/04-13:12:25.571 7c0 Compacted 1@1 + 1@2 files => 550 bytes
+2021/07/04-13:12:25.600 7c0 compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/07/04-13:12:25.601 7c0 Delete type=2 #5
+2021/07/04-13:12:25.601 7c0 Delete type=2 #8
+2021/07/04-13:12:25.619 7c0 Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x0e\x00_\x00_\x00s\x00a\x00k\x006\x005\x000\x008\x005\x004\x006\x006\x004' @ 78 : 1 .. (end); will stop at (end)

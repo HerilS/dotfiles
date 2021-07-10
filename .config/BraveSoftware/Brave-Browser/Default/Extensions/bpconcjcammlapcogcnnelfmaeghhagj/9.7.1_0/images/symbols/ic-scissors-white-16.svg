@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>4E374650-4247-494C-B064-CA088DD9CA93</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic-scissors-white-16">
+            <g>
+                <rect id="bounds" x="0" y="0" width="16" height="16"></rect>
+                <polygon id="Line-2" fill="#FFFFFF" fill-rule="nonzero" points="0.0857864376 1.5 1.5 0.0857864376 12.4142136 11 11 12.4142136"></polygon>
+                <polygon id="Line-2" fill="#FFFFFF" fill-rule="nonzero" points="14.5260064 0.042679703 15.9414001 1.45571216 5.00118061 12.4142131 3.58578693 11.0011806"></polygon>
+                <path d="M3,16 C1.34314575,16 0,14.6568542 0,13 C0,11.3431458 1.34314575,10 3,10 C4.65685425,10 6,11.3431458 6,13 C6,14.6568542 4.65685425,16 3,16 Z M3,14 C3.55228475,14 4,13.5522847 4,13 C4,12.4477153 3.55228475,12 3,12 C2.44771525,12 2,12.4477153 2,13 C2,13.5522847 2.44771525,14 3,14 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                <path d="M13,16 C11.3431458,16 10,14.6568542 10,13 C10,11.3431458 11.3431458,10 13,10 C14.6568542,10 16,11.3431458 16,13 C16,14.6568542 14.6568542,16 13,16 Z M13,14 C13.5522847,14 14,13.5522847 14,13 C14,12.4477153 13.5522847,12 13,12 C12.4477153,12 12,12.4477153 12,13 C12,13.5522847 12.4477153,14 13,14 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

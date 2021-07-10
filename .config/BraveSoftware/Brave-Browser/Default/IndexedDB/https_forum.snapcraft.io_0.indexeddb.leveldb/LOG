@@ -1,0 +1,6 @@
+2021/05/26-02:06:23.780 811e Creating DB /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_forum.snapcraft.io_0.indexeddb.leveldb since it was missing.
+2021/05/26-02:06:23.879 811e Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_forum.snapcraft.io_0.indexeddb.leveldb/MANIFEST-000001
+2021/05/26-02:07:26.620 8273 Level-0 table #5: started
+2021/05/26-02:07:26.653 8273 Level-0 table #5: 68283 bytes OK
+2021/05/26-02:07:26.683 8273 Delete type=0 #3
+2021/05/26-02:07:26.684 8273 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,33 @@
+2021/06/30-19:29:33.542 14f2d Reusing MANIFEST /home/herilsaha/.config/Slack/Local Storage/leveldb/MANIFEST-000001
+2021/06/30-19:29:33.543 14f2d Recovering log #3
+2021/06/30-19:29:33.797 14f2d Reusing old log /home/herilsaha/.config/Slack/Local Storage/leveldb/000003.log 
+2021/06/30-21:00:36.601 19492 Level-0 table #5: started
+2021/06/30-21:00:36.673 19492 Level-0 table #5: 11199 bytes OK
+2021/06/30-21:00:36.703 19492 Delete type=0 #3
+2021/07/01-04:14:36.648 2f42f Level-0 table #7: started
+2021/07/01-04:14:36.691 2f42f Level-0 table #7: 7571 bytes OK
+2021/07/01-04:14:36.724 2f42f Delete type=0 #4
+2021/07/01-11:28:36.633 2f42f Level-0 table #9: started
+2021/07/01-11:28:36.664 2f42f Level-0 table #9: 7583 bytes OK
+2021/07/01-11:28:36.690 2f42f Delete type=0 #6
+2021/07/01-18:42:36.627 542f3 Level-0 table #11: started
+2021/07/01-18:42:36.670 542f3 Level-0 table #11: 7586 bytes OK
+2021/07/01-18:42:36.699 542f3 Delete type=0 #8
+2021/07/02-01:48:36.645 6fa9d Level-0 table #13: started
+2021/07/02-01:48:36.684 6fa9d Level-0 table #13: 8792 bytes OK
+2021/07/02-01:48:36.714 6fa9d Delete type=0 #10
+2021/07/02-09:02:36.598 82087 Level-0 table #15: started
+2021/07/02-09:02:36.638 82087 Level-0 table #15: 7582 bytes OK
+2021/07/02-09:02:36.665 82087 Delete type=0 #12
+2021/07/02-09:02:36.665 82087 Compacting 4@0 + 1@1 files
+2021/07/02-09:02:36.706 82087 Generated table #16@0: 4 keys, 1396 bytes
+2021/07/02-09:02:36.706 82087 Compacted 4@0 + 1@1 files => 1396 bytes
+2021/07/02-09:02:36.731 82087 compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/07/02-09:02:36.732 82087 Delete type=2 #9
+2021/07/02-09:02:36.732 82087 Delete type=2 #13
+2021/07/02-09:02:36.732 82087 Delete type=2 #11
+2021/07/02-09:02:36.732 82087 Delete type=2 #7
+2021/07/02-09:02:36.732 82087 Delete type=2 #15
+2021/07/02-16:16:41.833 88dfa Level-0 table #18: started
+2021/07/02-16:16:41.867 88dfa Level-0 table #18: 7583 bytes OK
+2021/07/02-16:16:41.894 88dfa Delete type=0 #14

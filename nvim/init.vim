@@ -1,4 +1,5 @@
 let mapleader =","
+
 " Use System Clipboard
 set clipboard=unnamedplus
 
@@ -16,6 +17,7 @@ nnoremap <leader>v :vsplit<CR>
 " Change & Delete JSX tags
 map <leader>c cstt
 map <leader>d dst
+
 " Alias reaplce all to S
 nnoremap S :%s//gI<Left><Left><Left>
 
@@ -27,16 +29,14 @@ Plug 'voldikss/vim-floaterm'
 Plug 'vim-airline/vim-airline'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'vim-airline/vim-airline-themes'
-
 Plug 'pangloss/vim-javascript'    " JavaScript support
-Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim' " Typescript support
 Plug 'peitalin/vim-jsx-typescript' " TSX Support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'HerringtonDarkholme/yats.vim'
-
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
@@ -46,11 +46,14 @@ Plug 'morhetz/gruvbox'
 Plug 'valloric/MatchTagAlways'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'joshdick/onedark.vim'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
 " Basic Settings
 set mouse=a
 syntax on
@@ -60,24 +63,18 @@ set number
 set t_Co=256
 set t_ut=
 set termguicolors
-let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'soft'
 let g:gruvbox_invert_tabline = 1
 let g:gruvbox_transparent_bg = 1
 colorscheme gruvbox
 set background=dark
-" colorscheme PaperColor
-" set background=light
 let g:rehash256 = 1
 hi Normal ctermbg=NONE guibg=NONE
-hi LineNr ctermbg=NONE guibg=NONE
-hi NonText ctermbg=NONE guibg=NONE
+" hi LineNr ctermbg=NONE guibg=NONE
+" hi NonText ctermbg=NONE guibg=NONE
 :set shiftwidth=2
 :set autoindent
 :set smartindent
-" Airline
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
 
 
 " Tab navigation like Firefox: only 'open new tab' works in terminal

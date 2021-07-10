@@ -1,0 +1,25 @@
+{
+   "description": "True Dark Black Theme, easy for the eyes, fitted for any type of display, but especially for Amoled screens",
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApEQLCxYo1rBYxsW6bqeJXiPs7JUquSJdohBBpyGhNEsSIXDzfYpRib9dhIM9VM8rIVrvOwh6H9/ByekHA/dLiGfENYHXfXqEKolvVCuh/RhOmVyy2gA9jlfDG4ny3zywD/zEANOsRmdLhzDs6PkJrFLGT3V8OSxq//GKpXS5nnyEqT2YpDdNUpaRSCHRDXDV/2D/FUtT1+J/o5rEO5/tEyymPEvZzID2gvFNpudLp5DhLA1MQ0/eYUwHaIMl714fCCxx+YEy8xyanqMAjz8QyD5d5UMKerVD7/koX+Z441fd3wLsyUVVdlcT075rJkMtJSw7zrox+KQ0CPe4un2wuQIDAQAB",
+   "manifest_version": 2,
+   "name": "Into The Black Hole - True Amoled Black Theme",
+   "theme": {
+      "colors": {
+         "bookmark_text": [ 255, 255, 255 ],
+         "button_background": [ 0, 0, 0, 1 ],
+         "frame": [ 0, 0, 0 ],
+         "frame_inactive": [ 0, 0, 0 ],
+         "ntp_background": [ 0, 0, 0 ],
+         "ntp_link": [ 255, 255, 255 ],
+         "ntp_text": [ 255, 255, 255 ],
+         "tab_background_text": [ 255, 255, 255 ],
+         "tab_text": [ 255, 255, 255 ],
+         "toolbar": [ 0, 0, 0 ]
+      },
+      "tints": {
+         "buttons": [ 0, 0, 1 ]
+      }
+   },
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.1"
+}

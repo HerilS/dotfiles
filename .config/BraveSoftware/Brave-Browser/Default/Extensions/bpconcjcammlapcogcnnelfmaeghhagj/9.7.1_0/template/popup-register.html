@@ -1,0 +1,42 @@
+<div class="nsc-popup nsc-hide" id="nsc_popup_register_nimbus" style="height: 440px;">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-nimubs-dark"></i>
+            <span class="nsc-title-send-to-nimbus" data-i18n="nimbusSend">Send to Nimbus Note</span>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-title" data-i18n="nimbusRegistration">Registration</div>
+            <div class="nsc-popup-form">
+                <form method="post" name="" action="" id="nsc_form_register_nimbus">
+                    <div class="nsc-popup-form-field">
+                        <label class="nsc-label-email" data-i18n="nimbusLabelEmail">Email</label>
+                        <input type="email" name="email" value="" placeholder="email" required data-i18n="nimbusPlaceholderEmail" data-i18n-attr="placeholder">
+                    </div>
+                    <div class="nsc-popup-form-field">
+                        <label class="nsc-label-password" data-i18n="nimbusLabelPasswordAndInfo">Password</label>
+                        <input type="password" name="password" value="" placeholder="password" required data-i18n="nimbusPlaceholderPassword" data-i18n-attr="placeholder">
+                    </div>
+                    <div class="nsc-popup-form-field">
+                        <label class="nsc-label-repass" data-i18n="nimbusLabelRetypePass">Retype Password</label>
+                        <input type="password" name="pass-repeat" value="" placeholder="repeat password" required data-i18n="nimbusPlaceholderPassword" data-i18n-attr="placeholder">
+                    </div>
+                    <div class="nsc-popup-form-actions">
+                        <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="submit" name="">
+                            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusBtnSignup">Sign up</span>
+                        </button>
+                    </div>
+                    <div class="nsc-popup-form-link nsc-open-popup-login-nimbus"><a href="#" data-i18n="nimbusBtnLogin">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

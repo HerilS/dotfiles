@@ -1,0 +1,6 @@
+2021/05/31-17:29:05.697 10e6 Creating DB /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb since it was missing.
+2021/05/31-17:29:06.037 10e6 Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
+2021/05/31-17:29:19.930 6eb Level-0 table #5: started
+2021/05/31-17:29:19.987 6eb Level-0 table #5: 2389 bytes OK
+2021/05/31-17:29:20.011 6eb Delete type=0 #3
+2021/05/31-17:29:20.012 6eb Manual compaction at level-0 from (begin) .. (end); will stop at (end)

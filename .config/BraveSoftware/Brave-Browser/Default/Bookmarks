@@ -1,0 +1,40 @@
+{
+   "checksum": "d5ae2db1c33fdcd658bdfb203bff1ddf",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13268552087412080",
+            "guid": "d04a071c-b02e-4295-adc2-29802725d015",
+            "id": "5",
+            "name": "Nixode | Cryptocurrency Charts and Prices",
+            "type": "url",
+            "url": "http://localhost:3000/"
+         } ],
+         "date_added": "13268180274454613",
+         "date_modified": "13269763527646508",
+         "guid": "00000000-0000-4000-a000-000000000002",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13268180274454618",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-a000-000000000003",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13268180274454621",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-a000-000000000004",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

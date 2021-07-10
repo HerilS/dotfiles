@@ -1,0 +1,15 @@
+2021/07/01-19:34:47.209 5be93 Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_nivo.rocks_0.indexeddb.leveldb/MANIFEST-000001
+2021/07/01-19:34:47.210 5be93 Recovering log #4
+2021/07/01-19:34:47.210 5be93 Reusing old log /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_nivo.rocks_0.indexeddb.leveldb/000004.log 
+2021/07/01-19:35:31.553 5c4d4 Level-0 table #8: started
+2021/07/01-19:35:31.601 5c4d4 Level-0 table #8: 1422 bytes OK
+2021/07/01-19:35:31.635 5c4d4 Delete type=0 #4
+2021/07/01-19:35:31.635 5c4d4 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/07/01-19:35:31.636 5c4d4 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x19\x00r\x00e\x00s\x00o\x00u\x00r\x00c\x00e\x00s\x00:\x00/\x00g\x00u\x00i\x00d\x00e\x00s\x00/\x00t\x00h\x00e\x00m\x00i\x00n\x00g' @ 386 : 1
+2021/07/01-19:35:31.636 5c4d4 Compacting 1@1 + 1@2 files
+2021/07/01-19:35:31.668 5c4d4 Generated table #9@1: 80 keys, 3722 bytes
+2021/07/01-19:35:31.668 5c4d4 Compacted 1@1 + 1@2 files => 3722 bytes
+2021/07/01-19:35:31.702 5c4d4 compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/07/01-19:35:31.702 5c4d4 Delete type=2 #5
+2021/07/01-19:35:31.702 5c4d4 Delete type=2 #8
+2021/07/01-19:35:31.703 5c4d4 Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x19\x00r\x00e\x00s\x00o\x00u\x00r\x00c\x00e\x00s\x00:\x00/\x00g\x00u\x00i\x00d\x00e\x00s\x00/\x00t\x00h\x00e\x00m\x00i\x00n\x00g' @ 386 : 1 .. (end); will stop at (end)

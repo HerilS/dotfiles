@@ -1,0 +1,15 @@
+2021/07/03-00:22:02.427 1ff8 Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.coinbase.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/07/03-00:22:02.427 1ff8 Recovering log #54
+2021/07/03-00:22:02.427 1ff8 Reusing old log /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.coinbase.com_0.indexeddb.leveldb/000054.log 
+2021/07/03-00:22:41.721 451a Level-0 table #59: started
+2021/07/03-00:22:41.745 451a Level-0 table #59: 55712 bytes OK
+2021/07/03-00:22:41.773 451a Delete type=0 #54
+2021/07/03-00:22:41.774 451a Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/07/03-00:22:41.774 451a Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x03\x01\x02\x01*\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00w\x00w\x00w\x00.\x00c\x00o\x00i\x00n\x00b\x00a\x00s\x00e\x00.\x00c\x00o\x00m\x00/\x00s\x00w\x00.\x00j\x00s\x00?\x00d\x00=\x002\x000\x002\x001\x00-\x000\x007\x00-\x000' @ 56496 : 1
+2021/07/03-00:22:41.774 451a Compacting 1@1 + 1@2 files
+2021/07/03-00:22:41.812 451a Generated table #60@1: 657 keys, 121228 bytes
+2021/07/03-00:22:41.812 451a Compacted 1@1 + 1@2 files => 121228 bytes
+2021/07/03-00:22:41.840 451a compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/07/03-00:22:41.840 451a Delete type=2 #56
+2021/07/03-00:22:41.840 451a Delete type=2 #59
+2021/07/03-00:22:41.840 451a Manual compaction at level-1 from '\x00\x03\x01\x02\x01*\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00w\x00w\x00w\x00.\x00c\x00o\x00i\x00n\x00b\x00a\x00s\x00e\x00.\x00c\x00o\x00m\x00/\x00s\x00w\x00.\x00j\x00s\x00?\x00d\x00=\x002\x000\x002\x001\x00-\x000\x007\x00-\x000' @ 56496 : 1 .. (end); will stop at (end)

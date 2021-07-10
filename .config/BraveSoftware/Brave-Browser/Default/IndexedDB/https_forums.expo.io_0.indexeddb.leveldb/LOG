@@ -1,0 +1,6 @@
+2021/05/30-16:15:39.477 1e7b4 Creating DB /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_forums.expo.io_0.indexeddb.leveldb since it was missing.
+2021/05/30-16:15:39.598 1e7b4 Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_forums.expo.io_0.indexeddb.leveldb/MANIFEST-000001
+2021/05/30-16:16:12.710 1f825 Level-0 table #5: started
+2021/05/30-16:16:12.744 1f825 Level-0 table #5: 2870 bytes OK
+2021/05/30-16:16:12.778 1f825 Delete type=0 #3
+2021/05/30-16:16:12.778 1f825 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

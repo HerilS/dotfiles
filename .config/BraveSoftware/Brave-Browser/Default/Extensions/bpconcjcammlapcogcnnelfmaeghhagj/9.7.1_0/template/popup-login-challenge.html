@@ -1,0 +1,34 @@
+<div class="nsc-popup nsc-hide" id="nsc_popup_connect_nimbus_challenge">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-nimubs-dark">&nbsp;</i>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-title" data-i18n="nimbusEnter">Sign in to Nimbus Note</div>
+
+            <div class="nsc-popup-form">
+                <form method="post" name="login-nimbus" id="nsc_form_login_nimbus_challenge">
+                    <input type="hidden" name="state" value="" placeholder="state" required>
+                    <div class="nsc-popup-form-field">
+                        <label class="nsc-label-email" data-i18n="nimbusLabelCode">Code</label>
+                        <input type="text" name="code" value="" placeholder="code" required>
+                    </div>
+                    <img src="" alt="">
+                    <div class="nsc-popup-form-actions">
+                        <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="submit" name="">
+                            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusBtnLogin">Login</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+2021/06/12-15:59:45.858 130f9 Creating DB /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_weareneon.com_0.indexeddb.leveldb since it was missing.
+2021/06/12-15:59:45.980 130f9 Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_weareneon.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/06/12-16:00:18.618 11079 Level-0 table #5: started
+2021/06/12-16:00:18.651 11079 Level-0 table #5: 1685 bytes OK
+2021/06/12-16:00:18.683 11079 Delete type=0 #3
+2021/06/12-16:00:18.684 11079 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,2113 @@
+<!doctype html>
+<html class="nsc-background">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Edit - Nimbus Screenshot</title>
+
+    <link rel="stylesheet" href="css/cropper.min.css"/>
+    <link rel="stylesheet" href="css/jquery.ambiance.min.css">
+    <link rel="stylesheet" href="css/spectrum.min.css">
+
+    <link rel="stylesheet" href="css/crop.min.css"/>
+    <link rel="stylesheet" href="css/flex.min.css">
+    <link rel="stylesheet" href="css/icons.min.css">
+    <link rel="stylesheet" href="css/new-style.min.css">
+    <link rel="stylesheet" href="css/popup.min.css">
+    <link rel="stylesheet" href="css/fix-style.min.css">
+
+    <script>
+        window.___gcfg = {
+            parsetags: 'explicit'
+        };
+
+    </script>
+    <script src="js/lib/axios.min.js"></script>
+    <script src="js/lib/moment.min.js"></script>
+    <script src="js/lib/platform.js"></script>
+    <script src="js/lib/jquery-3.3.1.js"></script>
+    <script src="js/lib/jquery-ui.js"></script>
+    <script src="js/lib/inversion.js"></script>
+    <script src="js/lib/Dropbox-sdk.min.js"></script>
+    <script src="js/lib/spectrum.js"></script>
+    <script src="js/lib/cropper.js"></script>
+    <script src="js/lib/jquery.ambiance.js"></script>
+    <script src="js/lib/jspdf.min.js"></script>
+    <script src="js/lib/google-analytics-bundle.js"></script>
+    <script src="js/lib/modernizr.js"></script>
+    <script src="js/ffmpeg.js"></script>
+
+    <script src="js/class/nscExtensionCore.js"></script>
+    <script src="js/class/nscStreamSocket.js"></script>
+    <script src="js/class/nscVideoRecorder.js"></script>
+    <script src="js/class/nscChromeCore.js"></script>
+    <script src="js/class/nscNimbusConnect.js"></script>
+    <script src="js/class/nscPopupQueue.js"></script>
+    <script src="js/class/nscLogger.js"></script>
+
+    <script src="js/content-core.js"></script>
+    <script src="js/connect-nimbus.js"></script>
+    <script src="js/connect-google.js"></script>
+    <script src="js/connect-slack.js"></script>
+    <script src="js/connect-dropbox.js"></script>
+    <script src="js/connect-youtube.js"></script>
+
+    <script src="js/edit-global.js"></script>
+    <!--<script src="js/edit-util.js"></script>-->
+    <script src="js/edit-panel.js"></script>
+    <script src="js/edit-done.js"></script>
+    <script src="js/edit-video.js"></script>
+    <script src="js/edit-redactor.js"></script>
+    <script src="js/video-convert.js"></script>
+
+    <script type="module" src="js/edit-init.js"></script>
+</head>
+<body class="nsc-background">
+<!--<div class="nsc-global">-->
+<div id="nsc_redactor_page" class="nsc-hide">
+    <div class="nsc-panel" id="nsc_redactor_panel">
+        <div class="nsc-panel-layout" flex layout="row" layout-align="start start">
+            <div class="nsc-panel-groups" flex layout="row" layout-align="center center" layout-wrap="">
+
+                <!-- group -->
+                <div class="nsc-panel-group" flex="none" layout="row" layout-align="start start">
+                    <input type="file" name="files[]" accept="image/*" class="nsc-hide">
+                    <button class="nsc-panel-button instant not_change_active" type="button" name="" id="nsc_redactor_open_image" data-i18n="tooltipOpenFile" data-i18n-attr="title">
+                        <span class="nsc-icon nsc-icon-open">&nbsp;</span>
+                    </button>
+                    <button class="nsc-panel-button not_change_active show-chrome-only nsc-hide" type="button" name="" id="nsc_redactor_capture_desktop" data-i18n="tooltipMakeScreenshot" data-i18n-attr="title">
+                        <span class="nsc-icon nsc-icon-screenshot">&nbsp;</span>
+                    </button>
+
+                    <div class="nsc-capture-helper-tooltip nsc-hide" id="nsc_capture_helper">
+                        <span data-i18n="labelCaptureHelper">Вы можете выбрать один из экранов для снимка</span>
+                        <button class="nsc-capture-helper-close">&nbsp;</button>
+                    </div>
+                </div>
+                <!-- /group -->
+
+                <!-- group -->
+                <div class="nsc-panel-group" flex="none" layout="row" layout-align="start start">
+                    <button class="nsc-panel-button" type="button" id="zoom_in" data-i18n="tooltipZoomPlus" data-i18n-attr="title">
+                        <span class="nsc-icon nsc-icon-zoom-in">&nbsp;</span>
+                    </button>
+                    <button class="nsc-panel-button" type="button" id="zoom_out" data-i18n="tooltipZoomMinus" data-i18n-attr="title">
+                        <span class="nsc-icon nsc-icon-zoom-out">&nbsp;</span>
+                    </button>
+
+                    <div class="nsc-panel-button assembled" data-i18n="tooltipChangeZoom" data-i18n-attr="title">
+                        <div class="nsc-panel-select" flex layout="row">
+                            <div class="nsc-panel-text nsc-noselect" flex layout="row" layout-align="center center">
+                                <span class="nsc-panel-text-value">75%</span>
+                            </div>
+                            <div class="nsc-panel-trigger">
+                                <span class="nsc-icon nsc-icon-arrow">&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="nsc-panel-dropdown">
+                            <select class="nsc-panel-dropdown-text" id="nsc_zoom_percent">
+                                <option class="nsc-panel-dropdown-text-value" value="0.25">25%</option>
+                                <option class="nsc-panel-dropdown-text-value" value="0.5">50%</option>
+                                <option class="nsc-panel-dropdown-text-value" value="0.75">75%</option>
+                                <option class="nsc-panel-dropdown-text-value" value="1" selected>100%</option>
+                                <option class="nsc-panel-dropdown-text-value" value="1.25">125%</option>
+                                <option class="nsc-panel-dropdown-text-value" value="1.5">150%</option>
+                                <option class="nsc-panel-dropdown-text-value" value="1.75">175%</option>
+                                <option class="nsc-panel-dropdown-text-value" value="2">200%</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- /group -->
+
+                <!-- group -->
+                <div class="nsc-panel-group" flex="none" layout="row" layout-align="start start">
+                    <!--<div class="nsc-panel-group-title"><span data-i18n="panelSize">Size</span>:</div>-->
+                    <div class="nsc-panel-button assembled" data-i18n="tooltipResize" data-i18n-attr="title">
+                        <div class="nsc-panel-select" flex layout="row">
+                            <div class="nsc-panel-text nsc-noselect" flex="none" layout="row" layout-align="center center">
+                                <span class="nsc-icon nsc-icon-resize">&nbsp;</span>
+                            </div>
+                            <div class="nsc-panel-trigger">
+                                <span class="nsc-icon nsc-icon-arrow">&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="nsc-panel-dropdown">
+                            <div class="nsc-panel-drop-area">
+                                <form method="post" id="nsc_redactor_resize_form">
+                                    <div class="nsc-panel-resize-content">
+                                        <div class="nsc-panel-dimension-field" flex layout="row" layout-align="start center">
+                                            <label flex="none" data-i18n="panelWidth">Width</label>
+                                            <div class="nsc-panel-dimension-input" flex>
+                                                <input type="number" name="width" id="nsc_redactor_resize_img_width">
+                                            </div>
+                                            <div class="nsc-panel-dimension-type">px</div>
+                                        </div>
+                                        <div class="nsc-panel-dimension-field" flex layout="row" layout-align="start center">
+                                            <label flex="none" data-i18n="panelHeight">Height</label>
+                                            <div class="nsc-panel-dimension-input" flex>
+                                                <input type="number" name="height" id="nsc_redactor_resize_img_height">
+                                            </div>
+                                            <div class="nsc-panel-dimension-type">px</div>
+                                        </div>
+                                        <div class="nsc-panel-drop-check">
+                                            <label class="nsc-noselect" flex layout="row" layout-align="start center">
+                                                <input class="nsc-panel-drop-check-input" type="checkbox" name="proportional" checked="checked" id="nsc_redactor_resize_proportional">
+                                                <span class="nsc-panel-drop-check-text" data-i18n="panelProportional">proportional</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="nsc-panel-drop-actions" flex layout="row" layout-align="center center">
+                                        <button class="nsc-button nsc-button-small" type="button">
+                                            <span class="nsc-button-layout" flex layout="row" layout-align="center center" data-i18n="panelCancel">Cancel</span>
+                                        </button>
+                                        <button class="nsc-button nsc-button-primary nsc-button-small" type="submit" name="">
+                                            <span class="nsc-button-layout" flex layout="row" layout-align="center center" data-i18n="panelChange">Resize</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="nsc-panel-button" type="button" id="nsc_redactor_crop" data-i18n="tooltipCrop" data-i18n-attr="title">
+                        <span class="nsc-icon nsc-icon-crop">&nbsp;</span>
+                    </button>
+                </div>
+                <!-- /group -->
+
+                <!-- group -->
+                <div class="nsc-panel-group" flex="none" layout="row" layout-align="start start">
+                    <!--<div class="nsc-panel-group-title"><span data-i18n="panelTools">Drawing tools</span>:</div>-->
+                    <button class="nsc-panel-button instant not_change_active show-chrome-only" data-on="false" type="button" name="" id="nsc_redactor_formula" data-i18n="tooltipFormula" data-i18n-attr="title">
+                        <span class="nsc-icon nsc-icon-formula">&nbsp;</span>
+                    </button>
+                    <div class="nsc-panel-button separated tools">
+                        <div class="nsc-panel-select" flex layout="row">
+                            <div class="nsc-panel-text nsc-noselect" flex="none" layout="row" layout-align="center center">
+                                <span class="nsc-icon nsc-icon-pen">&nbsp;</span>
+                            </div>
+                            <div class="nsc-panel-trigger">
+                                <span class="nsc-icon nsc-icon-arrow">&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="nsc-panel-dropdown">
+                            <select class="nsc-panel-dropdown-icon" id="nsc_redactor_pens" data-id="redactorPens">
+                                <option value="pen" class="nsc-icon nsc-icon-pen" data-tool-id="PEN" selected="selected" data-i18n="tooltipPen" data-i18n-attr="title">&nbsp;</option>
+                                <option value="highlight" class="nsc-icon nsc-icon-marker" data-tool-id="HIGHLIGHT" data-i18n="tooltipMarker" data-i18n-attr="title">&nbsp;</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="nsc-panel-button separated tools">
+                        <div class="nsc-panel-select" flex layout="row">
+                            <div class="nsc-panel-text nsc-noselect" flex="none" layout="row" layout-align="center center">
+                                <span class="nsc-icon nsc-icon-square">&nbsp;</span>
+                            </div>
+                            <div class="nsc-panel-trigger">
+                                <span class="nsc-icon nsc-icon-arrow">&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="nsc-panel-dropdown">
+                            <select class="nsc-panel-dropdown-icon" id="nsc_redactor_square" data-id="redactorSquare">
+                                <option value="rectangle" class="nsc-icon nsc-icon-square" data-tool-id="EMPTY_RECTANGLE" data-i18n="tooltipSquare" data-i18n-attr="title">&nbsp;</option>
+                                <option value="rounded_rectangle" class="nsc-icon nsc-icon-square-rounded" data-tool-id="ROUNDED_RECTANGLE" data-i18n="tooltipRounded" data-i18n-attr="title">&nbsp;</option>
+                                <option value="sphere" class="nsc-icon nsc-icon-circle" data-tool-id="EMPTY_CIRCLE" data-i18n="tooltipCircle" data-i18n-attr="title">&nbsp;</option>
+                                <option value="ellipse" class="nsc-icon nsc-icon-elipse" data-tool-id="ELLIPSE" data-i18n="tooltipEllipse" data-i18n-attr="title">&nbsp;</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="nsc-panel-button separated tools">
+                        <div class="nsc-panel-select" flex layout="row">
+                            <div class="nsc-panel-text nsc-noselect" flex="none" layout="row" layout-align="center center">
+                                <span class="nsc-icon nsc-icon-arrow-line">&nbsp;</span>
+                            </div>
+                            <div class="nsc-panel-trigger">
+                                <span class="nsc-icon nsc-icon-arrow">&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="nsc-panel-dropdown">
+                            <select class="nsc-panel-dropdown-icon" id="nsc_redactor_arrow" data-id="redactorArrow">
+                                <option value="arrow_line" class="nsc-icon nsc-icon-arrow-line" data-tool-id="ARROW" data-i18n="tooltipArrowLine" data-i18n-attr="title">&nbsp;</option>
+                                <option value="arrow_curve" class="nsc-icon nsc-icon-arrow-curve" data-tool-id="ARROW_CURVE" data-i18n="tooltipArrowCurve" data-i18n-attr="title">&nbsp;</option>
+                                <option value="arrow_double" class="nsc-icon nsc-icon-arrow-double" data-tool-id="ARROW_DOUBLE" data-i18n="tooltipArrowDouble" data-i18n-attr="title">&nbsp;</option>
+                                <option value="line" class="nsc-icon nsc-icon-line" data-tool-id="LINE" data-i18n="tooltipLine" data-i18n-attr="title">&nbsp;</option>
+                                <option value="line_curve" class="nsc-icon nsc-icon-line-curve" data-tool-id="LINE_CURVE" data-i18n="tooltipLineCurve" data-i18n-attr="title">&nbsp;</option>
+                                <option value="line_dotted" class="nsc-icon nsc-icon-line-dotted" data-tool-id="LINE_DOTTED" data-i18n="tooltipLineDotted" data-i18n-attr="title">&nbsp;</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="nsc-panel-button separated tools">
+                        <div class="nsc-panel-select" flex layout="row">
+                            <div class="nsc-panel-text nsc-noselect" flex="none" layout="row" layout-align="center center">
+                                <span class="nsc-icon nsc-icon-note-text-arrow">&nbsp;</span>
+                            </div>
+                            <div class="nsc-panel-trigger">
+                                <span class="nsc-icon nsc-icon-arrow">&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="nsc-panel-dropdown">
+                            <select class="nsc-panel-dropdown-icon" id="nsc_redactor_text_arrow" data-id="redactorTextArrow">
+                                <option value="text_arrow" class="nsc-icon nsc-icon-note-text-arrow" data-tool-id="TEXT_ARROW" data-i18n="tooltipTextArrow" data-i18n-attr="title">&nbsp;</option>
+                                <option value="sticker" class="nsc-icon nsc-icon-note-text" data-tool-id="STICKER" data-i18n="tooltipNoteText" data-i18n-attr="title">&nbsp;</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="nsc-panel-button tools" type="button" id="nsc_redactor_text" data-i18n="tooltipText" data-i18n-attr="title">
+                        <span class="nsc-icon nsc-icon-draw-text" data-tool-id="TEXT">&nbsp;</span>
+                    </button>
+                    <button class="nsc-panel-button tools" type="button" id="nsc_redactor_number" data-i18n="" data-i18n-attr="title">
+                        <span class="nsc-icon nsc-icon-number" data-tool-id="NUMBER">&nbsp;</span>
+                    </button>
+                    <div class="nsc-panel-button separated tools">
+                        <div class="nsc-panel-select" flex layout="row">
+                            <div class="nsc-panel-text nsc-noselect" flex="none" layout="row" layout-align="center center">
+                                <span class="nsc-icon nsc-icon-blur">&nbsp;</span>
+                            </div>
+                            <div class="nsc-panel-trigger">
+                                <span class="nsc-icon nsc-icon-arrow">&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="nsc-panel-dropdown">
+                            <select class="nsc-panel-dropdown-icon" id="nsc_redactor_blur">
+                                <option value="blur" class="nsc-icon nsc-icon-blur" data-tool-id="BLUR" data-i18n="tooltipBlur" data-i18n-attr="title">&nbsp;</option>
+                                <option value="blur-all" class="nsc-icon nsc-icon-blur-all" data-tool-id="BLUR_OTHER" data-i18n="tooltipBlur" data-i18n-attr="title">&nbsp;</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- /group -->
+
+                <!-- group -->
+                <div class="nsc-panel-group" flex="none" layout="row" layout-align="start start">
+                    <!--<div class="nsc-panel-group-title"><span data-i18n="panelParameters">Parameters</span>:</div>-->
+
+                    <div class="nsc-panel-button assembled not_change_active nsc-hide" id="nsc_redactor_panel_line_width" data-i18n="tooltipLineWidth" data-i18n-attr="title">
+                        <div class="nsc-panel-select" flex layout="row">
+                            <div class="nsc-panel-text nsc-noselect" flex="none" layout="row" layout-align="center center">
+                                <span class="nsc-icon nsc-icon-line-width-2">&nbsp;</span>
+                                <span class="nsc-panel-text-value">2px</span>
+                            </div>
+                            <div class="nsc-panel-trigger">
+                                <span class="nsc-icon nsc-icon-arrow">&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="nsc-panel-dropdown">
+                            <select class="nsc-panel-dropdown-text" id="nsc_redactor_line_width">
+                                <option value="1" class="nsc-panel-dropdown-text-value" data-icon="nsc-icon nsc-icon-line-width-1">1px</option>
+                                <option value="2" class="nsc-panel-dropdown-text-value" data-icon="nsc-icon nsc-icon-line-width-2">2px</option>
+                                <option value="3" class="nsc-panel-dropdown-text-value" data-icon="nsc-icon nsc-icon-line-width-3" selected>3px</option>
+                                <option value="4" class="nsc-panel-dropdown-text-value" data-icon="nsc-icon nsc-icon-line-width-4">4px</option>
+                                <option value="5" class="nsc-panel-dropdown-text-value" data-icon="nsc-icon nsc-icon-line-width-5">5px</option>
+                                <option value="6" class="nsc-panel-dropdown-text-value" data-icon="nsc-icon nsc-icon-line-width-6">6px</option>
+                                <option value="7" class="nsc-panel-dropdown-text-value" data-icon="nsc-icon nsc-icon-line-width-7">7px</option>
+                                <option value="8" class="nsc-panel-dropdown-text-value" data-icon="nsc-icon nsc-icon-line-width-8">8px</option>
+                                <option value="9" class="nsc-panel-dropdown-text-value" data-icon="nsc-icon nsc-icon-line-width-9">9px</option>
+                                <option value="10" class="nsc-panel-dropdown-text-value" data-icon="nsc-icon nsc-icon-line-width-10">10px</option>
+                                <option value="15" class="nsc-panel-dropdown-text-value" data-icon="nsc-icon nsc-icon-line-width-15">15px</option>
+                                <option value="20" class="nsc-panel-dropdown-text-value" data-icon="nsc-icon nsc-icon-line-width-20">20px</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="nsc-panel-button assembled not_change_active nsc-hide" id="nsc_redactor_panel_font" data-i18n="tooltipFontAndSize" data-i18n-attr="title">
+                        <div class="nsc-panel-select" flex="" layout="row">
+                            <div class="nsc-panel-text nsc-noselect" flex="none" layout="row" layout-align="center center">
+                                <span class="nsc-panel-text-font">Times New Roman</span>
+                                <span class="nsc-panel-text-value">2px</span>
+                            </div>
+                            <div class="nsc-panel-trigger">
+                                <span class="nsc-icon nsc-icon-arrow">&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="nsc-panel-dropdown">
+                            <div class="nsc-panel-drop-area nsc-panel-drop-area-no-spacing">
+                                <div class="nsc-panel-font-field" flex="" layout="row" layout-align="start center">
+                                    <label flex="none"><span data-i18n="panelSize">Size</span>:</label>
+                                    <div class="nsc-panel-font-input" flex="none">
+                                        <input type="number" max="999" value="24" id="nsc_redactor_font_size">
+                                    </div>
+                                    <div class="nsc-panel-font-type" flex="none">px</div>
+                                </div>
+                                <select class="nsc-panel-dropdown-text" id="nsc_redactor_font_family">
+                                    <option class="nsc-panel-dropdown-text-value font-times-new-roman" value="Times New Roman" selected>Times New Roman</option>
+                                    <option class="nsc-panel-dropdown-text-value font-courier-new" value="Courier New"> Courier New</option>
+                                    <option class="nsc-panel-dropdown-text-value font-arial" value="Arial">Arial</option>
+                                    <option class="nsc-panel-dropdown-text-value font-badscript" value="BadScript">BadScript</option>
+                                    <option class="nsc-panel-dropdown-text-value font-lobster" value="Lobster">Lobster</option>
+                                    <option class="nsc-panel-dropdown-text-value font-marckscript" value="MarckScript">MarckScript</option>
+                                    <option class="nsc-panel-dropdown-text-value font-poiretone" value="PoiretOne">PoiretOne</option>
+                                    <option class="nsc-panel-dropdown-text-value font-robotoslab" value="RobotoSlab">RobotoSlab</option>
+                                    <option class="nsc-panel-dropdown-text-value font-russoone" value="RussoOne">RussoOne</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nsc-panel-button assembled" data-i18n="tooltipColorLineAndText" data-i18n-attr="title">
+                        <div class="nsc-panel-select" flex layout="row">
+                            <div class="nsc-panel-text nsc-noselect" flex="none" layout="row" layout-align="center center">
+                                    <span class="nsc-icon nsc-icon-border-none nsc-panel-icon-fill-border">
+                                        <span class="nsc-panel-icon-fill-inner">&nbsp;</span>
+                                    </span>
+                            </div>
+                            <div class="nsc-panel-trigger">
+                                <span class="nsc-icon nsc-icon-arrow">&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="nsc-panel-dropdown">
+                            <div class="nsc-panel-drop-area">
+                                <input type="text" id="nsc_redactor_stroke_color">
+                                <div class="nsc-panel-spectrum-info" data-i18n="panelAlfaChanel">Двигайте слайдер, чтобы изменить прозрачность.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nsc-panel-button assembled" id="nsc_redactor_panel_fill_color" data-i18n="tooltipColorFull" data-i18n-attr="title">
+                        <div class="nsc-panel-select" flex layout="row">
+                            <div class="nsc-panel-text nsc-noselect" flex="none" layout="row"
+                                 layout-align="center center">
+                                    <span class="nsc-icon nsc-icon-fill-none nsc-panel-icon-fill">
+                                        <span class="nsc-panel-icon-fill-inner">&nbsp;</span>
+                                    </span>
+                            </div>
+                            <div class="nsc-panel-trigger">
+                                <span class="nsc-icon nsc-icon-arrow">&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="nsc-panel-dropdown">
+                            <div class="nsc-panel-drop-area">
+                                <input type="text" id="nsc_redactor_fill_color">
+                                <div class="nsc-panel-spectrum-info" data-i18n="panelAlfaChanel">Двигайте слайдер, чтобы изменить прозрачность.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nsc-panel-button assembled" id="nsc_redactor_panel_fill_text_color" data-i18n="tooltipColorFull" data-i18n-attr="title">
+                        <div class="nsc-panel-select" flex layout="row">
+                            <div class="nsc-panel-text nsc-noselect" flex="none" layout="row"
+                                 layout-align="center center">
+                                    <span class="nsc-icon nsc-icon-fill-none nsc-panel-icon-fill">
+                                        <span class="nsc-panel-icon-fill-inner">&nbsp;</span>
+                                    </span>
+                            </div>
+                            <div class="nsc-panel-trigger">
+                                <span class="nsc-icon nsc-icon-arrow">&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="nsc-panel-dropdown">
+                            <div class="nsc-panel-drop-area">
+                                <input type="text" id="nsc_redactor_fill_text_color">
+                                <div class="nsc-panel-spectrum-info" data-i18n="panelAlfaChanel">Двигайте слайдер, чтобы
+                                    изменить прозрачность.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nsc-panel-button assembled" data-i18n="tooltipColorAndSizeShadow" data-i18n-attr="title">
+                        <div class="nsc-panel-select" flex layout="row">
+                            <div class="nsc-panel-text nsc-noselect" flex="none" layout="row" layout-align="center center">
+                                <span class="nsc-icon nsc-icon-shadow">&nbsp;</span>
+                            </div>
+                            <div class="nsc-panel-trigger">
+                                <span class="nsc-icon nsc-icon-arrow">&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="nsc-panel-dropdown">
+                            <div class="nsc-panel-drop-area">
+                                <div class="nsc-panel-shadow-content" flex layout="row" layout-align="start center">
+                                    <div class="nsc-panel-drop-check">
+                                        <label class="nsc-noselect" flex layout="row" layout-align="start center">
+                                            <input class="nsc-panel-drop-check-input" id="nsc_redactor_shadow" type="checkbox">
+                                            <span class="nsc-panel-drop-check-text" data-i18n="panelShadow">Shadow</span>
+                                        </label>
+                                    </div>
+                                    <div class="nsc-panel-button assembled">
+                                        <input type="text" id="nsc_redactor_shadow_color">
+                                    </div>
+                                    <div class="nsc-panel-dimension-field" flex layout="row" layout-align="start center">
+                                        <label flex="none" data-i18n="panelSize">Size</label>
+                                        <div class="nsc-panel-dimension-input" flex>
+                                            <input id="nsc_redactor_shadow_width" max="50" min="1" value="1" type="number">
+                                        </div>
+                                        <div class="nsc-panel-dimension-type">px</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="nsc-panel-button change not_change_active" type="button" id="nsc_redactor_lock" data-i18n="tooltipLock" data-i18n-attr="title">
+                        <span class="nsc-icon nsc-icon-unlock">&nbsp;</span>
+                        <span class="nsc-icon nsc-panel-button-change-icon nsc-icon-lock">&nbsp;</span>
+                    </button>
+                </div>
+                <!-- /group -->
+
+                <!-- group -->
+                <div class="nsc-panel-group" flex="none" layout="row" layout-align="start start">
+                    <!--<div class="nsc-panel-group-title"><span data-i18n="panelActions">Actions</span>:</div>-->
+                    <button class="nsc-panel-button instant not_change_active" type="button" id="nsc_redactor_undo" data-i18n="tooltipUndo" data-i18n-attr="title">
+                        <span class="nsc-icon nsc-icon-undo">&nbsp;</span>
+                    </button>
+                    <button class="nsc-panel-button instant not_change_active" type="button" id="nsc_redactor_redo" data-i18n="tooltipRedo" data-i18n-attr="title">
+                        <span class="nsc-icon nsc-icon-redo">&nbsp;</span>
+                    </button>
+                    <button class="nsc-panel-button instant not_change_active" type="button" id="nsc_redactor_undo_all" data-i18n="tooltipUndoAll" data-i18n-attr="title">
+                        <span class="nsc-icon nsc-icon-undo-all">&nbsp;</span>
+                    </button>
+                </div>
+                <!-- /group -->
+
+                <!-- group -->
+                <!--<div class="nsc-panel-group" flex="none" layout="row" layout-align="start start">-->
+
+                <!--<div class="nsc-panel-button separated tools">-->
+                <!--<div class="nsc-panel-select" flex layout="row">-->
+                <!--<div class="nsc-panel-text nsc-noselect" flex="none" layout="row" layout-align="center center">-->
+                <!--<span class="nsc-icon nsc-icon-numbers">&nbsp;</span>-->
+                <!--</div>-->
+                <!--<div class="nsc-panel-trigger">-->
+                <!--<span class="nsc-icon nsc-icon-arrow">&nbsp;</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="nsc-panel-dropdown">-->
+                <!--<select class="nsc-panel-dropdown-icon" id="nsc_redactor_numbers">-->
+                <!--<option class="nsc-icon nsc-icon-number" value="number" selected>&nbsp;</option>-->
+                <!--<option class="nsc-icon nsc-icon-numbers" value="numbers">&nbsp;</option>-->
+                <!--</select>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!-- /group -->
+
+            </div>
+            <div class="nsc-panel-actions" flex="none" layout="row" layout-align="start center">
+                <button class="nsc-button nsc-button-primary nsc-button-small" type="button" name="" id="nsc_done">
+                    <span class="nsc-button-layout" flex layout="row" layout-align="center center" data-i18n="editBtnDone">DONE</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="nsc-canvas-wrap" id="nsc_canvas_wrap">
+        <div class="nsc-canvas-scroll" id="nsc_canvas_scroll">
+            <div id="nsc_drop_file" class="nsc-hide">
+                <div class="receiver">
+                    <span class="nsc-icon ic-gallery-16">&nbsp;</span>
+                    <span data-i18n="labelDropImage">drop image here</span>
+                </div>
+
+                <button class="nsc-button nsc-button-main" type="button" id="nsc_create_blank">
+                    <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                        <span class="nsc-icon nsc-icon-blank-screen-24">&nbsp;</span>
+                        <span data-i18n="btnBlankScreen">Blank screen</span>
+                    </span>
+                </button>
+                <button class="nsc-button nsc-button-main show-chrome-only" type="button" id="nsc_capture_desktop">
+                    <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                        <span class="nsc-icon nsc-icon-entire-page-24">&nbsp;</span>
+                        <span data-i18n="btnDesktop">Capture from Desktop</span>
+                    </span>
+                </button>
+            </div>
+            <div class="nsc-canvas" id="nsc_canvas"></div>
+        </div>
+    </div>
+</div>
+<div id="nsc_video_page" class="nsc-hide">
+    <div class="nsc-ve-layout " flex layout="column">
+
+        <!-- video editor top -->
+        <div class="nsc-ve-top" flex="none" layout="row" layout-align="start center">
+
+            <!-- panel -->
+            <div class="nsc-panel nsc-panel-static">
+                <div class="nsc-panel-layout" flex layout="row" layout-align="start center">
+                    <div class="nsc-panel-actions" flex="none" layout="row" layout-align="start center">
+                        <div class="nsc-panel-title" data-i18n="editVideoTitle">Video editor</div>
+                    </div>
+                    <div class="nsc-panel-groups" flex layout="row" layout-align="center start" layout-wrap></div>
+                    <div class="nsc-panel-actions" flex="none" layout="row" layout-align="start center">
+                        <button class="nsc-button nsc-button-small" type="button" name="" id="nsc_discard" style="margin-right: 10px">
+                            <span class="nsc-button-layout" flex layout="row" layout-align="center center" data-i18n="editBtnDiscard">Discard</span>
+                        </button>
+                        <button class="nsc-button nsc-button-primary nsc-button-small" type="button" name="" id="nsc_done_video">
+                            <span class="nsc-button-layout" flex layout="row" layout-align="center center" data-i18n="editBtnDone">DONE</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- /panel -->
+
+        </div>
+        <!-- /video editor top -->
+
+        <!-- video editor content -->
+        <div class="nsc-ve-content" flex layout="column">
+            <div class="nsc-ve-content-wrapper" flex="auto" layout="row" layout-align="center center">
+
+                <!-- add text window -->
+                <div class="nsc-ve-window nsc-ve-window-text nsc-hide">
+                    <div class="nsc-ve-window-text-panel">
+
+                        <div class="nsc-panel-groups" flex layout="row" layout-align="space-between start">
+
+                            <!-- group -->
+                            <div class="nsc-panel-group" flex="none" layout="row" layout-align="start start">
+                                <div class="nsc-panel-group-title">Font:</div>
+                                <div class="nsc-panel-button assembled">
+                                    <div class="nsc-panel-select" flex="none" layout="row">
+                                        <div class="nsc-panel-text nsc-noselect" flex="none" layout="row" layout-align="center center">
+                                            <span class="nsc-panel-text-font">Times New Roman</span>
+                                        </div>
+                                        <div class="nsc-panel-trigger">
+                                            <span class="nsc-icon nsc-icon-arrow"></span>
+                                        </div>
+                                    </div>
+                                    <div class="nsc-panel-dropdown">
+                                        <div class="nsc-panel-drop-area nsc-panel-drop-area-no-spacing">
+                                            <ul>
+                                                <li class="nsc-panel-dropdown-text " flex="" layout="row" layout-align="start center">
+                                                    <span class="nsc-panel-dropdown-text-value">TimesNewRomanPSMT</span>
+                                                </li>
+                                                <li class="nsc-panel-dropdown-text " flex="" layout="row" layout-align="start center">
+                                                    <span class="nsc-panel-dropdown-text-value">Courier New</span>
+                                                </li>
+                                                <li class="nsc-panel-dropdown-text " flex="" layout="row" layout-align="start center">
+                                                    <span class="nsc-panel-dropdown-text-value">Arial</span>
+                                                </li>
+                                                <li class="nsc-panel-dropdown-text " flex="" layout="row"
+                                                    layout-align="start center">
+                                                    <span class="nsc-panel-dropdown-text-value">Bad script</span>
+                                                </li>
+                                                <li class="nsc-panel-dropdown-text " flex="" layout="row"
+                                                    layout-align="start center">
+                                                    <span class="nsc-panel-dropdown-text-value">Lobster</span>
+                                                </li>
+                                                <li class="nsc-panel-dropdown-text " flex="" layout="row"
+                                                    layout-align="start center">
+                                                    <span class="nsc-panel-dropdown-text-value">MarckScript</span>
+                                                </li>
+                                                <li class="nsc-panel-dropdown-text " flex="" layout="row"
+                                                    layout-align="start center">
+                                                    <span class="nsc-panel-dropdown-text-value">PorietOne</span>
+                                                </li>
+                                                <li class="nsc-panel-dropdown-text " flex="" layout="row"
+                                                    layout-align="start center">
+                                                    <span class="nsc-panel-dropdown-text-value">RobotoSlab</span>
+                                                </li>
+                                                <li class="nsc-panel-dropdown-text " flex="" layout="row"
+                                                    layout-align="start center">
+                                                    <span class="nsc-panel-dropdown-text-value">RussoOne</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /group -->
+
+                            <!-- group -->
+                            <div class="nsc-panel-group" flex="none" layout="row" layout-align="start start">
+                                <div class="nsc-panel-group-title">Size:</div>
+
+                                <div class="nsc-panel-button assembled">
+                                    <div class="nsc-panel-select" flex layout="row">
+                                        <div class="nsc-panel-text nsc-noselect" flex="none" layout="row"
+                                             layout-align="center center">
+                                            <span class="nsc-panel-text-value">18px</span>
+                                        </div>
+                                        <div class="nsc-panel-trigger">
+                                            <span class="nsc-icon nsc-icon-arrow"></span>
+                                        </div>
+                                    </div>
+                                    <div class="nsc-panel-dropdown">
+                                        <ul>
+                                            <li class="nsc-panel-dropdown-text " flex layout="row"
+                                                layout-align="start center">
+                                                <span class="nsc-panel-dropdown-text-value">16px</span>
+                                            </li>
+                                            <li class="nsc-panel-dropdown-text " flex layout="row"
+                                                layout-align="start center">
+                                                <span class="nsc-panel-dropdown-text-value">18px</span>
+                                            </li>
+                                            <li class="nsc-panel-dropdown-text " flex layout="row"
+                                                layout-align="start center">
+                                                <span class="nsc-panel-dropdown-text-value">20px</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="nsc-panel-button assembled">
+                                    <div class="nsc-panel-select" flex layout="row">
+                                        <div class="nsc-panel-text nsc-noselect" flex="none" layout="row"
+                                             layout-align="center center">
+                      <span class="nsc-icon nsc-icon-border-none nsc-panel-icon-fill-border">
+                        <span class="nsc-panel-icon-fill-inner" style="border-color:#;"></span>
+                      </span>
+                                        </div>
+                                        <div class="nsc-panel-trigger">
+                                            <span class="nsc-icon nsc-icon-arrow"></span>
+                                        </div>
+                                    </div>
+                                    <div class="nsc-panel-dropdown">
+                                        <div class="nsc-panel-drop-area">
+                                            <div class="nsc-panel-colors">
+                                                Colorpicker
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="nsc-panel-button assembled">
+                                    <div class="nsc-panel-select" flex layout="row">
+                                        <div class="nsc-panel-text nsc-noselect" flex="none" layout="row"
+                                             layout-align="center center">
+                      <span class="nsc-icon nsc-icon-fill-none nsc-panel-icon-fill">
+                        <span class="nsc-panel-icon-fill-inner" style="background:#;"></span>
+                      </span>
+                                        </div>
+                                        <div class="nsc-panel-trigger">
+                                            <span class="nsc-icon nsc-icon-arrow"></span>
+                                        </div>
+                                    </div>
+                                    <div class="nsc-panel-dropdown">
+                                        <div class="nsc-panel-drop-area">
+                                            <div class="nsc-panel-colors">
+
+                                                Colorpicker
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- /group -->
+
+                        </div>
+
+                    </div>
+                    <div class="nsc-ve-window-text-area">
+                        <textarea name="">Adwords Keyword Research For Beginners</textarea>
+                    </div>
+                    <div class="nsc-ve-window-actions" flex layout="row" layout-align="start start">
+                        <div class="nsv-ve-window-actions-aside" flex="none">
+                            <button class="nsc-button cancel nsc-button-small" type="button" name="">
+                <span class="nsc-button-layout" flex="" layout="row" layout-align="center center">
+                  DELETE
+                </span>
+                            </button>
+                        </div>
+                        <div class="nsv-ve-window-actions-primary" flex="noshrink" layout="row" layout-align="end start">
+                            <button class="nsc-button nsc-button-small" type="button" name="">
+                <span class="nsc-button-layout" flex="" layout="row" layout-align="center center">
+                  CANCEL
+                </span>
+                            </button>
+                            <button class="nsc-button nsc-button-primary nsc-button-small" type="button" name="">
+                <span class="nsc-button-layout" flex="" layout="row" layout-align="center center">
+                  SAVE
+                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /add text window -->
+
+                <div class="nsc-ve-content-view">
+                    <div class="nsc-ve-content-view-inner" id="nsc_video_container">
+                        <video controlsList="nodownload nofullscreen noremoteplayback" id="nsc_video_player">&nbsp</video>
+                        <div class="nsc-preview-loading" id="nsc_video_loading">
+                            <span class="nsc-icon nsc-icon-loading rotating-horizontally">&nbsp;</span>
+                            <span data-i18n>Loading...</span>
+                        </div>
+                        <div class="nsc-ve-content-view-text nsc-hide">Adwords Keyword Research For Beginners</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /video editor content -->
+
+        <!-- video editor options -->
+        <div class="nsc-ve-options" flex="none">
+            <div class="nsc-ve-options-wrapper">
+
+                <!-- nsc-ve-options-container -->
+                <div class="nsc-ve-options-container" flex layout="row" layout-align="start center">
+
+                    <!-- nsc-ve-controls -->
+                    <div class="nsc-ve-controls" flex="none" layout="row" layout-align="start center">
+                        <div class="nsc-ve-controls-button" id="nsc_video_pause" flex="none">
+                            <button class="nsc-button nsc-button-icon-cleared" type="button" name="">
+                            <span class="nsc-button-layout" flex layout="row" layout-align="center center"><i
+                                    class="nsc-icon nsc-icon-pause-white-24">&nbsp;</i></span>
+                            </button>
+                        </div>
+                        <div class="nsc-ve-controls-button" id="nsc_video_play" flex="none">
+                            <button class="nsc-button nsc-button-icon-cleared" type="button" name="">
+                            <span class="nsc-button-layout" flex layout="row" layout-align="center center"><i
+                                    class="nsc-icon nsc-icon-play-white-24">&nbsp;</i></span>
+                            </button>
+                        </div>
+                        <div class="nsc-ve-controls-time" id="nsc_video_time" flex="none">0:59:22</div>
+                    </div>
+                    <!-- /nsc-ve-controls -->
+
+                    <!-- nsc-ve-actions -->
+                    <div class="nsc-ve-actions" flex layout="row" layout-align="end center">
+
+                        <div class="nsc-ve-actions-group" flex="none" layout="row" layout-align="start start">
+                            <div class="nsc-ve-actions-button nsc-hide" flex="none">
+                                <button class="nsc-button nsc-button-icon-cleared" type="button" name="">
+                                    <span class="nsc-button-layout" flex layout="row" layout-align="center center"><i class="nsc-icon nsc-icon-text-add-16">&nbsp;</i></span>
+                                </button>
+                            </div>
+                            <div class="nsc-ve-actions-button nsc-hide" flex="none">
+                                <button class="nsc-button nsc-button-icon-cleared" type="button" name="" id="nsc_video_blur" data-i18n="tooltipBlur" data-i18n-attr="title">
+                                    <span class="nsc-button-layout" flex layout="row" layout-align="center center"><i class="nsc-icon nsc-icon-blur-write">&nbsp;</i></span>
+                                </button>
+                            </div>
+                            <div class="nsc-ve-actions-button" flex="none">
+                                <button class="nsc-button nsc-button-icon-cleared" type="button" name="" id="nsc_video_crop" data-i18n="tooltipCrop" data-i18n-attr="title">
+                                    <span class="nsc-button-layout" flex layout="row" layout-align="center center"><i class="nsc-icon nsc-icon-crop-white">&nbsp;</i></span>
+                                </button>
+                            </div>
+                            <div class="nsc-ve-actions-button" flex="none">
+                                <!-- cut window -->
+                                <div class="nsc-ve-window nsc-ve-window-cut nsc-hide" style="left: auto; right: 0;" id="nsc_video_button_trim_window">
+                                    <!--<div class="nsc-ve-window-radio-set">-->
+                                    <!--<label class="nsc-ve-window-radio" flex layout="row" layout-align="start start">-->
+                                    <!--<span class="nsc-ve-window-radio-text" flex data-i18n="videoEditorTrimTitle">Trim selected</span>-->
+                                    <!--</label>-->
+                                    <!--</div>-->
+                                    <div class="nsc-ve-window-actions" flex layout="row" layout-align="start start">
+                                        <div class="nsv-ve-window-actions-primary" flex="noshrink" layout="row"
+                                             layout-align="center center">
+                                            <button class="nsc-button nsc-button-small" type="button" name="" id="nsc_video_button_cancel_trim">
+                                                <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="videoEditorTrimCancel">Cancel</span>
+                                            </button>
+                                            <button class="nsc-button nsc-button-primary nsc-button-small" type="button" name="" id="nsc_video_button_trim" data-i18n="videoEditorTrimTooltip" data-i18n-attr="title">
+                                                <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="videoEditorTrimApply" style="white-space: nowrap;">Apply trim</span>
+                                            </button>
+                                            <button class="nsc-button nsc-button-primary nsc-button-small nsc-hide" type="button" name="" id="nsc_video_button_cup" data-i18n="videoEditorKeepTooltip" data-i18n-attr="title">
+                                                <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="videoEditorKeepApply" style="white-space: nowrap;">Apply Keep</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /cut window -->
+
+                                <button class="nsc-button nsc-button-icon-cleared" type="button" name="" id="nsc_video_button_open_trim" data-i18n="tooltipTrim" data-i18n-attr="title">
+                                    <span class="nsc-button-layout" flex layout="row" layout-align="center center"><i class="nsc-icon nsc-icon-scissors-white-16">&nbsp;</i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- nsc-ve-zoom -->
+                        <div class="nsc-ve-zoom nsc-hide" flex="none" layout="row" layout-align="start center">
+                            <div class="nsc-ve-zoom-title" flex="none" data-i18n="videoEditorTimeline">Timeline zoom</div>
+                            <div class="nsc-ve-zoom-range" flex="none">
+                                <input class="range" min="0" max="100" step="1" value="0" type="range" id="nsc_video_zoom_range">
+                            </div>
+                            <div class="nsc-ve-zoom-time" flex="none" id="nsc_video_zoom_time">1 / 100</div>
+                        </div>
+                        <!-- /nsc-ve-zoom -->
+
+                    </div>
+                    <!-- /nsc-ve-actions -->
+
+                </div>
+                <!-- /nsc-ve-options-container -->
+
+                <!-- nsc-ve-timeline -->
+                <div class="nsc-ve-timeline-outer" id="nsc_video_time_line_box">
+                    <div class="nsc-ve-timeline" id="nsc_video_time_line">
+                        <div class="nsc-ve-timeline-segments" id="nsc_video_time_line_segments"></div>
+
+                        <div class="nsc-ve-timeline-cursor" id="nsc_video_time_line_cursor"></div>
+
+                        <div class="nsc-ve-timeline-choose nsc-hide" id="nsc_video_timeline_choose">
+                            <div class="nsc-ve-timeline-choose-handler nsc-ve-timeline-choose-handler-left">
+                                <span class="nsc-ve-timeline-choose-handler-inner-shape">&nbsp;</span>
+                            </div>
+                            <div class="nsc-ve-timeline-choose-handler nsc-ve-timeline-choose-handler-right">
+                                <span class="nsc-ve-timeline-choose-handler-inner-shape">&nbsp;</span>
+                            </div>
+                        </div>
+
+                        <div class="nsc-ve-timeline-bg"></div>
+                    </div>
+                </div>
+                <!-- /nsc-ve-timeline -->
+            </div>
+        </div>
+        <!-- /vide editor options -->
+    </div>
+</div>
+
+<div id="nsc_done_page" class="nsc-done-page nsc-hide">
+
+    <!-- done page layout -->
+    <div class="nsc-done-page-layout" flex layout="column">
+
+        <!-- heading actions -->
+        <div class="nsc-heading-actions" flex="none" layout="row" layout-align="end start">
+            <span id="nsc_video_limit_time" class="nsc-hide">
+                <a href="https://nimbusweb.me/capture-pro/" target="_blank"></a>
+            </span>
+            <span id="nsc_manage_devices" class="nsc-hide">
+                <a href="https://nimbusweb.me/user-billing/?utm_source=capture&utm_medium=addon&utm_campaign=edit_page" target="_blank" data-i18n="nimbusManageDevices">Manage devices</a>
+            </span>
+            <span id="nsc_increase_limit" class="nsc-hide">
+                <a href="https://nimbusweb.me/order-capture-pro/?utm_source=capture&utm_medium=addon&utm_campaign=edit_page" target="_blank" data-i18n="nimbusIncreaseLimit">Increase limit</a>
+            </span>
+            <span id="nsc_upgrade_to_nimbus_pro" class="nsc-hide">
+                🔥 <a href="https://nimbusweb.me/capture-pro/?utm_source=capture&utm_medium=addon&utm_campaign=premium_banner_savescreen_upgrade" target="_blank" data-i18n="nimbusGoPro">Upgrade to Nimbus Pro</a>
+            </span>
+            <span>
+                <a href="https://nimbusweb.me/share/3552387/mp8nr3ee75mtgyqfonnc?utm_source=capture&utm_medium=addon&utm_campaign=edit_page" target="_blank" data-i18n="nimbusHelp" id="nimbus_help_link">Help</a>
+            </span>
+            <span><a href="https://nimbusweb.me/contact-us.php?utm_source=capture&utm_medium=addon&utm_campaign=edit_page" target="_blank" data-i18n="nimbusSupport">Support</a></span>
+<!--            <span><a href="https://nimbusweb.me/discounts-for-education.php?utm_source=capture&utm_medium=addon&utm_campaign=edit_page" target="_blank" data-i18n="nimbusEducationDiscounts">Discounts for education</a></span>-->
+            <!--<span id="nsc_link_twitter"><a href="https://twitter.com/nimbuswebinc" target="_blank">Twitter</a></span>-->
+            <!--<span id="nsc_link_facebook"><a href="https://www.facebook.com/nimbuswebco" target="_blank">Facebook</a></span>-->
+            <span id="nsc_nimbus_logout_link" class="nsc-hide"><a href="" target="_blank" data-i18n="nimbusLogout">Выйти из Nimbus</a></span>
+        </div>
+        <!-- /heading actions -->
+
+        <!-- save screenshot block -->
+        <div class="nsc-save-screenshot-block" flex="none">
+            <a id="nsc_main_title" href="">
+                <span class="nsc-save-screenshot-layout" flex layout="row">
+                    <i class="nsc-icon nsc-icon-save-screenshot"></i>
+                    <span>Save screenshot</span>
+                </span>
+            </a>
+        </div>
+        <!-- /save screenshot block -->
+
+        <!-- save panel -->
+        <div class="nsc-save-panel" flex="none">
+            <!-- nsc-save-buttons -->
+            <div class="nsc-save-buttons" flex layout="row">
+                <button class="nsc-button" type="button" name="" id="nsc_button_back" data-i18n="tooltipEditBtnBack" data-i18n-attr="title">
+                    <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                        <i class="nsc-icon nsc-icon-back" style="margin: 0">&nbsp;</i>
+                    </span>
+                </button>
+                <button class="nsc-button" type="button" name="" id="nsc_button_nimbus" data-i18n="tooltipEditBtnNimbus" data-i18n-attr="title">
+
+                    <span class="nsc-button-layout nsc-flex nsc-layout-row" id="nsc_button_nimbus_screenshot">
+                        <i class="nsc-icon nsc-icon-save-to-nimbus-24">&nbsp;</i><span data-i18n="editBtnNimbusScreen">Upload screenshot</span>
+
+                    </span>
+                    <span class="nsc-button-layout nsc-flex nsc-layout-row" id="nsc_button_nimbus_video">
+                        <i class="nsc-icon nsc-icon-save-to-nimbus-24">&nbsp;</i><span data-i18n="editBtnNimbusVideo">Upload video</span>
+                    </span>
+                </button>
+                <div class="nsc-trigger-panel-container save-from-disk is_trigger">
+                    <button class="nsc-button nsc-button-save-image" type="button" name="" id="nsc_button_save_image" data-i18n="editBtnSave" data-i18n-attr="title">
+                        <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                            <i class="nsc-icon nsc-icon-save-image">&nbsp;</i><span data-i18n="editBtnSave">Save as Image</span>
+                        </span>
+                    </button>
+                    <div class="nsc-trigger-panel show-chrome-only" style="text-align: center; padding: 10px;">
+                        <button class="nsc-button nsc-button-small" type="button" name="" id="nsc_button_pdf">
+                            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="editBtnSavePDF">Готово</span>
+                        </button>
+                    </div>
+                    <span class="nsc-choose-trigger-panel show-chrome-only">&nbsp;</span>
+                </div>
+                <button class="nsc-button show-chrome-only" type="button" name="" id="nsc_button_save_video" data-i18n="editBtnSaveVideo" data-i18n-attr="title">
+                    <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                        <i class="nsc-icon nsc-icon-save-image">&nbsp;</i><span data-i18n="editBtnSaveVideo">Save as Video</span>
+                    </span>
+                </button>
+                <button class="nsc-button" type="button" name="" id="nsc_button_quick" data-i18n="tooltipBtnQuickUpload" data-i18n-attr="title">
+                    <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                        <i class="nsc-icon nsc-icon-quick-upload-24">&nbsp;</i><span data-i18n="editBtnQuickUpload">Quick Upload</span>
+                    </span>
+                </button>
+                <div class="nsc-trigger-panel-container nsc-button-google-drive">
+                    <button class="nsc-button" type="button" name="" id="nsc_button_google" data-i18n="tooltipEditBtnDrive" data-i18n-attr="title">
+                        <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                            <i class="nsc-icon nsc-icon-google-drive">&nbsp;</i><span data-i18n="editBtnDrive">Google Drive</span>
+                        </span>
+                    </button>
+                    <div class="nsc-trigger-panel nsc-trigger-panel-google">
+                        <h5 class="nsc-trigger-panel-title" id="nsc_google_drive_open_folders">&nbsp;</h5>
+                        <div class="nsc-trigger-panel-bottom">
+                            <div>
+                                <input class="nsc-trigger-panel-checkbox" type="checkbox" name="share" value="" id="nsc_google_drive_share">
+                                <span data-i18n="gDriveUploadPrivate">private</span>
+                            </div>
+                            <button class="nsc-trigger-panel-logout" id="nsc_google_drive_logout" data-i18n="gDriveLogout">logout</button>
+                        </div>
+                    </div>
+                    <span class="nsc-choose-trigger-panel">&nbsp;</span>
+                </div>
+                <div class="nsc-trigger-panel-container dropbox">
+                    <button class="nsc-button" type="button" name="" id="nsc_button_dropbox" data-i18n="tooltipEditBtnDropbox" data-i18n-attr="title">
+                        <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                            <i class="nsc-icon nsc-icon-dropbox-24">&nbsp;</i><span data-i18n="editBtnDropbox">dropbox</span>
+                        </span>
+                    </button>
+                    <div class="nsc-trigger-panel">
+                        <h5 class="nsc-trigger-panel-title" id="nsc_dropbox_open_folders">&nbsp;</h5>
+                        <span class="nsc-trigger-panel-logout">(<a id="nsc_dropbox_logout" data-i18n="gDriveLogout">logout</a>)</span>
+                    </div>
+                    <span class="nsc-choose-trigger-panel">&nbsp;</span>
+                </div>
+                <button class="nsc-button" type="button" name="" id="nsc_button_youtube" data-i18n="tooltipEditBtnYoutube" data-i18n-attr="title">
+                    <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                        <i class="nsc-icon nsc-icon-youtube-24">&nbsp;</i><span data-i18n="editBtnYoutube">Youtube</span>
+                    </span>
+                </button>
+                <button class="nsc-button" type="button" name="" id="nsc_button_slack" data-i18n="tooltipEditBtnSlack" data-i18n-attr="title">
+                    <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                        <i class="nsc-icon nsc-icon-slack">&nbsp;</i><span data-i18n="editBtnSlack">Slack</span>
+                    </span>
+                </button>
+                <button class="nsc-button show-firefox-only" type="button" name="" id="nsc_button_copy_to_clipboard" data-i18n="editBtnCopy" data-i18n-attr="title">
+                    <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                        <i class="nsc-icon nsc-icon-copy-clipboard">&nbsp;</i><span data-i18n="editBtnCopy">Copy to clipboard</span>
+                    </span>
+                </button>
+                <button class="nsc-button" type="button" name="" id="nsc_button_print" data-i18n="editBtnPrint" data-i18n-attr="title">
+                    <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                        <i class="nsc-icon nsc-icon-print">&nbsp;</i><span data-i18n="editBtnPrint">Print</span>
+                    </span>
+                </button>
+            </div>
+            <!-- /nsc-save-buttons -->
+
+            <div class="nsc-message-status-visible">
+                <!-- linked -->
+                <div class="nsc-linked nsc-flex nsc-layout-row" id="nsc_linked">
+                    <div class="nsc-linked-field nsc-flex">
+                        <input type="text" name="" value="http://nimbus.web/link">
+                    </div>
+                    <button class="nsc-button nsc-button-icon no-flex-shrink" type="button" id="nsc_copy_url" data-i18n="tooltipCopy" data-i18n-attr="title">
+                        <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                            <i class="nsc-icon nsc-icon-copy-clipboard"></i>
+                        </span>
+                    </button>
+
+                    <button class="nsc-button nsc-button-icon no-flex-shrink show-chrome-only" type="button" data-i18n="tooltipClassroomSend" data-i18n-attr="title">
+                        <div id="nsc_share_classroom"></div>
+                    </button>
+                </div>
+                <!-- /linked -->
+
+                <a href="https://nimbus.everhelper.me/client/" target="_blank" id="nsc_message_view_uploads">
+                    <button class="nsc-button nsc-button-primary" type="submit" name="">
+                        <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusViewUploads">View my Nimbus uploads</span>
+                    </button>
+                </a>
+                <a href="https://www.dropbox.com/home/" target="_blank" id="nsc_message_view_uploads_dropbox">
+                    <button class="nsc-button nsc-button-primary" type="submit" name="">
+                        <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusViewUploadsToDropbox">Open file in Dropbox</span>
+                    </button>
+                </a>
+                <div id="nsc_loading_upload_file"></div>
+            </div>
+        </div>
+        <!-- /save panel -->
+
+        <!-- wrapper -->
+        <div class="nsc-wrapper" flex="noshrink" layout="column">
+            <div class="nsc-done-content" flex="noshrink" layout="row">
+                <div class="nsc-done-main nsc-flex nsc-layout-column">
+
+                    <div class="nsc-indicator nsc-hide" flex="none" layout="row" layout-align="space-between end" id="nsc_indicator">
+                        <div class="nsc-indicator-screen-info" flex="none">
+                            <span class="nsc-indicator-screen-info-format" id="nsc_indicator_format"></span>
+                            <span class="nsc-indicator-screen-info-size" id="nsc_indicator_size"></span>
+                            <span class="nsc-indicator-screen-info-weight" id="nsc_indicator_weight"></span>
+                            <div class="nsc-indicator-screen-info-enable-watermark nsc-hide">
+                                <button class="nsc-button nsc-button-icon-cleared" data-i18n="tooltipOptionsWatermark" data-i18n-attr="title" type="button" name="open-plugin-option" id="nsc_open_watermark_option" style="position: relative; top: 3px; margin-right: 3px;">
+                                    <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                                        <i class="nsc-icon nsc-icon-options-16"></i>
+                                    </span>
+                                </button>
+                                <label for="nsc_enable_watermark" data-i18n="optionLabelEnableWatermark">enable watermark</label>
+                                <input type="checkbox" name="enable-watermark" id="nsc_enable_watermark" style="vertical-align: middle;">
+                            </div>
+                            <div class="nsc-indicator-convert-action nsc-hide" flex="none" id="nsc_video_convert">
+                                <button class="nsc-convert-button nsc-button nsc-button-icon-cleared" type="button" name="editor" data-i18n="tooltipVideoEditor" data-i18n-attr="title">
+                                <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                                    <i class="nsc-icon nsc-icon-edit-video-16"></i><span data-i18n="videoEditor">Edit video</span>
+                                </span>
+                                </button>
+                                <button class="nsc-convert-button nsc-button nsc-button-icon-cleared" type="button" name="menu">
+                                    <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                                        <i class="nsc-icon nsc-icon-options-white-16"></i><span data-i18n="videoConvertOpen">Convert to MP4 or Gif</span>
+                                    </span>
+                                </button>
+
+                                <!-- nsc-convert-menu -->
+                                <div class="nsc-convert-menu">
+                                    <div class="nsc-convert-menu-inner">
+                                        <div class="nsc-convert-menu-types" flex layout="row" layout-align="center center">
+                                            <label class="nsc-convert-menu-radio" flex="none" layout="row" layout-align="start center">
+                                                <input name="format" value="webm" type="radio">
+                                                <span class="nsc-icon nsc-icon-webm">&nbsp;</span>
+                                            </label>
+                                            <label class="nsc-convert-menu-radio" flex="none" layout="row" layout-align="start center">
+                                                <input name="format" checked="checked" value="mp4" type="radio">
+                                                <span class="nsc-icon nsc-icon-mp4-24">&nbsp;</span>
+                                            </label>
+                                            <label class="nsc-convert-menu-radio" flex="none" layout="row" layout-align="start center">
+                                                <input name="format" value="gif" type="radio">
+                                                <span class="nsc-icon nsc-icon-gif-24">&nbsp;</span>
+                                            </label>
+                                        </div>
+                                        <div class="nsc-convert-menu-size">
+                                            <div class="nsc-convert-menu-size-title"><span data-i18n="videoConvertSize">Size</span>:<span id="nsc_video_convert_size">890x560 px</span></div>
+                                            <div class="nsc-convert-menu-size-quality">
+                                                <input class="range" name="size" min="1" max="10" step="1" value="3" type="range">
+                                            </div>
+                                        </div>
+                                        <div class="nsc-convert-menu-size nsc-hide" style="margin-top: 10px;">
+                                            <div class="nsc-convert-menu-size-title"><span data-i18n="videoConvertFrameRate">Frame rate</span>:<span id="nsc_video_convert_frame_rate">15</span></div>
+                                            <div class="nsc-convert-menu-size-quality">
+                                                <input class="range" name="frame-rate" min="1" max="5" step="1" value="3" type="range">
+                                            </div>
+                                        </div>
+                                        <div class="nsc-convert-menu-desc" data-i18n="videoConvertInfo">You can convert video to other formats. It might take some time. You can’t save screencast before finish
+                                        </div>
+                                        <div class="nsc-convert-menu-submit">
+                                            <button class="nsc-button nsc-button-primary" type="button" name="convert">
+                                                <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="videoConvert">Convert</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /nsc-convert-menu -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="nsc-preview" flex layout="row">
+                        <div class="nsc-preview-content" id="nsc_preview_content">
+                            <img id="nsc_preview_img" src="">
+                            <video class="nsc-hide" id="nsc_stream_video" preload controls controlsList="nodownload"></video>
+                            <div class="nsc-preview-loading" id="nsc_preview_loading">
+                                <span class="nsc-icon nsc-icon-loading rotating-horizontally">&nbsp;</span>
+                                <span data-i18n>Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nsc-aside" flex="none" layout="column" id="nsc_done_youtube">
+                    <div class="nsc-aside-main" flex layout="column">
+                        <div class="nsc-aside-heading" flex="none" layout="row">
+                            <div class="nsc-icon nsc-icon-youtube" flex="none"></div>
+                            <div class="nsc-aside-heading-content" flex data-i18n="nimbusYoutubeSend">Upload to Youtube</div>
+                            <button name="" type="button" class="nsc-button nsc-button-icon-cleared" id="nsc_youtube_logout">
+                                <span class="nsc-button-layout" flex layout="row"><i class="nsc-icon nsc-icon-logout">&nbsp;</i></span>
+                            </button>
+                        </div>
+
+                        <div class="nsc-aside-search" flex="none">
+                            <div class="nsc-capture-flags">
+                                <div class="nsc-capture-flag" flex layout="row" layout-align="start center">
+                                    <label class="nsc-capture-flag-label nsc-noselect" flex layout="row" layout-align="start center">
+                                        <input name="shareOnYoutube" value="public" type="radio" checked>
+                                        <span class="nsc-capture-flag-text" data-i18n="youtubePublic">Public</span>
+                                    </label>
+                                </div>
+                                <div class="nsc-capture-flag" flex layout="row" layout-align="start center">
+                                    <label class="nsc-capture-flag-label nsc-noselect" flex layout="row" layout-align="start center">
+                                        <input name="shareOnYoutube" value="unlisted" type="radio">
+                                        <span class="nsc-capture-flag-text" data-i18n="youtubeUnlisted">Unlisted</span>
+                                    </label>
+                                </div>
+                                <div class="nsc-capture-flag" flex layout="row" layout-align="start center">
+                                    <label class="nsc-capture-flag-label nsc-noselect" flex layout="row" layout-align="start center">
+                                        <input name="shareOnYoutube" value="private" type="radio">
+                                        <span class="nsc-capture-flag-text" data-i18n="youtubePrivate">Private</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="nsc_youtube_playlist_add" class="nsc-hide">
+                            <div class="nsc-aside-list-group-top" flex="none" layout="row" layout-align="center center">
+                                <div class="nsc-aside-list-group-title" flex>New Playlist</div>
+                                <button name="cleared" type="button" class="nsc-button nsc-button-icon-cleared" flex="none">
+                                    <span class="nsc-button-layout" flex layout="row"><i class="nsc-icon nsc-icon-panel-cancel"></i></span>
+                                </button>
+                            </div>
+                            <div class="nsc-aside-search">
+                                <input class="nsc-aside-search-text" type="text" name="name" placeholder="Name" value="" data-i18n="youtubeName" data-i18n-attr="placeholder">
+                                <div class="nsc-aside-search-submit">
+                                    <button class="nsc-button nsc-button-primary" type="button" name="add">
+                                        <span class="nsc-button-layout" flex layout="row" layout-align="center center" data-i18n="youtubeCreate">create</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nsc-aside-list nsc-aside-list-action" flex layout="column">
+                            <div class="nsc-aside-list-group-top" flex="none" layout="row" layout-align="center center">
+                                <div class="nsc-aside-list-group-title" flex data-i18n="youtubePlaylist">Playlist</div>
+                                <button type="button" class="nsc-button nsc-button-icon-cleared nsc-hide" flex="none" id="nsc_youtube_playlist_show_add">
+                                    <span class="nsc-button-layout" flex layout="row">
+                                        <span class="nsc-icon nsc-icon-plus"></span>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="nsc-aside-list-group" flex>
+                                <ul id="nsc_youtube_playlist">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nsc-aside nsc-flex nsc-flex-nogrow nsc-layout-column" id="nsc_done_slack">
+                    <div class="nsc-aside-main nsc-flex nsc-layout-column">
+                        <div class="nsc-aside-heading nsc-flex nsc-flex-nogrow nsc-layout-row">
+                            <div class="nsc-icon nsc-icon-slack no-flex-shrink"></div>
+                            <div class="nsc-aside-heading-content nsc-flex">
+                                <span data-i18n="nimbusSlackAccount">Send to Slack</span>
+                                <span id="nsc_slack_team_name">Nimbus Web Inc Nimbus Web Inc</span>
+                            </div>
+                            <button type="button" class="nsc-button nsc-button-icon-cleared" id="nsc_slack_logout" data-i18n="nimbusSlackLogout" data-i18n-attr="title">
+                                <span class="nsc-button-layout nsc-flex nsc-layout-row">
+                                    <span class="nsc-icon nsc-icon-logout"></span>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="nsc-aside-search no-flex-shrink">
+                            <label class="nsc-aside-search-label" data-i18n="nimbusSelectChannel">Select channel</label>
+                            <input class="nsc-aside-search-text" type="text" placeholder="search here" id="nsc_slack_channel_search" data-i18n="nimbusSearch" data-i18n-attr="placeholder">
+                        </div>
+                        <div class="nsc-aside-list nsc-flex" id="nsc_slack_list_group">
+                            <div class="nsc-aside-list-group">
+                                <div class="nsc-aside-list-group-title" data-i18n="nimbusChannels">Сhannels</div>
+                                <ul id="nsc_slack_channel"></ul>
+                            </div>
+                            <div class="nsc-aside-list-group">
+                                <div class="nsc-aside-list-group-title" data-i18n="nimbusPrivateMessage">Private message</div>
+                                <ul id="nsc_slack_user"></ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="nsc-aside-toggle no-flex-shrink">
+                        <a href="#" id="nsc_slack_toggle" data-i18n="nimbusSlackHidePanel">Hide Slackpanel</a>
+                    </div>
+                </div>
+
+                <div class="nsc-aside nsc-flex nsc-flex-nogrow nsc-layout-column" id="nsc_done_nimbus">
+                    <div id="nsc_aside_main_nimbus" class="nsc-aside-main nsc-flex nsc-layout-column">
+
+                        <div class="nsc-aside-heading nsc-flex nsc-flex-nogrow nsc-layout-row">
+                            <div class="nsc-icon nsc-icon-nimbus-dark no-flex-shrink"></div>
+                            <div class="nsc-aside-heading-content nsc-flex">
+                                <span data-i18n="nimbusAccount">Send to Nimbus</span>
+                                <span id="nsc_nimbus_email"></span>
+                            </div>
+                            <button name="" type="button" class="nsc-button nsc-button-icon-cleared" id="nsc_nimbus_logout">
+								<span class="nsc-button-layout nsc-flex nsc-layout-row">
+									<i class="nsc-icon nsc-icon-logout"></i>
+								</span>
+                            </button>
+                        </div>
+
+                        <div class="nsc-aside-search no-flex-shrink">
+                            <label class="nsc-aside-search-label" data-i18n="nimbusNoteName">Name</label>
+                            <input class="nsc-aside-search-text" type="text" name="" value="Screenshot" id="nsc_screen_name">
+
+                            <div class="nsc-capture-flag">
+                                <label class="nsc-flex nsc-layout-row nsc-noselect">
+                                    <input id="nsc_nimbus_private_share" type="checkbox" name="" class="no-flex-shrink">
+                                    <span class="nsc-capture-flag-text" data-i18n="nimbusPrivate">Private</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="nsc-aside-loader nsc-flex">
+                            <div class="nsc-aside-loader-img"></div>
+                        </div>
+
+                        <div class="nsc-aside-select no-flex-shrink" id="nsc_select_organization">
+                            <label class="nsc-aside-select-label" data-i18n="nimbusSelectOrganization">Organization</label>
+                            <div class="nsc-aside-select-button" flex="" layout="row">
+                                <div class="nsc-aside-select-text nsc-noselect" flex="" data-id="">tgdgdfgdfgdfgdfgd</div>
+                                <div class="nsc-aside-select-trigger">
+                                    <span class="nsc-icon nsc-icon-arrow-write">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class="nsc-aside-select-dropdown">
+                                <ul>
+                                    <li class="nsc-aside-select-dropdown-item" flex="" layout="row" layout-align="start center" data-id="1">1111111</li>
+                                    <li class="nsc-aside-select-dropdown-item" flex="" layout="row" layout-align="start center" data-id="2">222222222222</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="nsc-aside-select no-flex-shrink" id="nsc_select_workspaces">
+                            <label class="nsc-aside-select-label" data-i18n="nimbusSelectWorkspace">Workspace</label>
+                            <div class="nsc-aside-select-button" flex="" layout="row">
+                                <div class="nsc-aside-select-loader"></div>
+                                <div class="nsc-aside-select-text nsc-noselect" flex="" data-id="">tgdgdfgdfgdfgdfgd</div>
+                                <div class="nsc-aside-select-trigger">
+                                    <span class="nsc-icon nsc-icon-arrow-write">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class="nsc-aside-select-dropdown">
+                                <ul>
+                                    <li class="nsc-aside-select-dropdown-item" flex="" layout="row" layout-align="start center" data-id="1">1111111</li>
+                                    <li class="nsc-aside-select-dropdown-item" flex="" layout="row" layout-align="start center" data-id="2">222222222222</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="nsc-aside-list nsc-flex" id="nsc_select_folder">
+                            <div class="nsc-aside-list-loader"></div>
+                            <div class="nsc-aside-list-group">
+                                <div class="nsc-aside-list-group-title" data-i18n="nimbusSelectFolder">Folder</div>
+                                <ul>
+                                    <li><a href="#">All notes</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="nsc-aside-usage no-flex-shrink nsc-hide" id="nsc_nimbus_usage_group">
+                        <div class="nsc-aside-usage-text"></div>
+                        <div class="nsc-aside-usage-line">
+                            <span class="nsc-aside-usage-line-colored" style="width:0%;"></span>
+                        </div>
+                    </div>
+                    <div class="nsc-aside-upgrade-link no-flex-shrink">
+                        <a href="http://nimbus.everhelper.me/pricing.php?utm_source=capture&utm_medium=addon&utm_campaign=premium_banner_savescreen_upgrade" target="_blank" data-i18n="nimbusUpgradePro" id="nsc_nimbus_upgrade_pro" class="nsc-hide">Upgrade to Nimbus Pro</a>
+                    </div>
+                </div>
+                <!-- /aside -->
+
+            </div>
+            <!-- /done content -->
+
+            <!-- nimbus comment -->
+            <div class="nsc-nimbus-comment" flex="none">
+                <div class="nsc-nimbus-comment-wrapper" flex="nogrow" layout="row">
+                    <div flex>
+                        <label data-i18n="nimbusComment">Comment</label>
+                        <label for="nsc_comment">
+                            <textarea id="nsc_comment" placeholder="comment your screenshot" tabindex="2" data-i18n="nimbusCommentPlaceholder" data-i18n-attr="placeholder"></textarea>
+                        </label>
+
+                        <div class="nsc-environment-info">
+                            <input type="checkbox" id="nsc_environment_info">
+                            <label for="nsc_environment_info" data-i18n="nimbusEnvironmentInfo">add environment info</label>
+                        </div>
+                    </div>
+                    <div class="nsc-nimbus-comment-submit">
+                        <label>&nbsp;</label>
+                        <button class="nsc-button nsc-button-primary" type="button" name="" id="nsc_send" data-type="" data-channel="false">
+                            <span class="nsc-button-layout nsc-flex nsc-layout-row">Send to Slack \ Nimbus </span>
+                        </button>
+                        <div class="nsc-info" id="hotkeys_send_ns">(Ctrl+Enter)</div>
+                    </div>
+                </div>
+            </div>
+            <!-- /nimbus comment -->
+
+        </div>
+        <!-- /wrapper -->
+
+    </div>
+    <!-- /done page layout -->
+
+</div>
+
+<div class="nsc-pre-load nsc-hide" id="nsc_pre_load" data-i18n="labelRedactorLoading">Please wait some time ...</div>
+
+<!--</div>-->
+
+<div class="nsc-rate-us nsc-hide" id="nsc_nimbus_rate">
+    <div class="nsc-rate-us-close">
+        <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button">
+            <span class="nsc-icon nsc-icon-close-2">&nbsp;</span>
+        </button>
+    </div>
+    <div class="nsc-rate-us-title">Nimbus Screenshot and Screencast</div>
+    <div class="nsc-rate-us-stars" flex="" layout="row" layout-align="center center">
+        <button class="nsc-button nsc-button-icon-cleared" type="button" name="feedback">
+            <span class="nsc-icon nsc-icon-star-solid">&nbsp;</span>
+        </button>
+        <button class="nsc-button nsc-button-icon-cleared" type="button" name="feedback">
+            <span class="nsc-icon nsc-icon-star-solid">&nbsp;</span>
+        </button>
+        <button class="nsc-button nsc-button-icon-cleared" type="button" name="feedback">
+            <span class="nsc-icon nsc-icon-star-solid">&nbsp;</span>
+        </button>
+        <button class="nsc-button nsc-button-icon-cleared" type="button" name="feedback">
+            <span class="nsc-icon nsc-icon-star-solid">&nbsp;</span>
+        </button>
+        <button class="nsc-button nsc-button-icon-cleared" type="button" name="feedback">
+            <span class="nsc-icon nsc-icon-star-solid">&nbsp;</span>
+        </button>
+    </div>
+    <div class="nsc-rate-us-text" data-i18n="rateText">Like Nimbus Capture?<br>Please write your review! Thank you.</div>
+    <div class="nsc-rate-us-button">
+        <button class="nsc-button nsc-button-primary nsc-button-small" type="button" name="feedback">
+            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="rateRate">Rate Nimbus Capture</span>
+        </button>
+    </div>
+    <div class="nsc-rate-us-dont-show">
+        <button class="button" type="button" name="not-show-more" data-i18n="rateNotShow">Don’t show it again</button>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide nsc-file-manager" id="nsc_file_manager">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title nsc-title-google" flex layout="row" layout-align="start center">
+            <span class="nsc-icon nsc-icon-google-manager">&nbsp;</span>
+            <span data-i18n="gDriveTitle">Send to Google Drive</span>
+        </div>
+        <div class="nsc-popup-heading-title nsc-title-dropbox" flex layout="row" layout-align="start center">
+            <span class="nsc-icon nsc-icon-dropbox-24">&nbsp;</span>
+            <span>Send to Dropbox</span>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-file-manager-info" data-i18n="gDriveLabel">Please, select folder you want to save screenshot</div>
+            <div class="nsc-file-manager-folders">
+                <div class="parent" id="nsc_file_manager_folders_parent"></div>
+                <div class="current" id="nsc_file_manager_folders_current"></div>
+                <ul class="nsc-file-manager-folders-list" id="nsc_file_manager_folders_list">&nbsp;</ul>
+            </div>
+            <div class="nsc-file-manager-future" data-i18n="gDriveLabelFolders" id="nsc_file_manager_future">You will save your screenshot to:</div>
+            <div class="nsc-popup-actions-buttons">
+                <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="done">
+                    <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="gDriveBtnDone">Done</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_connect_nimbus">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-nimubs-dark">&nbsp;</i>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-title" data-i18n="nimbusEnter">Sign in to Nimbus Note</div>
+
+            <div class="nsc-popup-form">
+                <form method="post" name="login-nimbus" id="nsc_form_login_nimbus">
+                    <div class="nsc-popup-form-field">
+                        <label class="nsc-label-email" data-i18n="nimbusLabelEmail">Email</label>
+                        <input type="email" name="email" value="" placeholder="email" required data-i18n="nimbusPlaceholderEmail" data-i18n-attr="placeholder">
+                    </div>
+                    <div class="nsc-popup-form-field">
+                        <label class="nsc-label-password" data-i18n="nimbusLabelPassword">Password</label>
+                        <input type="password" name="password" value="" placeholder="password" required data-i18n="nimbusPlaceholderPassword" data-i18n-attr="placeholder">
+                    </div>
+                    <div class="nsc-popup-form-link nsc-popup-form-link-small"><a href="#" class="nsc-open-popup-remind-pass-nimbus" data-i18n="nimbusBtnRemind">Forgot your password?</a></div>
+                    <div class="nsc-popup-form-actions">
+                        <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="submit" name="">
+                            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusBtnLogin">Login</span>
+                        </button>
+                    </div>
+                </form>
+                <div class="nsc-popup-form-link">
+                    <a href="#" class="nsc-open-popup-register-nimbus" data-i18n="nimbusNotAccount">I don't have account</a>
+                </div>
+                <div class="nsc-popup-form-or"><span>or</span></div>
+                <div class="nsc-popup-form-actions">
+                    <button class="nsc-button nsc-button-large nsc-button-block nsc-button-google" type="button" name="" id="nsc_connect_to_google">
+                        <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusBtnAuthGoogle">Continue with Google</span>
+                    </button>
+                    <button class="nsc-button nsc-button-large nsc-button-block nsc-button-facebook" type="button" name="" id="nsc_connect_to_facebook">
+                        <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusBtnAuthFacebook">Continue with Facebook</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_connect_nimbus_challenge">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-nimubs-dark">&nbsp;</i>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-title" data-i18n="nimbusEnter">Sign in to Nimbus Note</div>
+
+            <div class="nsc-popup-form">
+                <form method="post" name="login-nimbus" id="nsc_form_login_nimbus_challenge">
+                    <input type="hidden" name="state" value="" placeholder="state" required>
+                    <div class="nsc-popup-form-field">
+                        <label class="nsc-label-email" data-i18n="nimbusLabelCode">Code</label>
+                        <input type="text" name="code" value="" placeholder="code" required>
+                    </div>
+                    <img src="" alt="">
+                    <div class="nsc-popup-form-actions">
+                        <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="submit" name="">
+                            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusBtnLogin">Login</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_register_nimbus">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <span class="nsc-icon ic-nimubs-dark">&nbsp;</span>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-title" data-i18n="nimbusRegistration">Registration</div>
+            <div class="nsc-popup-form">
+                <form method="post" name="" action="" id="nsc_form_register_nimbus">
+                    <div class="nsc-popup-form-field">
+                        <label class="nsc-label-email" data-i18n="nimbusLabelEmail">Email</label>
+                        <input type="email" name="email" value="" placeholder="email" required data-i18n="nimbusPlaceholderEmail" data-i18n-attr="placeholder">
+                    </div>
+                    <div class="nsc-popup-form-field">
+                        <label class="nsc-label-password" data-i18n="nimbusLabelPasswordAndInfo">Password</label>
+                        <input type="password" name="password" value="" placeholder="password" required data-i18n="nimbusPlaceholderPassword" data-i18n-attr="placeholder">
+                    </div>
+                    <div class="nsc-popup-form-field">
+                        <label class="nsc-label-repass" data-i18n="nimbusLabelRetypePass">Retype Password</label>
+                        <input type="password" name="passrepeat" value="" placeholder="repeat password" required data-i18n="nimbusPlaceholderPassword" data-i18n-attr="placeholder">
+                    </div>
+                    <div class="nsc-popup-form-actions">
+                        <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="submit" name="">
+                            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusBtnSignup">Sign up</span>
+                        </button>
+                    </div>
+                    <div class="nsc-popup-form-link nsc-open-popup-login-nimbus">
+                        <a href="#" data-i18n="nimbusBtnLogin">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_remind_password_nimbus">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <span class="nsc-icon ic-nimubs-dark">&nbsp;</span>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-title" data-i18n="nimbusRemindPass">Remind password</div>
+            <div class="nsc-popup-form">
+                <form method="post" name="remind-password" id="nsc_form_remind_password_nimbus">
+                    <div class="nsc-popup-form-field">
+                        <label class="nsc-label-email" data-i18n="nimbusLabelEmail">Email</label>
+                        <input type="email" name="email" value="" required data-i18n="nimbusPlaceholderEmail" data-i18n-attr="placeholder">
+                    </div>
+                    <div class="nsc-popup-form-actions">
+                        <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="submit" name="">
+                            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusBtnRemind">Remind</span>
+                        </button>
+                    </div>
+                    <div class="nsc-popup-form-link"><a href="#" data-i18n="nimbusBtnLogin" class="nsc-open-popup-login-nimbus">Login</a>
+                    </div>
+                    <div class="nsc-popup-form-link"><a href="#" data-i18n="nimbusBtnSignup" class="nsc-open-popup-register-nimbus">Sign up</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_account_popup">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-nimubs-dark">&nbsp;</i>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-title" data-i18n="nimbusSend">Send to Nimbus Note</div>
+            <div class="nsc-popup-actions-text nsc-popup-actions-icon-list">
+                <ul>
+                    <li>
+                        <i class="nsc-icon nsc-icon-ic-share-24">&nbsp;</i>
+                        <span data-i18n="nimbusShareFriends">Share screenshots with friends and colleagues</span>
+                    </li>
+                    <li>
+                        <i class="nsc-icon nsc-icon-ic-devices-24">&nbsp;</i>
+                        <span data-i18n="nimbusAccessAnyTimes">Have access to screenshots anytimes from anywhere</span>
+                    </li>
+                    <li>
+                        <i class="nsc-icon nsc-icon-ic-organize-24">&nbsp;</i>
+                        <span data-i18n="nimbusOrganizeUploadFolders">Organize your uploads by folders, sub-folders, and tags</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="nsc-popup-form-actions nsc-popup-close">
+                <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary nsc-open-popup-register-nimbus" type="button" name="">
+                    <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusCreateAccount">Create Account</span>
+                </button>
+            </div>
+            <div class="nsc-popup-form-link nsc-open-popup-login-nimbus">
+                <a href="#" data-i18n="nimbusBtnLogin">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_limit">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-nimubs-dark">&nbsp;</i>
+            <span class="nsc-title-send-to-nimbus" data-i18n="nimbusSend">Send to Nimbus Note</span>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-title" data-i18n="nimbusLimitVideo">Your video is too big!<br>But all is not lost ...</div>
+            <div class="nsc-popup-actions-text" data-i18n="nimbusLimitVideoDestruction">Max.file size for Nimbus Pro = 1GB<br>Please write to <b>team@nimbusweb.co</b> to raise the file limit.</div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-actions-buttons nsc-popup-close">
+                    <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="">
+                        <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusThanksYou">Thank you for information</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_limit_free">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-nimubs-dark">&nbsp;</i>
+            <span class="nsc-title-send-to-nimbus" data-i18n="nimbusSend">Send to Nimbus Note</span>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-title" data-i18n="nimbusLimitVideoFree">Your video is too big!<br>But all is not lost ...</div>
+            <div class="nsc-popup-actions-text" data-i18n="nimbusLimitVideoDestructionFree">Max. file size for free accounts = 10MB<br>Upgrade to Nimbus Pro to raise the file limit.</div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-actions-buttons nsc-popup-close">
+                    <a href="https://nimbusweb.me/pricing.php?utm_source=capture&utm_medium=addon&utm_campaign=premium_banner_upload_10" target="_blank">
+                        <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="">
+                            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusGoPro">Upgrade to Nimbus Pro</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="nsc-popup-form-link"><a href="#" data-i18n="nimbusNoThanks">No thanks</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_limit_org_free">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-nimubs-dark">&nbsp;</i>
+            <span class="nsc-title-send-to-nimbus" data-i18n="nimbusSend">Send to Nimbus Note</span>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-title" data-i18n="nimbusLimitVideoOrgFree">Your video is too big!<br>But all is not lost ...</div>
+            <div class="nsc-popup-actions-text" data-i18n="nimbusLimitVideoDestructionOrgFree">Max. file size for free accounts = 10MB<br>Upgrade to Nimbus Pro to raise the file limit.</div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-actions-buttons nsc-popup-close">
+                    <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="">
+                        <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="btnOkGotIt">Ok, Got It</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_limit_org_premium">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-nimubs-dark">&nbsp;</i>
+            <span class="nsc-title-send-to-nimbus" data-i18n="nimbusSend">Send to Nimbus Note</span>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-title" data-i18n="nimbusLimitVideoOrgPremium">Your video is too big!<br>But all is not lost ...</div>
+            <div class="nsc-popup-actions-text" data-i18n="nimbusLimitVideoDestructionOrgPremium">Max.file size for Nimbus Pro = 1GB<br>Please write to <b>team@nimbusweb.co</b> to raise the file limit.</div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-actions-buttons nsc-popup-close">
+                    <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="">
+                        <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="btnOkGotIt">Ok, Got It</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_limit_org_limit">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-nimubs-dark">&nbsp;</i>
+            <span class="nsc-title-send-to-nimbus" data-i18n="nimbusSend">Send to Nimbus Note</span>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-title" data-i18n="nimbusLimitVideoOrgLimit">Your video is too big!<br>But all is not lost ...</div>
+            <div class="nsc-popup-actions-text" data-i18n="nimbusLimitVideoDestructionOrgLimit">Max.file size for Nimbus Pro = 1GB<br>Please write to <b>team@nimbusweb.co</b> to raise the file limit.</div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-actions-buttons nsc-popup-close">
+                    <a href="https://nimbusweb.me/pricing.php?utm_source=capture&utm_medium=addon&utm_campaign=premium_banner_upload_10" target="_blank">
+                        <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="">
+                            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusGoPro">Upgrade to Nimbus Pro</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="nsc-popup-form-link"><a href="#" data-i18n="nimbusNoThanks">No thanks</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_slack_connect">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-slack">&nbsp;</i>
+            <span data-i18n="nimbusSlackSend">Send to Slack</span>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-slack-connect-logos" flex="" layout="row" layout-align="center center">
+                <div class="nsc-icon ic-nimbus-logo"></div>
+                <div class="nsc-icon ic-plus-color"></div>
+                <div class="nsc-icon ic-slack-logo"></div>
+            </div>
+            <div class="nsc-popup-actions-text">
+                <b data-i18n="nimbusSlackWelcome">Please read the following:</b>
+                <p data-i18n="nimbusSlackWelcome2">
+                    Nimbus Capture extension will not access to any content of your messages.<br>
+                    All your conversations are safe.<br>
+                    Nimbus Capture will upload screenshots only.
+                </p>
+                <span>
+                    <span data-i18n="nimbusSlackWelcome3">
+                    Questions regarding permissions? Feel free to contact us
+                </span>:
+                    <a href="mailto:team@nimbusweb.co">team@nimbusweb.co</a>
+                </span>
+            </div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-actions-buttons">
+                    <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" id="nsc_button_connect_slack" type="button" name="">
+                        <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="btnConnectSlack">Connect Slack</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="new_release_popup">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-nimubs-dark">&nbsp;</i>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-text">
+                <h2 style="margin-bottom: 20px" data-i18n="newReleaseTitle">&nbsp;</h2>
+                <ol style="display: inline-block; text-align: left" data-i18n="newReleaseText">&nbsp;</ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_premium">
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex="none">
+            <div class="nsc-popup-actions-title" data-i18n="nimbusCaptureUpgradePro">Ещё больше возможностей<br>с Nimbus Capture Pro</div>
+            <div class="nsc-popup-actions-text nsc-popup-actions-icon-list">
+                <ul>
+                    <li class="hide-firefox-only">
+                        <i class="nsc-icon nsc-icon-unlimited-recording-24">&nbsp;</i>
+                        <span data-i18n="nimbusProVideoLimit">Unlimited recordings</span>
+                    </li>
+                    <li class="hide-firefox-only">
+                        <i class="nsc-icon nsc-icon-mp4-dark-24">&nbsp;</i>
+                        <span data-i18n="nimbusProConvertMP4">Convert video to MP4</span>
+                    </li>
+                    <li class="hide-firefox-only">
+                        <i class="nsc-icon nsc-icon-gif-dark-24">&nbsp;</i>
+                        <span data-i18n="nimbusProConvertGIF">Convert video to GIF</span>
+                    </li>
+                    <li class="hide-firefox-only">
+                        <i class="nsc-icon nsc-icon-crop-dark-24">&nbsp;</i>
+                        <span data-i18n="nimbusProCropVideo">Crop your video</span>
+                    </li>
+                    <li class="hide-firefox-only">
+                        <i class="nsc-icon nsc-icon-trim-dark-24">&nbsp;</i>
+                        <span data-i18n="nimbusProTrimVideo">Trim your video</span>
+                    </li>
+                    <li class="hide-firefox-only">
+                        <i class="nsc-icon nsc-icon-youtube-24">&nbsp;</i>
+                        <span data-i18n="nimbusProSendYoutube">Отправка видео в Youtube</span>
+                    </li>
+                    <li class="hide-firefox-only">
+                        <i class="nsc-icon nsc-icon-google-drive-24">&nbsp;</i>
+                        <span data-i18n="nimbusProSendGoogleDrive">Upload images and videos to Google Drive</span>
+                    </li>
+                    <li class="hide-chrome-only">
+                        <i class="nsc-icon nsc-icon-google-drive-24">&nbsp;</i>
+                        <span data-i18n="nimbusProSendGoogleDriveFirefox">Upload images to Google Drive</span>
+                    </li>
+                    <li class="hide-firefox-only">
+                        <i class="nsc-icon nsc-icon-google-drive-24">&nbsp;</i>
+                        <span data-i18n="nimbusProSendGoogleDrive2">Upload as a public or private link to Google Drive</span>
+                    </li>
+                    <li>
+                        <i class="nsc-icon nsc-icon-dropbox-24">&nbsp;</i>
+                        <span data-i18n="nimbusProSendDropbox">Send images and video to Dropbox</span>
+                    </li>
+                    <li>
+                        <i class="nsc-icon nsc-icon-watermark-dark-24">&nbsp;</i>
+                        <span data-i18n="nimbusProAddWaterMark">Add your watermark for branding</span>
+                    </li>
+                    <li>
+                        <i class="nsc-icon nsc-icon-support-dark-24">&nbsp;</i>
+                        <span data-i18n="nimbusProSupport">Priority Support</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-form-actions nsc-popup-close">
+                    <a href="https://nimbusweb.me/capture-pro?utm_source=capture&utm_medium=addon&utm_campaign=premium_banner_savescreen_upgrade" target="_blank">
+                        <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="">
+                            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusGoPro">Upgrade to Nimbus Pro</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="nsc-popup-form-link">
+                    <a href="#" data-i18n="nimbusNoThanks">No thanks</a>
+                </div>
+                <div class="nsc-popup-form-or is-auth-hide nsc-hide">
+                    <span data-i18n="nimbusOr">or</span>
+                </div>
+                <div class="nsc-popup-form-link nsc-popup-form-link-bottomed is-auth-hide nsc-hide">
+                    <a href="#" class="nsc-open-popup-login-nimbus" data-i18n="nimbusIsPro">I have NimbusPro</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_google_premium">
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex="none">
+            <div class="nsc-popup-actions-title" data-i18n="nimbusCaptureUpgradePremium">Ещё больше возможностей<br>с Nimbus Capture Business</div>
+            <div class="nsc-popup-actions-text nsc-popup-actions-icon-list">
+                <ul>
+                    <li class="hide-firefox-only">
+                        <i class="nsc-icon nsc-icon-google-drive-24">&nbsp;</i>
+                        <span data-i18n="nimbusProSendGoogleDrive">Upload images and videos to Google Drive</span>
+                    </li>
+                    <li class="hide-chrome-only">
+                        <i class="nsc-icon nsc-icon-google-drive-24">&nbsp;</i>
+                        <span data-i18n="nimbusProSendGoogleDriveFirefox">Upload images to Google Drive</span>
+                    </li>
+                    <li class="hide-firefox-only">
+                        <i class="nsc-icon nsc-icon-google-drive-24">&nbsp;</i>
+                        <span data-i18n="nimbusProSendGoogleDrive2">Upload as a public or private link to Google Drive</span>
+                    </li>
+                    <li>
+                        <i class="nsc-icon nsc-icon-watermark-dark-24">&nbsp;</i>
+                        <span data-i18n="nimbusProAddWaterMark">Add your watermark for branding</span>
+                    </li>
+                    <li>
+                        <i class="nsc-icon nsc-icon-support-dark-24">&nbsp;</i>
+                        <span data-i18n="nimbusProSupport">Priority Support</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-form-actions nsc-popup-close">
+                    <a href="https://nimbusweb.me/capture-pro?utm_source=capture&utm_medium=addon&utm_campaign=premium_banner_savescreen_upgrade" target="_blank">
+                        <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="">
+                            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="btnGoPremium">Go to Premium</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="nsc-popup-form-link">
+                    <a href="#" data-i18n="nimbusNoThanks">No thanks</a>
+                </div>
+                <div class="nsc-popup-form-or is-auth-hide nsc-hide">
+                    <span data-i18n="nimbusOr">or</span>
+                </div>
+                <div class="nsc-popup-form-link nsc-popup-form-link-bottomed is-auth-hide nsc-hide">
+                    <a href="#" class="nsc-open-popup-login-nimbus" data-i18n="nimbusIsPro">I have NimbusPro</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_trial">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-nimubs-dark">&nbsp;</i>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex>
+            <div class="nsc-popup-actions-text" data-i18n="nimbusLimitVideoDurationDestruction">
+                Your 7-day trial has started. You can now record video without a limit on size.
+                After the trial is over, you can record video with a duration of no more than 5 minutes.
+                Upgrade to Nimbus Pro to activate unlimited recording.
+            </div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-actions-buttons nsc-popup-close">
+                    <a href="https://nimbusweb.me/capture-pro?utm_source=capture&utm_medium=addon&utm_campaign=premium_banner_savescreen_upgrade" target="_blank">
+                        <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="">
+                            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusGoPro">Upgrade to Nimbus Pro</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="nsc-popup-form-link"><a href="#" data-i18n="nimbusNoThanks">No thanks</a></div>
+                <div class="nsc-popup-form-or"><span data-i18n="nimbusOr">or</span></div>
+                <div class="nsc-popup-form-link nsc-popup-form-link-bottomed"><a href="#" class="nsc-open-popup-login-nimbus" data-i18n="nimbusIsPro">I have NimbusPro</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_capture_pro_device">
+    <div class="nsc-popup-heading" flex layout="row" layout-align="start start">
+        <div class="nsc-popup-heading-title" flex layout="row" layout-align="start center">
+            <i class="nsc-icon ic-nimubs-dark">&nbsp;</i>
+            <span>Nimbus Capture</span>
+        </div>
+        <div class="nsc-popup-close" flex="none">
+            <button class="nsc-button nsc-button-block nsc-button-icon-cleared" type="button" name="">
+                <span class="nsc-icon ic-cancel">&nbsp;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex="none">
+            <div class="nsc-popup-actions-title" data-i18n="nimbusLimitDeviceTitle">Your Nimbus Capture account is already being used on the maximum number of devices.</div>
+            <div class="nsc-popup-actions-text" data-i18n="nimbusLimitDeviceDestruction">If you want to use Nimbus Capture on more than two devices, you will need to upgrade your plan.</div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-form-actions nsc-popup-close">
+                    <a href="https://nimbusweb.me/capture-pro/" target="_blank">
+                        <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="">
+                            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="nimbusIncreaseLimit">Increase limit</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="nsc-popup-form-link">
+                    <a href="https://nimbusweb.me/user-billing/devices" target="_blank" data-i18n="nimbusManageDevices">Manage devices</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_youtube_no_channel">
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex="none">
+            <div class="nsc-popup-actions-title" data-i18n="popupYoutubeChannel">You need to a Youtube channel</div>
+            <div class="nsc-popup-actions-text" data-i18n="popupYoutubeChannelCreates">In order to upload a recorded videos to Youtube, you will need to create a Youtube channel.</div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-form-actions nsc-popup-close">
+                    <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="" id="nsc_popup_youtube_no_channel_learn_more">
+                        <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="btnLearnMore">Learn more</span>
+                    </button>
+                    <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="" id="nsc_popup_youtube_no_channel_cancel">
+                        <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="btnCancel">Cancel</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_video_editor">
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex="none">
+            <div class="nsc-popup-actions-title" data-i18n="popupVideoEditorWelcomeTitle">Welcome to the video editor!</div>
+            <div class="nsc-popup-actions-text" data-i18n="popupVideoEditorWelcomeDescription">Here, you can easily crop and trim your videos. <a href='https://nimbusweb.me/s/share/3636848/d89qs8v6i4nbw3l6hefq' target='_blank'>Read the user guide</a> to learn how to work with the editor.</div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-form-actions nsc-popup-close">
+                    <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="">
+                        <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="btnOkGotIt">Ok, Got It</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_video_crop">
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex="none">
+            <div class="nsc-popup-actions-text"><img src="" style="width: 100%"></div>
+            <div class="nsc-popup-actions-text" data-i18n="popupVideoEditorCrop">Select region you want to crop and hit on check mark.</div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-form-actions nsc-popup-close">
+                    <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="">
+                        <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="btnOkGotIt">Ok, Got It</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_video_trim">
+    <div class="nsc-popup-content nsc-popup-content-single" flex layout="row" layout-align="center center">
+        <div class="nsc-popup-actions" flex="none">
+            <div class="nsc-popup-actions-text"><img src="" style="width: 100%"></div>
+            <div class="nsc-popup-actions-text" data-i18n="popupVideoEditorTrim">Using the blue markers, select a part of the video that needs to be trimmed and click on Apply trim.</div>
+            <div class="nsc-popup-form">
+                <div class="nsc-popup-form-actions nsc-popup-close">
+                    <button class="nsc-button nsc-button-large nsc-button-block nsc-button-primary" type="button" name="">
+                        <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="btnOkGotIt">Ok, Got It</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nsc-popup nsc-hide" id="nsc_popup_formula">
+    <div id="inputs">
+        <div class="nsc_math_field" id="nsc_math_field"></div>
+        <textarea class="nsc-math-output" id="nsc_formula_enter" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
+    </div>
+    <div class="nsc-popup-form">
+        <div class="nsc-popup-form-actions">
+            <button class="nsc-button nsc-button-large nsc-button-primary" type="button" name="" id="nsc_insert_formula">
+                <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="tooltipFormula">Insert formula</span>
+            </button>
+            <button class="nsc-button nsc-button-large nsc-button-primary" type="button" name="" id="nsc_insert_formula_cancel">
+                <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="btnCancel">Cancel</span>
+            </button>
+        </div>
+    </div>
+    <div class="nsc-formula-copy-btn">
+        <button class="nsc-panel-button instant not_change_active show-chrome-only" type="button" name="" id="nsc_redactor_formula_copy">
+            <span class="nsc-icon nsc-icon-formula-copy">&nbsp;</span>
+        </button>
+        <button class="nsc-panel-button instant not_change_active show-chrome-only" type="button" name="" id="nsc_redactor_formula_save">
+            <span class="nsc-icon nsc-icon-formula-save">&nbsp;</span>
+        </button>
+    </div>
+</div>
+
+<iframe id="print" src="print.html" style="visibility: hidden; width: 1px; height: 1px"></iframe>
+</body>
+</html>
+
+
+

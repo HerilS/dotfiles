@@ -1,0 +1,8 @@
+2021/05/30-15:05:25.763 14f3f Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_calendar.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/05/30-15:05:25.763 14f3f Recovering log #10
+2021/05/30-15:05:25.763 14f3f Reusing old log /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_calendar.google.com_0.indexeddb.leveldb/000010.log 
+2021/05/30-15:05:29.243 14f3f Level-0 table #15: started
+2021/05/30-15:05:29.243 14f3f Level-0 table #15: 0 bytes OK
+2021/05/30-15:05:29.306 14f3f Delete type=0 #10
+2021/05/30-15:05:29.306 14f3f Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/05/30-15:05:29.306 14f3f Manual compaction at level-1 from (begin) .. (end); will stop at (end)

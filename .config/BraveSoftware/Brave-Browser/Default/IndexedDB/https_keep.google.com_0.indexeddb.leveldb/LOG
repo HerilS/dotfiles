@@ -1,0 +1,6 @@
+2021/06/07-21:29:51.450 8ccc Creating DB /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_keep.google.com_0.indexeddb.leveldb since it was missing.
+2021/06/07-21:29:51.550 8ccc Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_keep.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/06/07-21:32:06.784 2fdf Level-0 table #5: started
+2021/06/07-21:32:06.809 2fdf Level-0 table #5: 3727 bytes OK
+2021/06/07-21:32:06.836 2fdf Delete type=0 #3
+2021/06/07-21:32:06.836 2fdf Manual compaction at level-0 from (begin) .. (end); will stop at (end)

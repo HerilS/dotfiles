@@ -1,0 +1,6 @@
+2021/06/28-17:46:42.414 e3cb Creating DB /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.uxlibrary.org_0.indexeddb.leveldb since it was missing.
+2021/06/28-17:46:42.496 e3cb Reusing MANIFEST /home/herilsaha/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.uxlibrary.org_0.indexeddb.leveldb/MANIFEST-000001
+2021/06/28-21:47:26.050 185f5 Level-0 table #5: started
+2021/06/28-21:47:26.139 185f5 Level-0 table #5: 1114 bytes OK
+2021/06/28-21:47:26.168 185f5 Delete type=0 #3
+2021/06/28-21:47:26.168 185f5 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
